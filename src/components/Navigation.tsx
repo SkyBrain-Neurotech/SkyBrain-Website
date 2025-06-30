@@ -9,6 +9,11 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -28,7 +33,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      isScrolled ? 'glass-card border-b border-neural-blue/20' : 'bg-transparent'
+      isScrolled || isOpen ? 'glass-card border-b border-neural-blue/20' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -79,27 +84,40 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Overlay */}
         {isOpen && (
-          <div className="md:hidden glass-card border-t border-neural-blue/20 mt-4 rounded-2xl mx-4 mb-4">
-            <div className="px-6 py-6 space-y-6">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`block text-ghost-white/80 hover:text-neural-blue transition-colors duration-300 font-semibold text-lg ${
-                    location.pathname === item.href ? 'text-neural-blue' : ''
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Button className="w-full cyber-button text-deep-space font-bold py-4 text-lg rounded-xl">
-                Get Started
-              </Button>
+          <>
+            {/* Backdrop */}
+            <div 
+              className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
+              onClick={() => setIsOpen(false)}
+            />
+            
+            {/* Mobile Menu */}
+            <div className="md:hidden fixed left-0 right-0 top-20 z-40">
+              <div className="glass-card border border-neural-blue/20 mx-4 rounded-2xl shadow-2xl backdrop-blur-xl">
+                <div className="px-6 py-6 space-y-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`block text-ghost-white/80 hover:text-neural-blue transition-colors duration-300 font-semibold text-lg py-3 rounded-lg hover:bg-neural-blue/10 px-4 ${
+                        location.pathname === item.href ? 'text-neural-blue bg-neural-blue/20' : ''
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="pt-4 border-t border-neural-blue/20">
+                    <Button className="w-full cyber-button text-deep-space font-bold py-4 text-lg rounded-xl">
+                      Get Started
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </nav>

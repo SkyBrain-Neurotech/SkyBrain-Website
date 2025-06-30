@@ -10,8 +10,8 @@ interface TeamMember {
   bio: string;
   expertise: string[];
   status: 'founder' | 'advisor' | 'team' | 'coming-soon';
-  level: number;
-  specialPower?: string;
+  education?: string;
+  experience?: string;
 }
 
 const TeamSelection = () => {
@@ -26,124 +26,124 @@ const TeamSelection = () => {
       name: 'Founder & CEO',
       role: 'Founder & CEO',
       category: 'Leadership',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Visionary leader driving the future of neurotechnology and mental wellness through Brain-Computer Interface innovations.',
-      expertise: ['Neurotechnology', 'Leadership', 'Strategy', 'BCI Research'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Visionary leader driving the future of neurotechnology and mental wellness through Brain-Computer Interface innovations. Leading breakthrough research in neural signal processing and cognitive enhancement systems.',
+      expertise: ['Neurotechnology', 'Leadership', 'Strategy', 'BCI Research', 'Neural Engineering'],
       status: 'founder',
-      level: 10,
-      specialPower: 'Neural Vision'
+      education: 'Ph.D. in Neuroscience, M.S. in Biomedical Engineering',
+      experience: '15+ years in neurotechnology and BCI research'
     },
     {
       id: 'ai-advisor',
       name: 'AI Advisor',
       role: 'AI Advisor',
       category: 'Advisory',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Leading AI expert guiding our machine learning initiatives and neural pattern recognition systems.',
-      expertise: ['Artificial Intelligence', 'Machine Learning', 'Neural Networks', 'Deep Learning'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Leading AI expert guiding our machine learning initiatives and neural pattern recognition systems. Pioneer in deep learning applications for brain-computer interfaces.',
+      expertise: ['Artificial Intelligence', 'Machine Learning', 'Neural Networks', 'Deep Learning', 'Pattern Recognition'],
       status: 'advisor',
-      level: 9,
-      specialPower: 'Deep Learning Mastery'
+      education: 'Ph.D. in Computer Science, Specialization in AI',
+      experience: '20+ years in AI research and development'
     },
     {
       id: 'neurotech-advisor',
       name: 'Neurotech Advisor',
       role: 'Neurotech Advisor',
       category: 'Advisory',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Neurotechnology pioneer with decades of BCI experience and groundbreaking research in neural interfaces.',
-      expertise: ['BCI Technology', 'Neuroscience', 'Signal Processing', 'Neural Engineering'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Neurotechnology pioneer with decades of BCI experience and groundbreaking research in neural interfaces. Published author with 100+ peer-reviewed papers.',
+      expertise: ['BCI Technology', 'Neuroscience', 'Signal Processing', 'Neural Engineering', 'Biomedical Devices'],
       status: 'advisor',
-      level: 9,
-      specialPower: 'Brain Interface Expert'
+      education: 'Ph.D. in Biomedical Engineering, M.D.',
+      experience: '25+ years in neurotechnology and medical devices'
     },
     // Research Team
     {
       id: 'research-scientist-1',
-      name: 'Senior Research Scientist',
+      name: 'Dr. Sarah Chen',
       role: 'Senior Research Scientist',
       category: 'Research',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Advanced research in neural signal processing and cognitive enhancement methodologies.',
-      expertise: ['Neuroscience', 'Signal Processing', 'Cognitive Science', 'EEG Analysis'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Advanced research in neural signal processing and cognitive enhancement methodologies. Leading our EEG analysis and real-time processing initiatives.',
+      expertise: ['Neuroscience', 'Signal Processing', 'Cognitive Science', 'EEG Analysis', 'Data Science'],
       status: 'coming-soon',
-      level: 8,
-      specialPower: 'Neural Analytics'
+      education: 'Ph.D. in Neuroscience, M.S. in Electrical Engineering',
+      experience: '12+ years in neural signal processing'
     },
     {
       id: 'research-scientist-2',
-      name: 'Research Scientist',
+      name: 'Dr. Michael Rodriguez',
       role: 'Research Scientist',
       category: 'Research',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Specializing in real-time neural data analysis and pattern recognition algorithms.',
-      expertise: ['Data Analysis', 'Pattern Recognition', 'Neural Networks', 'Real-time Processing'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Specializing in real-time neural data analysis and pattern recognition algorithms. Expert in machine learning applications for BCI systems.',
+      expertise: ['Data Analysis', 'Pattern Recognition', 'Neural Networks', 'Real-time Processing', 'Algorithm Development'],
       status: 'coming-soon',
-      level: 7,
-      specialPower: 'Pattern Master'
+      education: 'Ph.D. in Computer Science, M.S. in Statistics',
+      experience: '10+ years in data science and neural computing'
     },
     // Technology Team
     {
       id: 'blockchain-expert',
-      name: 'Blockchain Expert',
+      name: 'Dr. Alex Kumar',
       role: 'Blockchain & Security Lead',
       category: 'Technology',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Ensuring secure, decentralized neural data management and privacy-preserving BCI systems.',
-      expertise: ['Blockchain', 'Cryptography', 'Security', 'Decentralized Systems'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Ensuring secure, decentralized neural data management and privacy-preserving BCI systems. Expert in cryptographic protocols for healthcare data.',
+      expertise: ['Blockchain', 'Cryptography', 'Security', 'Decentralized Systems', 'Data Privacy'],
       status: 'coming-soon',
-      level: 8,
-      specialPower: 'Crypto Shield'
+      education: 'Ph.D. in Cryptography, M.S. in Computer Science',
+      experience: '8+ years in blockchain and security systems'
     },
     // Medical Advisors
     {
       id: 'doctor-advisor-1',
-      name: 'Clinical Advisor',
+      name: 'Dr. Emily Johnson',
       role: 'Clinical Advisor',
       category: 'Medical',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Clinical expertise in neurology and mental health applications of BCI technology.',
-      expertise: ['Neurology', 'Clinical Research', 'Mental Health', 'Medical Ethics'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Clinical expertise in neurology and mental health applications of BCI technology. Board-certified neurologist with extensive research background.',
+      expertise: ['Neurology', 'Clinical Research', 'Mental Health', 'Medical Ethics', 'Patient Care'],
       status: 'coming-soon',
-      level: 9,
-      specialPower: 'Clinical Wisdom'
+      education: 'M.D., Ph.D. in Neuroscience',
+      experience: '18+ years in clinical neurology and research'
     },
     {
       id: 'doctor-advisor-2',
-      name: 'Medical Advisor',
+      name: 'Dr. James Wilson',
       role: 'Medical Advisor',
       category: 'Medical',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Bridging neurotechnology with clinical practice and patient care applications.',
-      expertise: ['Medicine', 'Neuroscience', 'Healthcare', 'Patient Care'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Bridging neurotechnology with clinical practice and patient care applications. Specialist in neuropsychiatry and brain disorders.',
+      expertise: ['Medicine', 'Neuroscience', 'Healthcare', 'Patient Care', 'Neuropsychiatry'],
       status: 'coming-soon',
-      level: 8,
-      specialPower: 'Health Guardian'
+      education: 'M.D., Residency in Psychiatry and Neurology',
+      experience: '15+ years in medical practice and research'
     },
     // Academic Researchers
     {
       id: 'academic-researcher-1',
-      name: 'Principal Researcher',
+      name: 'Dr. Maria Gonzalez',
       role: 'Principal Researcher',
       category: 'Academia',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Leading academic research in brain-computer interfaces and publishing breakthrough studies.',
-      expertise: ['Academic Research', 'Publications', 'BCI Theory', 'Scientific Writing'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Leading academic research in brain-computer interfaces and publishing breakthrough studies. Professor at leading research university.',
+      expertise: ['Academic Research', 'Publications', 'BCI Theory', 'Scientific Writing', 'Grant Writing'],
       status: 'coming-soon',
-      level: 8,
-      specialPower: 'Knowledge Seeker'
+      education: 'Ph.D. in Neuroscience, Postdoc in BCI Research',
+      experience: '14+ years in academic research and teaching'
     },
     {
       id: 'academic-researcher-2',
-      name: 'Research Fellow',
+      name: 'Dr. David Park',
       role: 'Research Fellow',
       category: 'Academia',
-      avatar: '/api/placeholder/200/200',
-      bio: 'Advancing the theoretical foundations of neurotechnology and cognitive enhancement.',
-      expertise: ['Research', 'Theory', 'Innovation', 'Cognitive Science'],
+      avatar: '/api/placeholder/400/400',
+      bio: 'Advancing the theoretical foundations of neurotechnology and cognitive enhancement. Rising star in computational neuroscience.',
+      expertise: ['Research', 'Theory', 'Innovation', 'Cognitive Science', 'Computational Modeling'],
       status: 'coming-soon',
-      level: 7,
-      specialPower: 'Theory Crafter'
+      education: 'Ph.D. in Computational Neuroscience',
+      experience: '6+ years in theoretical neuroscience research'
     }
   ];
 
@@ -206,31 +206,30 @@ const TeamSelection = () => {
         {/* Epic Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center space-x-3 glass-card px-8 py-4 mb-8 rounded-full border border-neural-blue/30">
-            <Users className="h-6 w-6 text-neural-blue animate-pulse" />
+            <Users className="h-6 w-6 text-neural-blue" />
             <span className="text-base font-bold text-neural-blue tracking-wide font-orbitron uppercase">
-              🧠 Neural Team Assembly
+              Our Expert Team
             </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight">
             <span className="text-ghost-white">Meet Our</span>{' '}
             <span className="neural-gradient bg-clip-text text-transparent font-orbitron">
-              Neural Squad
+              Expert Team
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-neural-gray max-w-4xl mx-auto leading-relaxed mb-8">
-            We don't get general developers - Our team consists of specialized neural engineers, 
-            AI experts, and neuroscience pioneers.
+            Leading neuroscientists, AI researchers, and medical professionals pioneering the future of brain-computer interfaces.
           </p>
           
           <div className="text-neural-blue font-semibold">
-            Select a team member to view their neural profile
+            Click on any team member to learn more about their expertise
           </div>
         </div>
 
-        {/* Team Grid - Game-like Character Selection */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-16">
+        {/* Team Grid - Professional Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {teamMembers.map((member, index) => {
             const IconComponent = getCategoryIcon(member.category);
             const isHovered = hoveredMember === member.id;
@@ -249,109 +248,108 @@ const TeamSelection = () => {
                 }}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Character Card */}
-                <div className={`glass-card p-6 rounded-2xl border-2 transition-all duration-300 ${
+                {/* Professional Team Card */}
+                <div className={`glass-card p-8 rounded-2xl border-2 transition-all duration-300 ${
                   isHovered 
                     ? 'border-neural-blue shadow-lg shadow-neural-blue/30' 
                     : member.status === 'coming-soon' 
                     ? 'border-neural-gray/30' 
                     : 'border-neural-blue/20 hover:border-neural-blue/50'
-                } relative overflow-hidden`}>
+                } relative overflow-hidden h-full`}>
                   
                   {/* Status Badge */}
-                  <div className={`absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${
+                  <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${
                     getStatusColor(member.status)
                   } text-white`}>
                     {getStatusBadge(member.status)}
                   </div>
                   
-                  {/* Level Badge */}
-                  <div className="absolute top-2 left-2 w-8 h-8 bg-neural-blue/20 rounded-full flex items-center justify-center">
-                    <span className="text-xs font-bold text-neural-blue">{member.level}</span>
-                  </div>
-                  
-                  {/* Avatar/Character */}
-                  <div className="relative mb-4">
-                    <div className={`w-24 h-24 mx-auto rounded-full border-4 transition-all duration-300 ${
+                  {/* Professional Photo */}
+                  <div className="relative mb-6">
+                    <div className={`w-40 h-40 mx-auto rounded-2xl border-4 transition-all duration-300 ${
                       member.status === 'coming-soon' 
-                        ? 'border-neural-gray/50 bg-neural-gray/10' 
-                        : 'border-neural-blue bg-gradient-to-br from-neural-blue/20 to-mind-purple/20'
-                    } flex items-center justify-center relative overflow-hidden group-hover:shadow-lg group-hover:shadow-neural-blue/30`}>
+                        ? 'border-neural-gray/50' 
+                        : 'border-neural-blue hover:border-neural-blue/80'
+                    } relative overflow-hidden group-hover:shadow-lg group-hover:shadow-neural-blue/30 bg-gradient-to-br from-neural-blue/10 to-mind-purple/10`}>
                       
-                      {/* Character Icon */}
-                      <div className={`relative transition-all duration-300 ${
-                        isHovered ? 'scale-125' : 'scale-100'
-                      }`}>
-                        <IconComponent className={`h-12 w-12 transition-all duration-300 ${
+                      {/* Photo Container */}
+                      <img 
+                        src={member.avatar} 
+                        alt={member.name}
+                        className={`w-full h-full object-cover transition-all duration-300 ${
+                          isHovered ? 'scale-105' : 'scale-100'
+                        } ${member.status === 'coming-soon' ? 'grayscale opacity-60' : ''}`}
+                        onError={(e) => {
+                          // Fallback to icon if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const iconDiv = target.nextElementSibling as HTMLElement;
+                          if (iconDiv) iconDiv.style.display = 'flex';
+                        }}
+                      />
+                      
+                      {/* Fallback Icon (hidden by default) */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-neural-blue/20 to-mind-purple/20 flex items-center justify-center" style={{ display: 'none' }}>
+                        <IconComponent className={`h-16 w-16 transition-all duration-300 ${
                           member.status === 'coming-soon' 
                             ? 'text-neural-gray' 
-                            : 'text-neural-blue group-hover:text-white'
+                            : 'text-neural-blue'
                         }`} />
-                        
-                        {/* Special Effects for Active Members */}
-                        {member.status !== 'coming-soon' && isHovered && (
-                          <div className="absolute inset-0 rounded-full border-2 border-neural-blue animate-ping opacity-75"></div>
-                        )}
                       </div>
                       
                       {/* Coming Soon Overlay */}
                       {member.status === 'coming-soon' && (
-                        <div className="absolute inset-0 bg-gradient-to-br from-neural-gray/20 to-transparent flex items-center justify-center">
-                          <div className="text-xs text-neural-gray font-bold">SOON</div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-shadow-black/60 to-transparent flex items-center justify-center">
+                          <div className="text-sm text-ghost-white font-bold bg-neural-gray/80 px-3 py-1 rounded-full">JOINING SOON</div>
                         </div>
                       )}
+                      
+                      {/* Professional Glow Effect */}
+                      {isHovered && member.status !== 'coming-soon' && (
+                        <div className="absolute inset-0 bg-gradient-to-br from-neural-blue/20 to-mind-purple/20 pointer-events-none"></div>
+                      )}
                     </div>
-                    
-                    {/* Power Level Animation */}
-                    {isHovered && member.status !== 'coming-soon' && (
-                      <div className="absolute -inset-2 bg-gradient-to-r from-neural-blue/20 via-mind-purple/20 to-neural-blue/20 rounded-full blur-lg animate-pulse"></div>
-                    )}
                   </div>
                   
-                  {/* Character Info */}
+                  {/* Professional Info */}
                   <div className="text-center">
-                    <h3 className={`font-bold font-orbitron mb-1 transition-all duration-300 ${
+                    <h3 className={`font-bold font-orbitron mb-2 transition-all duration-300 text-lg ${
                       member.status === 'coming-soon' 
-                        ? 'text-neural-gray text-sm' 
+                        ? 'text-neural-gray' 
                         : isHovered 
-                        ? 'text-neural-blue text-base' 
-                        : 'text-ghost-white text-sm'
+                        ? 'text-neural-blue' 
+                        : 'text-ghost-white'
                     }`}>
                       {member.name}
                     </h3>
                     
-                    <p className={`text-xs mb-2 ${
-                      member.status === 'coming-soon' ? 'text-neural-gray/70' : 'text-neural-gray'
+                    <p className={`text-sm mb-3 font-semibold ${
+                      member.status === 'coming-soon' ? 'text-neural-gray/70' : 'text-neural-blue'
                     }`}>
                       {member.role}
                     </p>
                     
-                    {/* Special Power */}
-                    {member.specialPower && (
-                      <div className={`text-xs font-semibold transition-all duration-300 ${
+                    {/* Education */}
+                    {member.education && (
+                      <div className={`text-xs mb-2 ${
                         member.status === 'coming-soon' 
                           ? 'text-neural-gray/50' 
-                          : isHovered 
-                          ? 'text-mind-purple' 
-                          : 'text-neural-blue/70'
+                          : 'text-neural-gray'
                       }`}>
-                        ⚡ {member.specialPower}
+                        {member.education}
                       </div>
                     )}
                     
-                    {/* Level Bar */}
-                    <div className="mt-3">
-                      <div className="w-full bg-neural-gray/20 rounded-full h-1.5">
-                        <div 
-                          className={`h-1.5 rounded-full transition-all duration-500 ${
-                            member.status === 'coming-soon' 
-                              ? 'bg-neural-gray/50' 
-                              : 'bg-gradient-to-r from-neural-blue to-mind-purple'
-                          }`}
-                          style={{ width: `${member.level * 10}%` }}
-                        ></div>
+                    {/* Experience */}
+                    {member.experience && (
+                      <div className={`text-xs font-medium ${
+                        member.status === 'coming-soon' 
+                          ? 'text-neural-gray/50' 
+                          : 'text-neural-blue/80'
+                      }`}>
+                        {member.experience}
                       </div>
-                    </div>
+                    )}
                   </div>
                   
                   {/* Hover Glow Effect */}
@@ -369,7 +367,7 @@ const TeamSelection = () => {
           {[
             { label: 'Active Members', value: teamMembers.filter(m => m.status !== 'coming-soon').length, icon: Users },
             { label: 'Joining Soon', value: teamMembers.filter(m => m.status === 'coming-soon').length, icon: Zap },
-            { label: 'Avg Level', value: Math.round(teamMembers.reduce((acc, m) => acc + m.level, 0) / teamMembers.length), icon: Award },
+            { label: 'Ph.D. Holders', value: teamMembers.filter(m => m.education?.includes('Ph.D.')).length, icon: Award },
             { label: 'Specializations', value: new Set(teamMembers.flatMap(m => m.expertise)).size, icon: Brain }
           ].map((stat, index) => (
             <div key={stat.label} className="glass-card p-6 rounded-xl text-center border border-neural-blue/20">
@@ -393,18 +391,33 @@ const TeamSelection = () => {
               ✕
             </button>
             
-            {/* Character Profile */}
-            <div className="text-center mb-6">
-              <div className={`w-32 h-32 mx-auto rounded-full border-4 border-neural-blue bg-gradient-to-br from-neural-blue/20 to-mind-purple/20 flex items-center justify-center mb-4`}>
-                {React.createElement(getCategoryIcon(selectedMember.category), { 
-                  className: "h-16 w-16 text-neural-blue" 
-                })}
+            {/* Professional Profile */}
+            <div className="text-center mb-8">
+              <div className={`w-48 h-48 mx-auto rounded-2xl border-4 border-neural-blue bg-gradient-to-br from-neural-blue/20 to-mind-purple/20 relative overflow-hidden mb-6`}>
+                <img 
+                  src={selectedMember.avatar} 
+                  alt={selectedMember.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to icon if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const iconDiv = target.nextElementSibling as HTMLElement;
+                    if (iconDiv) iconDiv.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback Icon */}
+                <div className="absolute inset-0 bg-gradient-to-br from-neural-blue/20 to-mind-purple/20 flex items-center justify-center" style={{ display: 'none' }}>
+                  {React.createElement(getCategoryIcon(selectedMember.category), { 
+                    className: "h-20 w-20 text-neural-blue" 
+                  })}
+                </div>
               </div>
               
-              <h2 className="text-2xl font-bold text-ghost-white font-orbitron mb-2">
+              <h2 className="text-3xl font-bold text-ghost-white font-orbitron mb-3">
                 {selectedMember.name}
               </h2>
-              <p className="text-neural-blue font-semibold mb-2">{selectedMember.role}</p>
+              <p className="text-neural-blue font-semibold text-lg mb-3">{selectedMember.role}</p>
               <div className={`inline-block px-4 py-2 rounded-full text-sm font-bold bg-gradient-to-r ${
                 getStatusColor(selectedMember.status)
               } text-white mb-4`}>
@@ -430,25 +443,19 @@ const TeamSelection = () => {
                 </div>
               </div>
               
-              {selectedMember.specialPower && (
+              {selectedMember.education && (
                 <div>
-                  <h3 className="text-lg font-bold text-ghost-white mb-2">Special Power</h3>
-                  <p className="text-mind-purple font-semibold">⚡ {selectedMember.specialPower}</p>
+                  <h3 className="text-lg font-bold text-ghost-white mb-2">Education</h3>
+                  <p className="text-neural-gray">{selectedMember.education}</p>
                 </div>
               )}
               
-              <div>
-                <h3 className="text-lg font-bold text-ghost-white mb-2">Power Level</h3>
-                <div className="flex items-center space-x-3">
-                  <div className="flex-1 bg-neural-gray/20 rounded-full h-3">
-                    <div 
-                      className="h-3 rounded-full bg-gradient-to-r from-neural-blue to-mind-purple transition-all duration-1000"
-                      style={{ width: `${selectedMember.level * 10}%` }}
-                    ></div>
-                  </div>
-                  <span className="text-neural-blue font-bold">{selectedMember.level}/10</span>
+              {selectedMember.experience && (
+                <div>
+                  <h3 className="text-lg font-bold text-ghost-white mb-2">Experience</h3>
+                  <p className="text-neural-blue font-semibold">{selectedMember.experience}</p>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

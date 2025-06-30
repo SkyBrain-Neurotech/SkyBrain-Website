@@ -336,7 +336,7 @@ const EpicRoadmap = () => {
         </div>
 
         {/* Phase Navigation & Milestones - Combined Clean Design */}
-        <div className="mt-12 mb-16 max-w-6xl mx-auto space-y-6">
+        <div className="mt-16 mb-16 max-w-6xl mx-auto space-y-6">
           {/* Navigation Controls */}
           <div className="flex justify-center items-center space-x-6">
             <button
