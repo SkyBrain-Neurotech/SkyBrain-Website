@@ -11,7 +11,7 @@ const TechnologyStreamlined = () => {
     {
       title: "Neural Signal Capture",
       description: "Medical-grade EEG sensors capture your brain's electrical activity across multiple frequency bands.",
-      content: "Our advanced 32-channel EEG system records neural oscillations from 0.5-50Hz, capturing everything from deep delta waves to high-frequency gamma activity. This comprehensive data collection ensures we map your complete neural signature.",
+      content: "Our advanced 4-channel EEG system records neural oscillations from 0.5-50Hz, capturing everything from deep delta waves to high-frequency gamma activity. This comprehensive data collection ensures we map your complete neural signature.",
       visual: Brain,
       color: "neural-blue"
     },
@@ -81,7 +81,7 @@ const TechnologyStreamlined = () => {
 
             <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight">
               <span className="text-ghost-white">EEG Neural</span>{' '}
-              <span className="text-neural-blue font-orbitron neural-glow text-7xl md:text-8xl block relative">
+              <span className="text-neural-blue font-orbitron neural-glow text-5xl md:text-7xl lg:text-8xl block relative">
                 Mapping
                 <div className="absolute inset-0 bg-neural-blue/20 blur-xl rounded-2xl animate-pulse"></div>
               </span>
@@ -110,6 +110,73 @@ const TechnologyStreamlined = () => {
         </div>
       </section>
 
+      {/* Understanding BCI Section */}
+      <section className="py-16 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* What is BCI Section */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight tracking-tight font-orbitron">
+              <span className="text-ghost-white">Understanding</span>{' '}
+              <span className="text-neural-blue neural-glow">Brain-Computer Interfaces</span>
+            </h2>
+            <p className="text-lg md:text-xl text-neural-gray max-w-4xl mx-auto leading-relaxed">
+              Neurotechnology reads and interprets brain signals to understand your mental state. 
+              Brain-Computer Interfaces (BCI) are the safe, non-invasive bridge between your mind and technology.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="glass-card p-8 text-center group hover:scale-105 transition-all duration-300">
+              <div className="p-4 bg-neural-blue/20 rounded-xl mx-auto w-fit mb-4">
+                <Shield className="h-8 w-8 text-neural-blue group-hover:rotate-12 transition-transform" />
+              </div>
+              <h3 className="text-xl font-bold text-ghost-white mb-3 font-orbitron">
+                Non-Invasive
+              </h3>
+              <p className="text-neural-gray leading-relaxed">
+                Safe external sensors, no surgery or implants required
+              </p>
+            </div>
+            
+            <div className="glass-card p-8 text-center group hover:scale-105 transition-all duration-300">
+              <div className="p-4 bg-mind-purple/20 rounded-xl mx-auto w-fit mb-4">
+                <Zap className="h-8 w-8 text-mind-purple group-hover:rotate-12 transition-transform" />
+              </div>
+              <h3 className="text-xl font-bold text-ghost-white mb-3 font-orbitron">
+                Real-Time
+              </h3>
+              <p className="text-neural-gray leading-relaxed">
+                Instant mental state analysis and personalized response
+              </p>
+            </div>
+            
+            <div className="glass-card p-8 text-center group hover:scale-105 transition-all duration-300">
+              <div className="p-4 bg-neural-blue/20 rounded-xl mx-auto w-fit mb-4">
+                <Users className="h-8 w-8 text-neural-blue group-hover:rotate-12 transition-transform" />
+              </div>
+              <h3 className="text-xl font-bold text-ghost-white mb-3 font-orbitron">
+                Accessible
+              </h3>
+              <p className="text-neural-gray leading-relaxed">
+                Designed for everyday wellness and cognitive enhancement
+              </p>
+            </div>
+            
+            <div className="glass-card p-8 text-center group hover:scale-105 transition-all duration-300">
+              <div className="p-4 bg-mind-purple/20 rounded-xl mx-auto w-fit mb-4">
+                <Brain className="h-8 w-8 text-mind-purple group-hover:rotate-12 transition-transform" />
+              </div>
+              <h3 className="text-xl font-bold text-ghost-white mb-3 font-orbitron">
+                Personal
+              </h3>
+              <p className="text-neural-gray leading-relaxed">
+                Learns your unique neural patterns and preferences
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Interactive EEG Process */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -117,7 +184,7 @@ const TechnologyStreamlined = () => {
             <h2 className="text-3xl md:text-5xl font-black mb-6 text-ghost-white font-orbitron">
               How EEG Technology Works
             </h2>
-            <p className="text-xl text-neural-gray max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-neural-gray max-w-3xl mx-auto">
               Explore our step-by-step process of reading and understanding your brain signals
             </p>
           </div>
@@ -131,7 +198,7 @@ const TechnologyStreamlined = () => {
               <div className="flex justify-center items-center space-x-4 mb-8">
                 <button
                   onClick={prevStep}
-                  className="glass-card p-3 rounded-full hover:scale-105 transition-all duration-300"
+                  className="glass-card p-3 sm:p-4 rounded-full hover:scale-105 transition-all duration-300 touch-manipulation"
                 >
                   <ChevronLeft className="h-6 w-6 text-neural-blue" />
                 </button>
@@ -156,7 +223,7 @@ const TechnologyStreamlined = () => {
 
                 <button
                   onClick={nextStep}
-                  className="glass-card p-3 rounded-full hover:scale-105 transition-all duration-300"
+                  className="glass-card p-3 sm:p-4 rounded-full hover:scale-105 transition-all duration-300 touch-manipulation"
                 >
                   <ChevronRight className="h-6 w-6 text-neural-blue" />
                 </button>
@@ -202,7 +269,7 @@ const TechnologyStreamlined = () => {
                             </div>
                           ))}
                         </div>
-                        <p className="text-neural-gray">32-channel EEG capture</p>
+                        <p className="text-neural-gray">4-channel EEG capture</p>
                       </div>
                     )}
                     
@@ -299,79 +366,6 @@ const TechnologyStreamlined = () => {
         </div>
       </section>
 
-      {/* Brain Wave Frequencies */}
-      <section className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black mb-6 text-ghost-white font-orbitron">
-              Brain Wave Frequencies
-            </h2>
-            <p className="text-xl text-neural-gray max-w-3xl mx-auto">
-              Understanding the different types of brain waves and their significance
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 max-w-4xl mx-auto">
-            {[
-              { name: 'Delta', freq: '0.5-4 Hz', color: '#6B46FF', desc: 'Deep sleep & healing', use: 'Recovery optimization' },
-              { name: 'Theta', freq: '4-8 Hz', color: '#8B5CF6', desc: 'Meditation & creativity', use: 'Flow state enhancement' },
-              { name: 'Alpha', freq: '8-13 Hz', color: '#00D4FF', desc: 'Relaxed awareness', use: 'Stress reduction' },
-              { name: 'Beta', freq: '13-30 Hz', color: '#06B6D4', desc: 'Active thinking', use: 'Cognitive performance' },
-              { name: 'Gamma', freq: '30-100 Hz', color: '#10B981', desc: 'High-level cognition', use: 'Peak mental states' }
-            ].map((wave, index) => (
-              <div key={wave.name} className="glass-card p-6 rounded-xl border border-neural-blue/30 hover:border-neural-blue/50 transition-all shadow-xl">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                  <div className="text-center md:text-left">
-                    <div className="text-lg font-bold mb-1" style={{ color: wave.color }}>
-                      {wave.name}
-                    </div>
-                    <div className="text-sm text-neural-gray">{wave.freq}</div>
-                  </div>
-                  
-                  <div className="md:col-span-2">
-                    <div className="h-12 bg-gradient-to-r from-deep-space/80 to-shadow-black/80 rounded-lg overflow-hidden relative border border-neural-blue/20">
-                      <svg width="100%" height="100%" viewBox="0 0 200 48" style={{ color: wave.color }}>
-                        <path
-                          d={`M0,24 ${Array.from({length: 20}, (_, i) => 
-                            `Q${i*10 + 5},${24 + Math.sin(i * (0.5 + index * 0.3)) * (8 + index * 2)} ${(i+1)*10},24`
-                          ).join(' ')}`}
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          fill="none"
-                          opacity="0.9"
-                        />
-                        <path
-                          d={`M0,24 ${Array.from({length: 20}, (_, i) => 
-                            `Q${i*10 + 5},${24 + Math.sin(i * (0.5 + index * 0.3)) * (8 + index * 2)} ${(i+1)*10},24`
-                          ).join(' ')}`}
-                          stroke="currentColor"
-                          strokeWidth="4"
-                          fill="none"
-                          opacity="0.3"
-                        />
-                      </svg>
-                      <div className="absolute top-1 right-2 text-xs px-2 py-1 bg-black/50 rounded" style={{ color: wave.color }}>
-                        {wave.freq}
-                      </div>
-                    </div>
-                    <div className="mt-2 text-sm text-neural-gray text-center md:text-left">
-                      {wave.desc}
-                    </div>
-                  </div>
-                  
-                  <div className="text-center md:text-right">
-                    <div className="glass-card px-3 py-2 border border-neural-blue/20 inline-block">
-                      <div className="text-xs font-semibold text-neural-blue mb-1">Application</div>
-                      <div className="text-xs text-neural-gray">{wave.use}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* How iAPF Works */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -455,7 +449,7 @@ const TechnologyStreamlined = () => {
                 </h2>
               </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 { 
                   icon: Eye, 

@@ -130,7 +130,7 @@ const ContactSection = () => {
                       First Name
                     </label>
                     <Input 
-                      placeholder="John" 
+                      placeholder="First Name" 
                       className="glass-card border-neural-blue/30 focus:border-neural-blue text-lg py-6 rounded-xl"
                     />
                   </div>
@@ -139,7 +139,7 @@ const ContactSection = () => {
                       Last Name
                     </label>
                     <Input 
-                      placeholder="Doe" 
+                      placeholder="Last Name" 
                       className="glass-card border-neural-blue/30 focus:border-neural-blue text-lg py-6 rounded-xl"
                     />
                   </div>
@@ -151,7 +151,7 @@ const ContactSection = () => {
                   </label>
                   <Input 
                     type="email" 
-                    placeholder="john@example.com" 
+                    placeholder="your@email.com" 
                     className="glass-card border-neural-blue/30 focus:border-neural-blue text-lg py-6 rounded-xl"
                   />
                 </div>
@@ -171,7 +171,7 @@ const ContactSection = () => {
                     Message
                   </label>
                   <Textarea 
-                    placeholder="Tell us about your project, research interests, or how you'd like to contribute..."
+                    placeholder="Your message..."
                     rows={6}
                     className="glass-card border-neural-blue/30 focus:border-neural-blue resize-none text-lg p-6 rounded-xl"
                   />
@@ -192,8 +192,8 @@ const ContactSection = () => {
                 <h3 className="text-2xl font-bold mb-8 text-ghost-white font-orbitron">Contact Information</h3>
                 <div className="space-y-6">
                   {[
-                    { icon: Mail, text: "contact@skybrain.in", gradient: "from-blue-500 to-cyan-500" },
-                    { icon: Phone, text: "+91 (xxx) xxx-xxxx", gradient: "from-green-500 to-emerald-500" },
+                    { icon: Mail, text: "info@skybrain.in", gradient: "from-blue-500 to-cyan-500" },
+                    { icon: Phone, text: "+91 93807 17022", gradient: "from-green-500 to-emerald-500" },
                     { icon: MapPin, text: "Bangalore, India", gradient: "from-purple-500 to-pink-500" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center group">

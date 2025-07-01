@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Brain } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { trackButtonClick } from '@/lib/analytics';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,9 +67,14 @@ const Navigation = () => {
                 }`}></div>
               </Link>
             ))}
-            <Button className="cyber-button text-deep-space font-bold px-8 py-3 text-lg rounded-xl">
-              Get Started
-            </Button>
+            <Link to="/beta-signup">
+              <Button 
+                onClick={() => trackButtonClick('Get Started', 'navigation', '/beta-signup')}
+                className="cyber-button text-deep-space font-bold px-8 py-3 text-lg rounded-xl"
+              >
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -110,9 +116,17 @@ const Navigation = () => {
                     </Link>
                   ))}
                   <div className="pt-4 border-t border-neural-blue/20">
-                    <Button className="w-full cyber-button text-deep-space font-bold py-4 text-lg rounded-xl">
-                      Get Started
-                    </Button>
+                    <Link to="/beta-signup" className="block">
+                      <Button 
+                        onClick={() => {
+                          trackButtonClick('Get Started', 'mobile_navigation', '/beta-signup');
+                          setIsOpen(false);
+                        }}
+                        className="w-full cyber-button text-deep-space font-bold py-4 text-lg rounded-xl"
+                      >
+                        Get Started
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>

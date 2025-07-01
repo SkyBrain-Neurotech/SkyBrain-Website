@@ -3,10 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Brain, Activity, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import DemoModal from './DemoModal';
+import { trackButtonClick } from '@/lib/analytics';
 
 const VisionHero = () => {
   const [textGlow, setTextGlow] = useState(false);
   const [brainPulse, setBrainPulse] = useState(0);
+  const [showDemoModal, setShowDemoModal] = useState(false);
 
   useEffect(() => {
     const glowInterval = setInterval(() => {
@@ -58,20 +61,28 @@ const VisionHero = () => {
 
           {/* Enhanced CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
+            <Button 
+              onClick={() => {
+                trackButtonClick('Experience Demo', 'hero', 'demo_modal');
+                setShowDemoModal(true);
+              }}
+              className="neural-gradient text-white font-bold px-8 py-4 text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <Brain className="mr-3 h-6 w-6 group-hover:rotate-180 transition-transform duration-500" />
+              <span className="relative z-10 text-neural-blue">Experience Demo</span>
+              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 group-hover:scale-125 transition-all duration-300" />
+            </Button>
             <Link to="/roadmap">
-              <Button className="neural-gradient text-white font-bold px-8 py-4 text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden">
-                <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <Brain className="mr-3 h-6 w-6 group-hover:rotate-180 transition-transform duration-500" />
-                <span className="relative z-10">See Our Roadmap</span>
-                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 group-hover:scale-125 transition-all duration-300" />
-              </Button>
-            </Link>
-            <Link to="/research">
-              <Button variant="outline" className="glass-card border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold px-8 py-4 text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden">
+              <Button 
+                onClick={() => trackButtonClick('See Our Roadmap', 'hero', '/roadmap')}
+                variant="outline" 
+                className="glass-card border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold px-8 py-4 text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden"
+              >
                 <div className="absolute inset-0 bg-neural-blue/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 <span className="group-hover:text-ghost-white transition-colors duration-300 relative z-10 flex items-center">
                   <Zap className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                  Join Our Mission
+                  See Our Roadmap
                 </span>
               </Button>
             </Link>
@@ -85,6 +96,12 @@ const VisionHero = () => {
           <div className="w-1.5 h-6 bg-gradient-to-b from-neural-blue via-mind-purple to-neural-blue rounded-full animate-pulse"></div>
         </div>
       </div>
+
+      {/* Demo Modal */}
+      <DemoModal 
+        isOpen={showDemoModal}
+        onClose={() => setShowDemoModal(false)}
+      />
     </section>
   );
 };

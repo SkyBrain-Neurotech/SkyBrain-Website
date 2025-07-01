@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import NewsletterSignup from './NewsletterSignup';
+import { trackButtonClick } from '@/lib/analytics';
 import { 
   CheckCircle2, 
   Circle, 
@@ -37,6 +39,7 @@ interface RoadmapPhase {
 const VisualRoadmap = () => {
   const [activePhase, setActivePhase] = useState<string>('foundation');
   const [hoveredMilestone, setHoveredMilestone] = useState<string | null>(null);
+  const [showNewsletterModal, setShowNewsletterModal] = useState(false);
 
   const phases: RoadmapPhase[] = [
     {
@@ -686,11 +689,23 @@ const VisualRoadmap = () => {
                 Join our community to get instant notifications!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="glass-button text-neural-blue font-bold px-8 py-4 text-lg rounded-xl hover:scale-105 transition-transform font-orbitron group">
+                <button 
+                  onClick={() => {
+                    trackButtonClick('Join Community', 'roadmap', 'discord_community');
+                    window.open('https://discord.gg/skybrain', '_blank');
+                  }}
+                  className="cyber-button text-deep-space font-bold px-8 py-4 text-lg rounded-xl hover:scale-105 transition-transform font-orbitron group"
+                >
                   <Users className="inline h-5 w-5 mr-2 group-hover:animate-pulse" />
                   Join Community
                 </button>
-                <button className="glass-button text-neural-blue font-bold px-8 py-4 text-lg rounded-xl hover:scale-105 transition-transform font-orbitron">
+                <button 
+                  onClick={() => {
+                    trackButtonClick('Subscribe to Updates', 'roadmap', 'newsletter_modal');
+                    setShowNewsletterModal(true);
+                  }}
+                  className="glass-card border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold px-8 py-4 text-lg rounded-xl hover:scale-105 transition-transform font-orbitron"
+                >
                   Subscribe to Updates
                 </button>
               </div>
@@ -698,6 +713,26 @@ const VisualRoadmap = () => {
           </div>
         </div>
       </div>
+
+      {/* Newsletter Signup Modal */}
+      {showNewsletterModal && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative">
+            <button
+              onClick={() => setShowNewsletterModal(false)}
+              className="absolute -top-2 -right-2 w-8 h-8 bg-neural-blue/20 hover:bg-neural-blue/30 rounded-full flex items-center justify-center text-neural-blue hover:text-white transition-colors z-10"
+            >
+              ×
+            </button>
+            <NewsletterSignup
+              location="roadmap_modal"
+              showPreferences={true}
+              title="Stay Updated on Our Progress"
+              description="Get exclusive updates as we hit each milestone on our roadmap."
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
