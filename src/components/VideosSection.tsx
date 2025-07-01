@@ -57,8 +57,8 @@ const VideosSection = () => {
     },
     {
       id: "gfp79bhekHA",
-      title: "Tech Summit 2025 Showcase",
-      description: "Live technology demonstration at Bengaluru Tech Summit 2025 featuring our latest BCI innovations.",
+      title: "Tech Summit 2024 Showcase",
+      description: "Live technology demonstration at Bengaluru Tech Summit 2024 featuring our latest BCI innovations.",
       thumbnail: "https://img.youtube.com/vi/gfp79bhekHA/maxresdefault.jpg"
     }
   ];
@@ -175,7 +175,7 @@ const VideosSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center glass-card rounded-2xl md:rounded-3xl p-6 md:p-12 holographic">
+        <div className="text-center glass-container rounded-2xl md:rounded-3xl p-6 md:p-12">
           <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-ghost-white font-orbitron">
             See More Live Demonstrations
           </h3>
@@ -186,7 +186,7 @@ const VideosSection = () => {
             href="https://youtube.com/@skybrain" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="cyber-button text-lg md:text-2xl flex items-center mx-auto group hover:scale-105 transition-transform px-6 md:px-8 py-3 md:py-4"
+            className="glass-button text-lg md:text-2xl flex items-center mx-auto group hover:scale-105 transition-transform px-6 md:px-8 py-3 md:py-4 text-neural-blue"
           >
             <Youtube className="mr-3 md:mr-4 h-6 w-6 md:h-8 md:w-8 group-hover:scale-125 transition-transform" />
             Subscribe to Channel

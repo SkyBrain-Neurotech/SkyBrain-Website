@@ -84,13 +84,14 @@ const TechnologyExplanation = () => {
             </div>
             
             <div className="relative">
-              {/* EEG Wave Visualization */}
-              <div className="glass-card p-8 rounded-2xl border border-neural-blue/30">
-                <h4 className="text-lg font-bold text-ghost-white mb-6 text-center font-orbitron">
+              {/* EEG Wave Visualization - Mobile Optimized */}
+              <div className="glass-card p-4 sm:p-8 rounded-2xl border border-neural-blue/30 backdrop-blur-lg bg-white/5 shadow-lg">
+                <h4 className="text-lg font-bold text-white mb-6 text-center font-orbitron drop-shadow-lg">
                   Brain Wave Frequencies
                 </h4>
                 
-                <div className="space-y-4">
+                {/* Mobile-first responsive grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
                   {[
                     { name: 'Delta', freq: '0.5-4 Hz', color: '#6B46FF', desc: 'Deep sleep' },
                     { name: 'Theta', freq: '4-8 Hz', color: '#8B5CF6', desc: 'Meditation, creativity' },
@@ -98,28 +99,48 @@ const TechnologyExplanation = () => {
                     { name: 'Beta', freq: '13-30 Hz', color: '#06B6D4', desc: 'Active thinking' },
                     { name: 'Gamma', freq: '30-100 Hz', color: '#10B981', desc: 'High-level cognition' }
                   ].map((wave, index) => (
-                    <div key={wave.name} className="flex items-center space-x-4">
-                      <div className="w-16 text-sm font-bold" style={{ color: wave.color }}>
-                        {wave.name}
-                      </div>
-                      <div className="flex-1 h-8 bg-gradient-to-r from-deep-space to-shadow-black rounded overflow-hidden relative">
-                        <svg width="100%" height="100%" viewBox="0 0 200 32" style={{ color: wave.color }}>
-                          <path
-                            d={`M0,16 ${Array.from({length: 20}, (_, i) => 
-                              `Q${i*10 + 5},${16 + Math.sin(i * (0.5 + index * 0.3)) * (6 + index * 2)} ${(i+1)*10},16`
-                            ).join(' ')}`}
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            fill="none"
-                            opacity="0.8"
-                          />
-                        </svg>
-                        <div className="absolute right-2 top-1 text-xs" style={{ color: wave.color }}>
-                          {wave.freq}
+                    <div key={wave.name} className="glass-card p-4 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                      {/* Mobile-optimized layout */}
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                        <div className="flex items-center justify-between w-full sm:w-auto">
+                          <div className="text-sm font-bold drop-shadow-lg" style={{ color: wave.color }}>
+                            {wave.name}
+                          </div>
+                          <div className="text-xs text-white/80 sm:hidden" style={{ color: wave.color }}>
+                            {wave.freq}
+                          </div>
                         </div>
-                      </div>
-                      <div className="w-24 text-xs text-neural-gray">
-                        {wave.desc}
+                        
+                        <div className="w-full sm:flex-1 h-8 bg-gradient-to-r from-deep-space/50 to-shadow-black/50 rounded overflow-hidden relative backdrop-blur-sm">
+                          <svg width="100%" height="100%" viewBox="0 0 200 32" style={{ color: wave.color }}>
+                            <path
+                              d={`M0,16 ${Array.from({length: 20}, (_, i) => 
+                                `Q${i*10 + 5},${16 + Math.sin(i * (0.5 + index * 0.3)) * (6 + index * 2)} ${(i+1)*10},16`
+                              ).join(' ')}`}
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              fill="none"
+                              opacity="0.9"
+                            />
+                            {/* Glow effect */}
+                            <path
+                              d={`M0,16 ${Array.from({length: 20}, (_, i) => 
+                                `Q${i*10 + 5},${16 + Math.sin(i * (0.5 + index * 0.3)) * (6 + index * 2)} ${(i+1)*10},16`
+                              ).join(' ')}`}
+                              stroke="currentColor"
+                              strokeWidth="4"
+                              fill="none"
+                              opacity="0.3"
+                            />
+                          </svg>
+                          <div className="absolute right-2 top-1 text-xs hidden sm:block drop-shadow-lg" style={{ color: wave.color }}>
+                            {wave.freq}
+                          </div>
+                        </div>
+                        
+                        <div className="text-xs text-white/70 sm:w-32 lg:w-24">
+                          {wave.desc}
+                        </div>
                       </div>
                     </div>
                   ))}

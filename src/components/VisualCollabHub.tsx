@@ -6,7 +6,7 @@ import {
   PlayCircle, 
   Handshake, 
   Rocket,
-  Github,
+  ExternalLink,
   MessageSquare,
   Heart,
   Beaker,
@@ -14,7 +14,9 @@ import {
   Target,
   Zap,
   Brain,
-  Globe
+  Globe,
+  Instagram,
+  Twitter
 } from 'lucide-react';
 
 const VisualCollabHub = () => {
@@ -74,7 +76,7 @@ const VisualCollabHub = () => {
 
   const communityStats = [
     { icon: Users, label: 'Contributors', value: '500+', emoji: '👥', growth: '+23%' },
-    { icon: Github, label: 'Open Projects', value: '8', emoji: '📦', growth: '+2' },
+    { icon: ExternalLink, label: 'Linktree Links', value: '8', emoji: '🌐', growth: '+2' },
     { icon: MessageSquare, label: 'Community', value: '12k', emoji: '💬', growth: '+1.2k' },
     { icon: Globe, label: 'Countries', value: '47', emoji: '🌍', growth: '+5' }
   ];
@@ -253,44 +255,46 @@ const VisualCollabHub = () => {
           </div>
         </div>
 
-        {/* Live Open Source Projects */}
+        {/* Follow Our Research */}
         <div className="glass-card rounded-3xl p-12 mb-20 relative overflow-hidden">
           <div className="flex items-center space-x-4 mb-12">
-            <Github className="h-8 w-8 text-neural-blue" />
+            <Brain className="h-8 w-8 text-neural-blue" />
             <h2 className="text-3xl font-bold text-ghost-white font-orbitron">
-              Open Source Projects
+              Follow Our Research
             </h2>
-            <div className="text-2xl">📦</div>
+            <div className="text-2xl">🧪</div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Neural Signal Processor', emoji: '🧠', stars: '2.1k', lang: 'Python', status: 'Active' },
-              { name: 'BCI Pattern Recognition', emoji: '🎯', stars: '890', lang: 'TensorFlow', status: 'Beta' },
-              { name: 'Mental Wellness API', emoji: '💡', stars: '1.3k', lang: 'Node.js', status: 'Production' }
-            ].map((project, index) => (
-              <div key={project.name} className="glass-card p-6 hover:border-neural-blue/30 transition-all group">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="text-2xl">{project.emoji}</div>
-                    <h3 className="text-lg font-bold text-ghost-white font-orbitron group-hover:text-neural-blue transition-colors">
-                      {project.name}
-                    </h3>
+              { name: 'Linktree', emoji: '🌐', icon: ExternalLink, followers: '2.1k', description: 'All our links', status: 'Active' },
+              { name: 'Instagram', emoji: '📸', icon: Instagram, followers: '890', description: 'Behind the scenes', status: 'Live' },
+              { name: 'Twitter X', emoji: '🐦', icon: Twitter, followers: '1.3k', description: 'Latest updates', status: 'Daily' }
+            ].map((platform, index) => {
+              const IconComponent = platform.icon;
+              return (
+                <div key={platform.name} className="glass-card p-6 hover:border-neural-blue/30 transition-all group cursor-pointer">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center space-x-2">
+                      <div className="text-2xl">{platform.emoji}</div>
+                      <h3 className="text-lg font-bold text-ghost-white font-orbitron group-hover:text-neural-blue transition-colors">
+                        {platform.name}
+                      </h3>
+                    </div>
+                    <IconComponent className="h-6 w-6 text-neural-blue group-hover:animate-pulse" />
                   </div>
-                  <div className="flex items-center space-x-1 text-neural-blue">
-                    <span>⭐</span>
-                    <span className="text-sm font-semibold">{project.stars}</span>
+                  
+                  <p className="text-neural-gray text-sm mb-3">{platform.description}</p>
+                  
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-mind-purple font-semibold">{platform.followers} followers</span>
+                    <span className="text-xs text-neural-gray bg-neural-blue/10 px-2 py-1 rounded-full">
+                      {platform.status}
+                    </span>
                   </div>
                 </div>
-                
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-mind-purple font-semibold">{project.lang}</span>
-                  <span className="text-xs text-neural-gray bg-neural-blue/10 px-2 py-1 rounded-full">
-                    {project.status}
-                  </span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

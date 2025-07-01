@@ -23,39 +23,38 @@ const TeamSelection = () => {
     // Leadership Team (From skybrain.in - to be populated)
     {
       id: 'founder-ceo',
-      name: 'Founder & CEO',
+      name: 'Rakesh Jakati',
       role: 'Founder & CEO',
       category: 'Leadership',
       avatar: '/api/placeholder/400/400',
-      bio: 'Visionary leader driving the future of neurotechnology and mental wellness through Brain-Computer Interface innovations. Leading breakthrough research in neural signal processing and cognitive enhancement systems.',
-      expertise: ['Neurotechnology', 'Leadership', 'Strategy', 'BCI Research', 'Neural Engineering'],
+      bio: 'Visionary leader driving the future of neurotechnology and mental wellness through Brain-Computer Interface innovations. Leading breakthrough research in BCI applications and cognitive enhancement systems.',
+      expertise: ['Neurotechnology', 'R&D', 'Strategy', 'Leadership', 'Blockchain'],
       status: 'founder',
-      education: 'Ph.D. in Neuroscience, M.S. in Biomedical Engineering',
-      experience: '15+ years in neurotechnology and BCI research'
+      experience: '7+ years in neurotechnology and BCI research'
     },
     {
       id: 'ai-advisor',
-      name: 'AI Advisor',
+      name: 'Dr. Bhaskar Tripathi',
       role: 'AI Advisor',
       category: 'Advisory',
       avatar: '/api/placeholder/400/400',
-      bio: 'Leading AI expert guiding our machine learning initiatives and neural pattern recognition systems. Pioneer in deep learning applications for brain-computer interfaces.',
+      bio: 'Leading AI expert guiding our AI initiatives and neural pattern recognition systems. Pioneer in deep learning applications for brain-computer interfaces.',
       expertise: ['Artificial Intelligence', 'Machine Learning', 'Neural Networks', 'Deep Learning', 'Pattern Recognition'],
       status: 'advisor',
-      education: 'Ph.D. in Computer Science, Specialization in AI',
-      experience: '20+ years in AI research and development'
+      education: 'Ph.D. in Computational and Mathematical Finance, Specialization in AI',
+      experience: '15+ years in AI research and development'
     },
     {
       id: 'neurotech-advisor',
-      name: 'Neurotech Advisor',
+      name: 'Dr. Ganesh R Naik',
       role: 'Neurotech Advisor',
       category: 'Advisory',
       avatar: '/api/placeholder/400/400',
-      bio: 'Neurotechnology pioneer with decades of BCI experience and groundbreaking research in neural interfaces. Published author with 100+ peer-reviewed papers.',
-      expertise: ['BCI Technology', 'Neuroscience', 'Signal Processing', 'Neural Engineering', 'Biomedical Devices'],
+      bio: 'Top 2% of researchers worldwide in Biomedical Engineering. Neurotechnology pioneer with decades of BCI experience and groundbreaking research in neural interfaces.',
+      expertise: ['Wearables & Algorithims', 'Neuroscience', 'Signal Processing', 'Sleep Research', 'Biomedical Devices'],
       status: 'advisor',
-      education: 'Ph.D. in Biomedical Engineering, M.D.',
-      experience: '25+ years in neurotechnology and medical devices'
+      education: 'Ph.D. in Eletrical & Eletronics Engineering.',
+      experience: '17+ years in neurotechnology and medical devices'
     },
     // Research Team
     {
@@ -362,27 +361,12 @@ const TeamSelection = () => {
           })}
         </div>
 
-        {/* Team Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {[
-            { label: 'Active Members', value: teamMembers.filter(m => m.status !== 'coming-soon').length, icon: Users },
-            { label: 'Joining Soon', value: teamMembers.filter(m => m.status === 'coming-soon').length, icon: Zap },
-            { label: 'Ph.D. Holders', value: teamMembers.filter(m => m.education?.includes('Ph.D.')).length, icon: Award },
-            { label: 'Specializations', value: new Set(teamMembers.flatMap(m => m.expertise)).size, icon: Brain }
-          ].map((stat, index) => (
-            <div key={stat.label} className="glass-card p-6 rounded-xl text-center border border-neural-blue/20">
-              <stat.icon className="h-8 w-8 text-neural-blue mx-auto mb-2" />
-              <div className="text-2xl font-bold text-neural-blue">{stat.value}</div>
-              <div className="text-sm text-neural-gray">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Character Details Modal */}
       {showModal && selectedMember && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="glass-card rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-neural-blue/30">
+          <div className="glass-modal p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             {/* Close Button */}
             <button
               onClick={() => setShowModal(false)}

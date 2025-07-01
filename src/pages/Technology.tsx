@@ -1,14 +1,12 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import TechnologyExplanation from '@/components/TechnologyExplanation';
-import UserExperienceFlow from '@/components/UserExperienceFlow';
+import TechnologyStreamlined from '@/components/TechnologyStreamlined';
 
 const Technology = () => {
   return (
     <PageLayout>
-      <TechnologyExplanation />
-      <UserExperienceFlow />
+      <TechnologyStreamlined />
     </PageLayout>
   );
 };

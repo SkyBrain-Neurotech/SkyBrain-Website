@@ -22,7 +22,12 @@
       "Bash(true)",
       "Bash(rg:*)",
       "WebFetch(domain:skybrain.in)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "WebFetch(domain:api.github.com)"
     ],
     "deny": []
   }

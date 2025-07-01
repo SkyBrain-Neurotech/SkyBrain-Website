@@ -31,12 +31,12 @@ const VisionHero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="fade-in-up">
           {/* Interactive Badge */}
-          <div className="inline-flex items-center space-x-3 glass-card px-6 py-3 mb-8 rounded-full hover:scale-105 transition-transform cursor-pointer group">
-            <Zap className={`h-5 w-5 text-neural-blue transition-all duration-300 ${brainPulse === 0 ? 'animate-pulse' : brainPulse === 1 ? 'animate-bounce' : 'animate-spin'}`} />
-            <span className="text-xs sm:text-sm font-semibold text-neural-gray tracking-wide font-orbitron uppercase group-hover:text-neural-blue transition-colors">
+          <div className="inline-flex items-center space-x-3 glass-card rounded-full px-6 py-3 mb-8 hover:scale-105 transition-transform cursor-pointer group holographic">
+            <Zap className={`h-5 w-5 text-neural-blue drop-shadow-lg transition-all duration-300 ${brainPulse === 0 ? 'animate-pulse' : brainPulse === 1 ? 'animate-bounce' : 'animate-spin'}`} />
+            <span className="text-xs sm:text-sm font-semibold text-neural-gray tracking-wide font-orbitron uppercase group-hover:text-neural-blue transition-colors drop-shadow-lg">
               Neurotechnology - EEG
             </span>
-            <div className="w-2 h-2 bg-neural-blue rounded-full animate-ping"></div>
+            <div className="w-2 h-2 bg-neural-blue rounded-full animate-ping drop-shadow-lg"></div>
           </div>
 
           {/* Dynamic Main Heading */}
@@ -67,7 +67,7 @@ const VisionHero = () => {
               </Button>
             </Link>
             <Link to="/research">
-              <Button variant="outline" className="glass-card text-neural-blue hover:bg-neural-blue/20 font-bold px-8 py-4 text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden border border-neural-blue/50 hover:border-neural-blue">
+              <Button variant="outline" className="glass-card border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold px-8 py-4 text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden">
                 <div className="absolute inset-0 bg-neural-blue/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 <span className="group-hover:text-ghost-white transition-colors duration-300 relative z-10 flex items-center">
                   <Zap className="mr-2 h-5 w-5 group-hover:animate-bounce" />
