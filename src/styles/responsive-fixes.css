@@ -154,12 +154,6 @@
 
 /* Mobile menu fixes */
 @media (max-width: 767px) {
-  /* Ensure mobile menu is always on top */
-  nav .md\\:hidden button {
-    z-index: 9999;
-    position: relative;
-  }
-  
   /* Prevent body scroll when mobile menu is open */
   body.menu-open {
     overflow: hidden;
@@ -175,25 +169,7 @@
   
   /* Improve button tap area */
   nav button {
-    min-height: 44px;
-    min-width: 44px;
+    min-height: 48px;
+    min-width: 48px;
   }
-  
-  /* Force mobile menu visibility when open */
-  nav [class*="fixed inset-0"] {
-    display: block !important;
-  }
-  
-  /* Ensure mobile menu components are visible */
-  .mobile-menu-overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    z-index: 9999 !important;
-    pointer-events: auto !important;
-  }
-  
-  /* Removed debug helper border */
 }

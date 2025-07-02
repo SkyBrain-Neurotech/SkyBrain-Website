@@ -96,10 +96,23 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <div className="md:hidden flex-shrink-0">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-ghost-white p-3 hover:bg-neural-blue/10 rounded-xl transition-colors border border-transparent hover:border-neural-blue/30 bg-transparent relative z-[60] touch-manipulation"
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsOpen(!isOpen);
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setIsOpen(!isOpen);
+              }}
+              className="text-ghost-white p-4 rounded-xl transition-colors bg-neural-blue/10 border border-neural-blue/30 relative z-[9999] min-h-[48px] min-w-[48px] flex items-center justify-center"
               aria-label="Toggle mobile menu"
               type="button"
+              style={{ 
+                WebkitTapHighlightColor: 'transparent',
+                touchAction: 'manipulation'
+              }}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -109,48 +122,77 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Navigation Overlay */}
-      {isOpen && (
-        <div className="md:hidden fixed inset-0 z-[9999] animate-in fade-in duration-200">
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            onClick={() => setIsOpen(false)}
-          />
-          
-          {/* Mobile Menu */}
-          <div className="absolute left-4 right-4 top-20 animate-in slide-in-from-top-4 duration-300">
-            <div className="bg-deep-space/95 border-2 border-neural-blue/60 rounded-2xl shadow-2xl backdrop-blur-xl">
-              <div className="px-6 py-6 space-y-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`block text-ghost-white/80 hover:text-neural-blue transition-colors duration-300 font-semibold text-lg py-3 rounded-lg hover:bg-neural-blue/10 px-4 ${
-                      location.pathname === item.href ? 'text-neural-blue bg-neural-blue/20' : ''
-                    }`}
-                    onClick={() => setIsOpen(false)}
+      <div 
+        className={`md:hidden fixed inset-0 z-[9998] transition-all duration-300 ${
+          isOpen 
+            ? 'opacity-100 visible pointer-events-auto' 
+            : 'opacity-0 invisible pointer-events-none'
+        }`}
+        style={{ 
+          backgroundColor: isOpen ? 'rgba(0, 0, 0, 0.8)' : 'transparent',
+          backdropFilter: isOpen ? 'blur(4px)' : 'none'
+        }}
+      >
+        {/* Backdrop */}
+        <div 
+          className="absolute inset-0"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsOpen(false);
+          }}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsOpen(false);
+          }}
+        />
+        
+        {/* Mobile Menu */}
+        <div 
+          className={`absolute left-4 right-4 top-24 transition-all duration-300 ${
+            isOpen ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="bg-deep-space border-2 border-neural-blue/60 rounded-2xl shadow-2xl backdrop-blur-xl">
+            <div className="px-6 py-6 space-y-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`block text-ghost-white/80 hover:text-neural-blue transition-colors duration-300 font-semibold text-lg py-4 rounded-lg hover:bg-neural-blue/10 px-4 ${
+                    location.pathname === item.href ? 'text-neural-blue bg-neural-blue/20' : ''
+                  }`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsOpen(false);
+                  }}
+                  onTouchEnd={(e) => {
+                    e.stopPropagation();
+                  }}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-4 border-t border-neural-blue/20">
+                <Link to="/beta-signup" className="block">
+                  <Button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      trackButtonClick('Get Started', 'mobile_navigation', '/beta-signup');
+                      setIsOpen(false);
+                    }}
+                    className="w-full cyber-button text-deep-space font-bold py-4 text-lg rounded-xl"
                   >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="pt-4 border-t border-neural-blue/20">
-                  <Link to="/beta-signup" className="block">
-                    <Button 
-                      onClick={() => {
-                        trackButtonClick('Get Started', 'mobile_navigation', '/beta-signup');
-                        setIsOpen(false);
-                      }}
-                      className="w-full cyber-button text-deep-space font-bold py-4 text-lg rounded-xl"
-                    >
-                      Get Started
-                    </Button>
-                  </Link>
-                </div>
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

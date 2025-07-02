@@ -135,21 +135,7 @@ const TeamSelection = () => {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-deep-space via-shadow-black to-neural-blue/5"></div>
         
-        {/* Neural Network Background */}
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%">
-            <defs>
-              <pattern id="team-neural" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-                <circle cx="60" cy="60" r="2" fill="#00D4FF" opacity="0.4">
-                  <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite" />
-                </circle>
-                <line x1="60" y1="0" x2="60" y2="120" stroke="#00D4FF" strokeWidth="0.5" opacity="0.2" />
-                <line x1="0" y1="60" x2="120" y2="60" stroke="#00D4FF" strokeWidth="0.5" opacity="0.2" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#team-neural)" />
-          </svg>
-        </div>
+        {/* Removed neural network grid background */}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

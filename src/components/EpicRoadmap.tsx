@@ -340,21 +340,7 @@ const EpicRoadmap = () => {
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-deep-space via-shadow-black to-neural-blue/10"></div>
         
-        {/* Animated Grid */}
-        <div className="absolute inset-0 opacity-20">
-          <svg width="100%" height="100%" className="absolute inset-0">
-            <defs>
-              <pattern id="roadmap-grid" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                <circle cx="50" cy="50" r="1" fill="#00D4FF" opacity="0.3">
-                  <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" />
-                </circle>
-                <line x1="50" y1="0" x2="50" y2="100" stroke="#00D4FF" strokeWidth="0.5" opacity="0.1" />
-                <line x1="0" y1="50" x2="100" y2="50" stroke="#00D4FF" strokeWidth="0.5" opacity="0.1" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#roadmap-grid)" />
-          </svg>
-        </div>
+        {/* Removed animated grid background */}
         
         {/* Floating Neural Particles */}
         <div className="absolute inset-0">
@@ -436,21 +422,6 @@ const EpicRoadmap = () => {
               <span className="text-mind-purple font-bold font-orbitron">2025 - 2026 Roadmap</span>
             </div>
 
-            {/* Status Legend */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-lg border border-green-500/30 bg-green-500/10">
-                <span className="text-green-500 text-lg">✓</span>
-                <span className="text-green-400 font-semibold text-sm">Completed</span>
-              </div>
-              <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-lg border border-neural-blue/30 bg-neural-blue/10">
-                <span className="text-neural-blue text-lg animate-pulse">⏳</span>
-                <span className="text-neural-blue font-semibold text-sm">In Progress</span>
-              </div>
-              <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-lg border border-orange-500/30 bg-orange-500/10">
-                <span className="text-orange-500 text-lg">📋</span>
-                <span className="text-orange-400 font-semibold text-sm">Planned</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -459,12 +430,7 @@ const EpicRoadmap = () => {
           {/* Desktop Horizontal Timeline */}
           <div className="hidden md:block">
             {/* Timeline Path */}
-            <div className="relative flex justify-center items-center mb-20 px-4">
-              <div className="absolute inset-0 flex items-center justify-center z-0">
-                <div className="w-full max-w-4xl h-1 bg-gradient-to-r from-neural-blue/20 via-neural-blue/50 to-neural-blue/20 rounded-full relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-neural-blue to-mind-purple rounded-full animate-pulse opacity-60"></div>
-                </div>
-              </div>
+            <div className="relative flex justify-center items-center mb-32 px-4">
               
               {/* Phase Nodes */}
               <div className="relative flex justify-between items-center w-full max-w-4xl z-10">
@@ -513,7 +479,7 @@ const EpicRoadmap = () => {
                       </div>
                       
                       {/* Phase Label */}
-                      <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-center min-w-max z-10">
+                      <div className="absolute -bottom-24 left-1/2 transform -translate-x-1/2 text-center min-w-max z-10">
                         <div className={`font-bold font-orbitron transition-all duration-300 text-base ${
                           isActive 
                             ? 'text-neural-blue text-lg' 
@@ -528,35 +494,6 @@ const EpicRoadmap = () => {
                         </div>
                       </div>
                       
-                      {/* Connection Line to Next - Split to go around circles */}
-                      {index < phases.length - 1 && (
-                        <>
-                          {/* Left segment - from current node edge */}
-                          <div className={`absolute top-1/2 left-full w-12 h-1 transition-all duration-300 ${
-                            (isPast || (isActive && phases.findIndex(p => p.id === activePhase) > index))
-                              ? 'bg-green-500' 
-                              : isActive 
-                              ? 'bg-neural-blue' 
-                              : 'bg-neural-gray/20'
-                          } transform -translate-y-1/2 z-0`}>
-                            {(isPast || isActive) && (
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-pulse"></div>
-                            )}
-                          </div>
-                          {/* Right segment - to next node edge */}
-                          <div className={`absolute top-1/2 left-full w-12 h-1 ml-16 transition-all duration-300 ${
-                            (isPast || (isActive && phases.findIndex(p => p.id === activePhase) > index))
-                              ? 'bg-green-500' 
-                              : isActive && phases.findIndex(p => p.id === activePhase) === index
-                              ? 'bg-neural-blue' 
-                              : 'bg-neural-gray/20'
-                          } transform -translate-y-1/2 z-0`}>
-                            {(isPast || isActive) && (
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-pulse"></div>
-                            )}
-                          </div>
-                        </>
-                      )}
                     </button>
                   );
                 })}
@@ -567,10 +504,6 @@ const EpicRoadmap = () => {
           {/* Mobile Vertical Timeline */}
           <div className="md:hidden px-4">
             <div className="relative max-w-md mx-auto">
-              {/* Vertical Timeline Line - Lower z-index to go behind elements */}
-              <div className="absolute left-8 top-8 bottom-8 w-1 bg-gradient-to-b from-neural-blue/20 via-neural-blue/50 to-neural-blue/20 rounded-full z-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-neural-blue to-mind-purple rounded-full animate-pulse opacity-60"></div>
-              </div>
               
               {/* Vertical Phase Nodes */}
               <div className="space-y-16">
@@ -645,7 +578,7 @@ const EpicRoadmap = () => {
         </div>
 
         {/* Phase Navigation & Milestones - Mobile Responsive */}
-        <div className="mt-24 mb-16 max-w-6xl mx-auto space-y-6 px-4">
+        <div className="mt-32 mb-16 max-w-6xl mx-auto space-y-8 px-4">
           {/* Navigation Controls */}
           <div className="flex justify-center items-center space-x-4 md:space-x-6">
             <button
@@ -703,6 +636,22 @@ const EpicRoadmap = () => {
                       <span className="text-sm text-neural-blue font-medium">{feature}</span>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Status Legend */}
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-lg border border-green-500/30 bg-green-500/10">
+                  <span className="text-green-500 text-lg">✓</span>
+                  <span className="text-green-400 font-semibold text-sm">Completed</span>
+                </div>
+                <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-lg border border-neural-blue/30 bg-neural-blue/10">
+                  <span className="text-neural-blue text-lg animate-pulse">⏳</span>
+                  <span className="text-neural-blue font-semibold text-sm">In Progress</span>
+                </div>
+                <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-lg border border-orange-500/30 bg-orange-500/10">
+                  <span className="text-orange-500 text-lg">📋</span>
+                  <span className="text-orange-400 font-semibold text-sm">Planned</span>
                 </div>
               </div>
 
