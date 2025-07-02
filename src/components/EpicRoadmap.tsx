@@ -398,11 +398,8 @@ const EpicRoadmap = () => {
             {/* Epic Main Title */}
             <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tight relative">
               <span className="text-ghost-white">Our</span>{' '}
-              <span className="neural-gradient bg-clip-text text-transparent font-orbitron relative">
+              <span className="neural-gradient bg-clip-text text-transparent font-orbitron">
                 Journey
-                {/* Multiple Glow Layers */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-neural-blue/30 via-mind-purple/30 to-neural-blue/30 blur-3xl animate-pulse"></div>
-                <div className="absolute -inset-2 bg-neural-blue/20 blur-xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
               </span>
             </h1>
             

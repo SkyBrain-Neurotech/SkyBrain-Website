@@ -44,7 +44,7 @@ const VisionHero = () => {
 
           {/* Dynamic Main Heading */}
           <h1 className={`text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight transition-all duration-1000 ${textGlow ? 'scale-105' : 'scale-100'}`}>
-            <span className="text-ghost-white hover:text-neural-blue transition-colors cursor-pointer">Mental Health Wellness</span>
+            <span className="text-ghost-white hover:text-neural-blue transition-colors cursor-pointer">Mental Wellness & Health</span>
             <br />
             <span className={`text-neural-blue font-orbitron relative transition-all duration-1000 ${textGlow ? 'neural-glow' : ''}`}>
               Through NeuroTech

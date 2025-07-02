@@ -12,6 +12,8 @@ import {
   Brain,
   Linkedin,
   Github,
+  Youtube,
+  ExternalLink,
   Microscope,
   Building2,
   Users,
@@ -211,11 +213,37 @@ const ContactSection = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-8 text-ghost-white font-orbitron">Follow Our Research</h3>
                 <div className="flex space-x-4">
-                  <Button variant="outline" size="lg" className="glass-card border-neural-blue/30 text-neural-blue p-4 rounded-xl">
-                    <Linkedin className="h-6 w-6" />
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
+                    onClick={() => window.open('https://linktr.ee/skybrain', '_blank')}
+                  >
+                    <ExternalLink className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>
-                  <Button variant="outline" size="lg" className="glass-card border-neural-blue/30 text-neural-blue p-4 rounded-xl">
-                    <Github className="h-6 w-6" />
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
+                    onClick={() => window.open('https://linkedin.com/company/skybrain-neurotech', '_blank')}
+                  >
+                    <Linkedin className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
+                    onClick={() => window.open('https://youtube.com/@skybrainneurotech', '_blank')}
+                  >
+                    <Youtube className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
+                    onClick={() => window.open('https://github.com/skybrain-neurotech', '_blank')}
+                  >
+                    <Github className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>
                 </div>
               </CardContent>

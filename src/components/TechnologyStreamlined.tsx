@@ -81,9 +81,8 @@ const TechnologyStreamlined = () => {
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight tracking-tight">
               <span className="text-ghost-white">EEG Neural</span>{' '}
-              <span className="text-neural-blue font-orbitron neural-glow text-4xl md:text-6xl lg:text-7xl block relative">
+              <span className="text-neural-blue font-orbitron neural-glow text-4xl md:text-6xl lg:text-7xl block">
                 Mapping
-                <div className="absolute inset-0 bg-neural-blue/20 blur-xl rounded-2xl animate-pulse"></div>
               </span>
             </h1>
             
@@ -433,7 +432,6 @@ const TechnologyStreamlined = () => {
                       <div className="text-center space-y-6">
                         <div className="relative">
                           <Target className="h-20 w-20 text-mind-purple mx-auto" />
-                          <div className="absolute inset-0 bg-mind-purple/20 rounded-full blur-xl animate-pulse"></div>
                         </div>
                         <div className="grid grid-cols-2 gap-3">
                           <div className="glass-card p-3 border border-mind-purple/30">
