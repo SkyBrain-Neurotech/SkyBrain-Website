@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Brain, CheckCircle2, ArrowRight, Users, Code, Microscope, TrendingUp } from 'lucide-react';
+import { Brain, CheckCircle2, ArrowRight, Users, Code, Microscope, TrendingUp, ArrowLeft, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import BetaSignupForm from '@/components/BetaSignupForm';
 
 const BetaSignup = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [userType, setUserType] = useState<string>('');
 
@@ -45,6 +47,27 @@ const BetaSignup = () => {
       <div className="absolute inset-0 neural-network-bg opacity-40"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Back/Close Navigation */}
+        <div className="flex justify-between items-center mb-8">
+          <Button
+            onClick={() => navigate(-1)}
+            variant="outline"
+            className="glass-card border-neural-blue/30 text-neural-blue hover:bg-neural-blue/10 flex items-center"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back
+          </Button>
+          
+          <Button
+            onClick={() => navigate('/')}
+            variant="outline"
+            size="icon"
+            className="glass-card border-neural-blue/30 text-neural-blue hover:bg-neural-blue/10"
+          >
+            <X className="h-4 w-4" />
+          </Button>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-3 glass-card rounded-full px-6 py-3 mb-8 holographic">

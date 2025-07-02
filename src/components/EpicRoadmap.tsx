@@ -27,10 +27,14 @@ interface RoadmapPhase {
   timeline: string;
   icon: React.ElementType;
   color: string;
+  description: string;
+  keyFeatures: string[];
   milestones: {
     title: string;
-    status: 'done' | 'active' | 'pending';
+    description: string;
+    status: 'done' | 'in-progress' | 'planned';
     visual: React.ElementType;
+    details: string[];
   }[];
 }
 
@@ -44,13 +48,54 @@ const EpicRoadmap = () => {
       title: 'Foundation',
       subtitle: 'Core BCI Technology',
       status: 'in-progress',
-      timeline: 'Q1-Q2 2025',
+      timeline: 'Q1 2025',
       icon: Brain,
       color: 'blue',
+      description: 'Building the fundamental brain-computer interface technology that powers all SkyBrain capabilities. This phase establishes our core neural signal processing pipeline, hardware integration, and the foundational algorithms that enable real-time brain activity monitoring and analysis.',
+      keyFeatures: [
+        'EEG acquisition',
+        '250Hz sampling precision',
+        'Real-time signal processing',
+        'Advanced noise filtering',
+        'Cross-platform compatibility'
+      ],
       milestones: [
-        { title: 'EEG Signal Processing', status: 'done', visual: Zap },
-        { title: 'Hardware Integration', status: 'done', visual: Cpu },
-        { title: 'Pattern Recognition', status: 'active', visual: Target }
+        { 
+          title: 'EEG Signal Processing', 
+          description: 'Advanced algorithms for extracting meaningful neural signals from raw EEG data with sophisticated noise reduction and artifact removal.',
+          status: 'done', 
+          visual: Zap,
+          details: [
+            'Digital signal processing pipeline',
+            'Artifact detection and removal',
+            'Frequency domain analysis',
+            'Cloud analysis'
+          ]
+        },
+        { 
+          title: 'Hardware Integration', 
+          description: 'Integration with best-in-class commercial EEG hardware while developing our proprietary beta hardware for future launch.',
+          status: 'done', 
+          visual: Cpu,
+          details: [
+            'Commercial hardware compatibility',
+            'Low-latency data transmission',
+            'Robust connection protocols',
+            'Beta hardware development'
+          ]
+        },
+        { 
+          title: 'Pattern Recognition', 
+          description: 'AI-powered identification of mental states, focus levels, and cognitive patterns from processed neural signals.',
+          status: 'done', 
+          visual: Target,
+          details: [
+            'Machine learning models',
+            'Mental state classification',
+            'Focus, Relaxation level detection',
+            'iAPF extraction'
+          ]
+        }
       ],
     },
     {
@@ -58,28 +103,109 @@ const EpicRoadmap = () => {
       title: 'Privacy',
       subtitle: 'Data Security & Protection',
       status: 'pending',
-      timeline: 'Q3 2025',
+      timeline: 'Q2 2025',
       icon: Shield,
       color: 'purple',
+      description: 'Implementing robust privacy-first architecture to ensure user neural data remains secure, private, and under complete user control. This phase focuses on building trust through transparency, encryption, and giving users ownership of their most sensitive data.',
+      keyFeatures: [
+        'Military-grade encryption',
+        'Zero-knowledge processing',
+        'Local data storage options',
+        'GDPR & HIPAA compliance',
+        'Blockchain consent tracking'
+      ],
       milestones: [
-        { title: 'End-to-End Encryption', status: 'pending', visual: Shield },
-        { title: 'Privacy by Design', status: 'pending', visual: Users },
-        { title: 'Data Anonymization', status: 'pending', visual: Target }
+        { 
+          title: 'End-to-End Encryption', 
+          description: 'Enterprise-grade encryption protocols for all neural data transmission and storage, ensuring complete privacy protection from device to cloud.',
+          status: 'done', 
+          visual: Shield,
+          details: [
+            'AES-256 encryption standard',
+            'Encrypted data transmission',
+            'Secure key management',
+            'Zero-trust architecture'
+          ]
+        },
+        { 
+          title: 'Privacy by Design', 
+          description: 'Comprehensive privacy framework with GDPR & HIPAA compliance, secure data handling, and robust retention policies.',
+          status: 'done', 
+          visual: Users,
+          details: [
+            'GDPR & HIPAA compliance',
+            'Solid retention & deletion policies',
+            'Secure encrypt/decrypt protocols',
+            'Anonymized datasets protection'
+          ]
+        },
+        { 
+          title: 'Blockchain Data Ownership', 
+          description: 'Revolutionary blockchain system securing data ownership, control, and ethical monetization opportunities for users.',
+          status: 'in-progress', 
+          visual: Target,
+          details: [
+            'Secure data ownership protocols',
+            'User-controlled data lifetime',
+            'Ethical usage permissions',
+            'Data monetization framework'
+          ]
+        }
       ],
     },
     {
       id: 'intelligence',
       title: 'Intelligence',
-      subtitle: 'iAPF AI Framework',
+      subtitle: 'AI Framework',
       status: 'pending',
-      timeline: 'Q4 2025 - Q1 2026',
+      timeline: 'Q3 - Q4 2025',
       icon: Lightbulb,
       color: 'purple',
+      description: 'Revolutionary intelligent Adaptive Personal Framework (iAPF) that learns from your unique neural patterns to provide personalized mental wellness optimization. This AI system adapts to individual brain signatures, delivering increasingly effective interventions tailored to each user.',
+      keyFeatures: [
+        'Personalized AI models',
+        'Adaptive learning algorithms',
+        'Real-time optimization',
+        'Mental state prediction',
+        'Behavioral pattern analysis'
+      ],
       milestones: [
-        { title: 'AI Model Architecture', status: 'pending', visual: Brain },
-        { title: 'Personal Learning Engine', status: 'pending', visual: Users },
-        { title: 'Adaptive Responses', status: 'pending', visual: Zap },
-        { title: 'Real-time Optimization', status: 'pending', visual: Target }
+        { 
+          title: 'AI Model Architecture', 
+          description: 'Deep learning framework specifically designed for neural pattern analysis and personalized mental health insights with continuous learning capabilities.',
+          status: 'in-progress', 
+          visual: Brain,
+          details: [
+            'Neural network architecture',
+            'Transfer learning models',
+            'Pattern recognition algorithms',
+            'Continuous learning systems'
+          ]
+        },
+        { 
+          title: 'Personal Learning Engine', 
+          description: 'Adaptive AI that learns your unique neural signatures to provide increasingly personalized recommendations and interventions over time.',
+          status: 'planned', 
+          visual: Users,
+          details: [
+            'Individual pattern learning',
+            'Personalized recommendations',
+            'Adaptive feedback loops',
+            'User preference modeling'
+          ]
+        },
+        { 
+          title: 'Real-time Optimization', 
+          description: 'Instant cognitive enhancement recommendations based on current mental state, historical patterns, and environmental context.',
+          status: 'planned', 
+          visual: Target,
+          details: [
+            'Real-time analysis engine',
+            'Contextual recommendations',
+            'Dynamic intervention adjustment',
+            'Performance optimization'
+          ]
+        }
       ],
     },
     {
@@ -87,14 +213,54 @@ const EpicRoadmap = () => {
       title: 'Validation',
       subtitle: 'Clinical Trials & Testing',
       status: 'planned',
-      timeline: 'Q2-Q3 2026',
+      timeline: 'Q1-Q3 2026',
       icon: Users,
       color: 'orange',
+      description: 'Rigorous clinical validation and regulatory approval process to demonstrate safety, efficacy, and compliance. This phase secures CDSCO approval for India and UAE regulatory clearances for our target launch markets.',
+      keyFeatures: [
+        'CDSCO regulatory compliance',
+        'MOHAP federal registration',
+        'DHA & DoH approvals',
+        'Peer-reviewed research',
+        'Clinical safety validation'
+      ],
       milestones: [
-        { title: 'IRB Approval', status: 'pending', visual: Award },
-        { title: 'Trial Design', status: 'pending', visual: Target },
-        { title: 'Participant Recruitment', status: 'pending', visual: Users },
-        { title: 'Data Collection', status: 'pending', visual: Brain }
+        { 
+          title: 'Regulatory Approval for India & UAE', 
+          description: 'Comprehensive regulatory strategy for our target launch markets: India, Dubai, and Abu Dhabi. Securing CDSCO approval for India and UAE federal/emirate-specific clearances.',
+          status: 'in-progress', 
+          visual: Award,
+          details: [
+            'India: CDSCO market approval',
+            'UAE Federal: MOHAP registration',
+            'Dubai: DHA approval required',
+            'Abu Dhabi: DoH clearance needed'
+          ]
+        },
+        { 
+          title: 'Trial Design', 
+          description: 'Scientifically rigorous study protocols designed to validate safety and efficacy across diverse populations with measurable outcomes.',
+          status: 'planned', 
+          visual: Target,
+          details: [
+            'Clinical protocol development',
+            'Outcome measurement design',
+            'Statistical analysis planning',
+            'Multi-site coordination'
+          ]
+        },
+        { 
+          title: 'Data Collection', 
+          description: 'Systematic collection and analysis of clinical trial data to demonstrate platform efficacy, safety, and real-world effectiveness.',
+          status: 'planned', 
+          visual: Brain,
+          details: [
+            'Participant data collection',
+            'Efficacy measurement',
+            'Safety monitoring',
+            'Statistical analysis'
+          ]
+        }
       ],
     },
     {
@@ -105,11 +271,51 @@ const EpicRoadmap = () => {
       timeline: 'Q4 2026',
       icon: Rocket,
       color: 'cyan',
+      description: 'Global launch of SkyBrain consumer platform, bringing validated neurotechnology and mental wellness optimization to users worldwide. This marks the transition from research to real-world impact, democratizing access to advanced brain-computer interface technology.',
+      keyFeatures: [
+        'Consumer-ready hardware',
+        'Intuitive mobile apps',
+        'Global distribution',
+        '24/7 customer support',
+        'Continuous updates'
+      ],
       milestones: [
-        { title: 'Product Design', status: 'pending', visual: Lightbulb },
-        { title: 'Manufacturing', status: 'pending', visual: Cpu },
-        { title: 'Regulatory Approval', status: 'pending', visual: Award },
-        { title: 'Global Release', status: 'pending', visual: Globe }
+        { 
+          title: 'Product Design', 
+          description: 'Final consumer product design with user-friendly interface, professional-grade neuromonitoring capabilities, and seamless user experience.',
+          status: 'in-progress', 
+          visual: Lightbulb,
+          details: [
+            'Industrial design finalization',
+            'User interface optimization',
+            'Ergonomic testing',
+            'Aesthetic refinement'
+          ]
+        },
+        { 
+          title: 'Manufacturing', 
+          description: 'Scaled manufacturing processes to produce high-quality, reliable neurotechnology devices for global distribution at consumer-friendly pricing.',
+          status: 'planned', 
+          visual: Cpu,
+          details: [
+            'Production line setup',
+            'Quality assurance systems',
+            'Supply chain optimization',
+            'Cost efficiency measures'
+          ]
+        },
+        { 
+          title: 'Strategic Market Launch', 
+          description: 'Targeted launch in India, Dubai, and Abu Dhabi with full regulatory compliance and market-specific strategies.',
+          status: 'planned', 
+          visual: Globe,
+          details: [
+            'India market entry strategy',
+            'Dubai Health Authority (DHA) approval',
+            'DoH Abu Dhabi compliance',
+            'GCC regional expansion'
+          ]
+        }
       ],
     }
   ];
@@ -123,23 +329,12 @@ const EpicRoadmap = () => {
     }
   };
 
-  // Auto-cycle through phases
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActivePhase(prev => {
-        const currentIndex = phases.findIndex(p => p.id === prev);
-        const nextIndex = (currentIndex + 1) % phases.length;
-        return phases[nextIndex].id;
-      });
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [phases]);
+  // Removed auto-cycling - now manual only
 
   const activePhaseData = phases.find(p => p.id === activePhase);
 
   return (
-    <section className="pt-32 pb-20 relative overflow-hidden">
+    <section className="pt-24 md:pt-32 pb-20 relative overflow-hidden">
       {/* Epic Background with Animated Elements */}
       <div className="absolute inset-0">
         {/* Gradient Background */}
@@ -189,12 +384,12 @@ const EpicRoadmap = () => {
               {[...Array(8)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute w-4 h-4 bg-neural-blue/60 rounded-full"
+                  className="absolute w-4 h-4 bg-neural-blue/60 rounded-full roadmap-orbital-sync"
                   style={{
                     top: '50%',
                     left: '50%',
                     transform: `rotate(${i * 45}deg) translateX(200px) translateY(-50%)`,
-                    animation: `spin ${8 + i}s linear infinite`
+                    animationDelay: `${i * 0.5}s`
                   }}
                 />
               ))}
@@ -209,7 +404,7 @@ const EpicRoadmap = () => {
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
               </div>
               <span className="text-base font-bold text-neural-blue tracking-wide font-orbitron uppercase">
-                🚀 Live Progress • Active Development
+                Live Progress • Active Development
               </span>
               <div className="w-3 h-3 bg-neural-blue rounded-full animate-ping"></div>
             </div>
@@ -236,127 +431,241 @@ const EpicRoadmap = () => {
             </div>
             
             {/* Timeline Badge */}
-            <div className="inline-flex items-center space-x-2 glass-card px-6 py-3 rounded-full border border-mind-purple/30">
+            <div className="inline-flex items-center space-x-2 glass-card px-6 py-3 rounded-full border border-mind-purple/30 mb-8">
               <Clock className="h-5 w-5 text-mind-purple" />
               <span className="text-mind-purple font-bold font-orbitron">2025 - 2026 Roadmap</span>
             </div>
-          </div>
-        </div>
 
-        {/* Epic Timeline Visualization */}
-        <div className="mb-16">
-          {/* Timeline Path */}
-          <div className="relative flex justify-center items-center mb-12">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full max-w-4xl h-1 bg-gradient-to-r from-neural-blue/20 via-neural-blue/50 to-neural-blue/20 rounded-full relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-neural-blue to-mind-purple rounded-full animate-pulse opacity-60"></div>
+            {/* Status Legend */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-lg border border-green-500/30 bg-green-500/10">
+                <span className="text-green-500 text-lg">✓</span>
+                <span className="text-green-400 font-semibold text-sm">Completed</span>
+              </div>
+              <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-lg border border-neural-blue/30 bg-neural-blue/10">
+                <span className="text-neural-blue text-lg animate-pulse">⏳</span>
+                <span className="text-neural-blue font-semibold text-sm">In Progress</span>
+              </div>
+              <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-lg border border-orange-500/30 bg-orange-500/10">
+                <span className="text-orange-500 text-lg">📋</span>
+                <span className="text-orange-400 font-semibold text-sm">Planned</span>
               </div>
             </div>
-            
-            {/* Phase Nodes */}
-            <div className="relative flex justify-between items-center w-full max-w-4xl">
-              {phases.map((phase, index) => {
-                const isActive = phase.id === activePhase;
-                const isPast = phases.findIndex(p => p.id === activePhase) > index;
-                const IconComponent = phase.icon;
-                
-                return (
-                  <button
-                    key={phase.id}
-                    onClick={() => setActivePhase(phase.id)}
-                    className={`relative group transition-all duration-500 ${
-                      isActive ? 'scale-125 z-20' : 'scale-100 hover:scale-110 z-10'
-                    }`}
-                  >
-                    {/* Node Circle */}
-                    <div className={`w-20 h-20 rounded-full border-4 transition-all duration-300 ${
-                      isActive 
-                        ? 'bg-neural-blue border-neural-blue shadow-lg shadow-neural-blue/50' 
-                        : isPast 
-                        ? 'bg-green-500 border-green-500' 
-                        : 'bg-neural-gray/20 border-neural-gray/30 group-hover:border-neural-blue/50'
-                    } flex items-center justify-center relative overflow-hidden`}>
-                      
-                      {/* Icon */}
-                      <IconComponent className={`h-8 w-8 transition-all duration-300 ${
+          </div>
+        </div>
+
+        {/* Epic Timeline Visualization - Mobile Vertical, Desktop Horizontal */}
+        <div className="mb-16">
+          {/* Desktop Horizontal Timeline */}
+          <div className="hidden md:block">
+            {/* Timeline Path */}
+            <div className="relative flex justify-center items-center mb-20 px-4">
+              <div className="absolute inset-0 flex items-center justify-center z-0">
+                <div className="w-full max-w-4xl h-1 bg-gradient-to-r from-neural-blue/20 via-neural-blue/50 to-neural-blue/20 rounded-full relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-neural-blue to-mind-purple rounded-full animate-pulse opacity-60"></div>
+                </div>
+              </div>
+              
+              {/* Phase Nodes */}
+              <div className="relative flex justify-between items-center w-full max-w-4xl z-10">
+                {phases.map((phase, index) => {
+                  const isActive = phase.id === activePhase;
+                  const isPast = phases.findIndex(p => p.id === activePhase) > index;
+                  const IconComponent = phase.icon;
+                  
+                  return (
+                    <button
+                      key={phase.id}
+                      onClick={() => setActivePhase(phase.id)}
+                      className={`relative group transition-all duration-500 z-20 ${
+                        isActive ? 'scale-125' : 'scale-100 hover:scale-110'
+                      }`}
+                    >
+                      {/* Node Circle */}
+                      <div className={`w-20 h-20 rounded-full border-4 transition-all duration-300 ${
                         isActive 
-                          ? 'text-white animate-pulse' 
+                          ? 'bg-neural-blue border-neural-blue shadow-lg shadow-neural-blue/50' 
                           : isPast 
-                          ? 'text-white' 
-                          : 'text-neural-gray group-hover:text-neural-blue'
-                      }`} />
-                      
-                      {/* Active Pulse Ring */}
-                      {isActive && (
-                        <div className="absolute inset-0 rounded-full border-4 border-neural-blue animate-ping opacity-75"></div>
-                      )}
-                      
-                      {/* Completion Check */}
-                      {isPast && (
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                          <CheckCircle2 className="h-4 w-4 text-white" />
-                        </div>
-                      )}
-                    </div>
-                    
-                    {/* Phase Label */}
-                    <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 text-center min-w-max">
-                      <div className={`font-bold font-orbitron transition-all duration-300 ${
-                        isActive 
-                          ? 'text-neural-blue text-lg' 
-                          : isPast 
-                          ? 'text-green-400 text-base' 
-                          : 'text-neural-gray text-base group-hover:text-ghost-white'
-                      }`}>
-                        {phase.title}
-                      </div>
-                      <div className="text-xs text-neural-gray mt-1">
-                        {phase.timeline}
-                      </div>
-                    </div>
-                    
-                    {/* Connection Line to Next */}
-                    {index < phases.length - 1 && (
-                      <div className={`absolute top-1/2 left-full w-20 h-1 -ml-2 transition-all duration-300 ${
-                        isPast || isActive 
-                          ? 'bg-gradient-to-r from-green-500 to-neural-blue' 
-                          : 'bg-neural-gray/20'
-                      } transform -translate-y-1/2 z-0`}>
-                        {/* Animated Flow */}
-                        {(isPast || isActive) && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-pulse"></div>
+                          ? 'bg-green-500 border-green-500' 
+                          : 'bg-neural-gray/20 border-neural-gray/30 group-hover:border-neural-blue/50'
+                      } flex items-center justify-center relative overflow-hidden`}>
+                        
+                        {/* Icon */}
+                        <IconComponent className={`h-8 w-8 transition-all duration-300 ${
+                          isActive 
+                            ? 'text-white animate-pulse' 
+                            : isPast 
+                            ? 'text-white' 
+                            : 'text-neural-gray group-hover:text-neural-blue'
+                        }`} />
+                        
+                        {/* Active Pulse Ring */}
+                        {isActive && (
+                          <div className="absolute inset-0 rounded-full border-4 border-neural-blue animate-ping opacity-75"></div>
+                        )}
+                        
+                        {/* Completion Check */}
+                        {isPast && (
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                            <CheckCircle2 className="h-4 w-4 text-white" />
+                          </div>
                         )}
                       </div>
-                    )}
-                  </button>
-                );
-              })}
+                      
+                      {/* Phase Label */}
+                      <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-center min-w-max z-10">
+                        <div className={`font-bold font-orbitron transition-all duration-300 text-base ${
+                          isActive 
+                            ? 'text-neural-blue text-lg' 
+                            : isPast 
+                            ? 'text-green-400' 
+                            : 'text-neural-gray group-hover:text-ghost-white'
+                        }`}>
+                          {phase.title}
+                        </div>
+                        <div className="text-xs text-neural-gray mt-1">
+                          {phase.timeline}
+                        </div>
+                      </div>
+                      
+                      {/* Connection Line to Next - Split to go around circles */}
+                      {index < phases.length - 1 && (
+                        <>
+                          {/* Left segment - from current node edge */}
+                          <div className={`absolute top-1/2 left-full w-12 h-1 transition-all duration-300 ${
+                            (isPast || (isActive && phases.findIndex(p => p.id === activePhase) > index))
+                              ? 'bg-green-500' 
+                              : isActive 
+                              ? 'bg-neural-blue' 
+                              : 'bg-neural-gray/20'
+                          } transform -translate-y-1/2 z-0`}>
+                            {(isPast || isActive) && (
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-pulse"></div>
+                            )}
+                          </div>
+                          {/* Right segment - to next node edge */}
+                          <div className={`absolute top-1/2 left-full w-12 h-1 ml-16 transition-all duration-300 ${
+                            (isPast || (isActive && phases.findIndex(p => p.id === activePhase) > index))
+                              ? 'bg-green-500' 
+                              : isActive && phases.findIndex(p => p.id === activePhase) === index
+                              ? 'bg-neural-blue' 
+                              : 'bg-neural-gray/20'
+                          } transform -translate-y-1/2 z-0`}>
+                            {(isPast || isActive) && (
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-pulse"></div>
+                            )}
+                          </div>
+                        </>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Vertical Timeline */}
+          <div className="md:hidden px-4">
+            <div className="relative max-w-md mx-auto">
+              {/* Vertical Timeline Line - Lower z-index to go behind elements */}
+              <div className="absolute left-8 top-8 bottom-8 w-1 bg-gradient-to-b from-neural-blue/20 via-neural-blue/50 to-neural-blue/20 rounded-full z-0">
+                <div className="absolute inset-0 bg-gradient-to-b from-neural-blue to-mind-purple rounded-full animate-pulse opacity-60"></div>
+              </div>
+              
+              {/* Vertical Phase Nodes */}
+              <div className="space-y-16">
+                {phases.map((phase, index) => {
+                  const isActive = phase.id === activePhase;
+                  const isPast = phases.findIndex(p => p.id === activePhase) > index;
+                  const IconComponent = phase.icon;
+                  
+                  return (
+                    <button
+                      key={phase.id}
+                      onClick={() => setActivePhase(phase.id)}
+                      className="flex items-start space-x-6 w-full text-left group relative"
+                    >
+                      {/* Node Circle - Higher z-index to appear above line */}
+                      <div className="relative z-20">
+                        <div className={`w-16 h-16 rounded-full border-4 transition-all duration-300 flex-shrink-0 ${
+                          isActive 
+                            ? 'bg-neural-blue border-neural-blue shadow-lg shadow-neural-blue/50' 
+                            : isPast 
+                            ? 'bg-green-500 border-green-500' 
+                            : 'bg-neural-gray/20 border-neural-gray/30 group-hover:border-neural-blue/50'
+                        } flex items-center justify-center relative overflow-hidden`}>
+                          
+                          {/* Icon */}
+                          <IconComponent className={`h-6 w-6 transition-all duration-300 ${
+                            isActive 
+                              ? 'text-white animate-pulse' 
+                              : isPast 
+                              ? 'text-white' 
+                              : 'text-neural-gray group-hover:text-neural-blue'
+                          }`} />
+                          
+                          {/* Active Pulse Ring */}
+                          {isActive && (
+                            <div className="absolute inset-0 rounded-full border-4 border-neural-blue animate-ping opacity-75"></div>
+                          )}
+                          
+                          {/* Completion Check */}
+                          {isPast && (
+                            <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                              <CheckCircle2 className="h-3 w-3 text-white" />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      
+                      {/* Phase Info - Higher z-index and better aligned */}
+                      <div className="flex-1 pt-2 relative z-10">
+                        <div className={`font-bold font-orbitron transition-all duration-300 text-xl mb-2 ${
+                          isActive 
+                            ? 'text-neural-blue' 
+                            : isPast 
+                            ? 'text-green-400' 
+                            : 'text-neural-gray group-hover:text-ghost-white'
+                        }`}>
+                          {phase.title}
+                        </div>
+                        <div className="text-base text-neural-gray mb-1 leading-relaxed">
+                          {phase.subtitle}
+                        </div>
+                        <div className="text-sm text-neural-gray/80">
+                          {phase.timeline}
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Phase Navigation & Milestones - Combined Clean Design */}
-        <div className="mt-16 mb-16 max-w-6xl mx-auto space-y-6">
+        {/* Phase Navigation & Milestones - Mobile Responsive */}
+        <div className="mt-24 mb-16 max-w-6xl mx-auto space-y-6 px-4">
           {/* Navigation Controls */}
-          <div className="flex justify-center items-center space-x-6">
+          <div className="flex justify-center items-center space-x-4 md:space-x-6">
             <button
               onClick={() => {
                 const currentIndex = phases.findIndex(p => p.id === activePhase);
                 const prevIndex = currentIndex > 0 ? currentIndex - 1 : phases.length - 1;
                 setActivePhase(phases[prevIndex].id);
               }}
-              className="glass-card p-3 rounded-full hover:bg-neural-blue/10 transition-all duration-300 group border border-neural-blue/30 hover:border-neural-blue"
+              className="glass-card p-2 md:p-3 rounded-full hover:bg-neural-blue/10 transition-all duration-300 group border border-neural-blue/30 hover:border-neural-blue"
             >
-              <ChevronLeft className="h-5 w-5 text-neural-blue group-hover:text-ghost-white" />
+              <ChevronLeft className="h-4 w-4 md:h-5 md:w-5 text-neural-blue group-hover:text-ghost-white" />
             </button>
 
-            <div className="glass-card rounded-xl px-6 py-3 text-center border border-neural-blue/30 min-w-[280px]">
-              <div className="flex items-center justify-center space-x-3">
+            <div className="glass-card rounded-xl px-4 py-2 md:px-6 md:py-3 text-center border border-neural-blue/30 min-w-[240px] md:min-w-[280px]">
+              <div className="flex items-center justify-center space-x-2 md:space-x-3">
                 {activePhaseData && React.createElement(activePhaseData.icon, { 
-                  className: "h-6 w-6 text-neural-blue" 
+                  className: "h-5 w-5 md:h-6 md:w-6 text-neural-blue" 
                 })}
                 <div>
-                  <div className="text-lg font-bold text-neural-blue font-orbitron">
+                  <div className="text-base md:text-lg font-bold text-neural-blue font-orbitron">
                     {activePhaseData?.title}
                   </div>
                   <div className="text-xs text-neural-gray">
@@ -372,52 +681,122 @@ const EpicRoadmap = () => {
                 const nextIndex = currentIndex < phases.length - 1 ? currentIndex + 1 : 0;
                 setActivePhase(phases[nextIndex].id);
               }}
-              className="glass-card p-3 rounded-full hover:bg-neural-blue/10 transition-all duration-300 group border border-neural-blue/30 hover:border-neural-blue"
+              className="glass-card p-2 md:p-3 rounded-full hover:bg-neural-blue/10 transition-all duration-300 group border border-neural-blue/30 hover:border-neural-blue"
             >
-              <ChevronRight className="h-5 w-5 text-neural-blue group-hover:text-ghost-white" />
+              <ChevronRight className="h-4 w-4 md:h-5 md:w-5 text-neural-blue group-hover:text-ghost-white" />
             </button>
           </div>
 
-          {/* Milestones Only */}
+          {/* Enhanced Phase Details */}
           {activePhaseData && (
-            <div className="flex flex-wrap justify-center gap-3">
-              {activePhaseData.milestones.map((milestone, idx) => (
-                <div
-                  key={milestone.title}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300
-                    ${milestone.status === 'done' ? 'bg-green-500/20 text-green-500 border border-green-500/30' : 
-                      milestone.status === 'active' ? 'bg-neural-blue/20 text-neural-blue border border-neural-blue/30' : 
-                      'bg-neural-gray/20 text-neural-gray border border-neural-gray/30'}
-                  `}
-                >
-                  <milestone.visual className={`h-4 w-4 ${
-                    milestone.status === 'active' ? 'animate-pulse' : ''
-                  }`} />
-                  <span className="font-medium text-sm">{milestone.title}</span>
-                  {milestone.status === 'done' && <span className="text-xs">✓</span>}
-                  {milestone.status === 'active' && <span className="text-xs">⏳</span>}
+            <div className="space-y-8">
+              {/* Phase Description */}
+              <div className="text-center max-w-4xl mx-auto">
+                <p className="text-lg text-neural-gray leading-relaxed mb-6">
+                  {activePhaseData.description}
+                </p>
+                
+                {/* Key Features */}
+                <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
+                  {activePhaseData.keyFeatures.map((feature, idx) => (
+                    <div key={idx} className="glass-card px-3 py-2 rounded-lg border border-neural-blue/20">
+                      <span className="text-sm text-neural-blue font-medium">{feature}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Enhanced Milestones */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                {activePhaseData.milestones.map((milestone, idx) => (
+                  <div
+                    key={milestone.title}
+                    className={`glass-card p-4 md:p-6 rounded-xl border transition-all duration-300 hover:scale-105
+                      ${milestone.status === 'done' ? 'border-green-500/40 bg-green-500/10' : 
+                        milestone.status === 'in-progress' ? 'border-neural-blue/40 bg-neural-blue/10' : 
+                        'border-orange-500/30 bg-orange-500/5'}
+                    `}
+                    onMouseEnter={() => setHoveredMilestone(milestone.title)}
+                    onMouseLeave={() => setHoveredMilestone(null)}
+                  >
+                    {/* Milestone Header */}
+                    <div className="flex items-start space-x-3 mb-4">
+                      <div className={`p-2 rounded-lg ${
+                        milestone.status === 'done' ? 'bg-green-500/20' : 
+                        milestone.status === 'in-progress' ? 'bg-neural-blue/20' : 
+                        'bg-orange-500/20'
+                      }`}>
+                        <milestone.visual className={`h-5 w-5 ${
+                          milestone.status === 'done' ? 'text-green-500' :
+                          milestone.status === 'in-progress' ? 'text-neural-blue animate-pulse' : 
+                          'text-orange-500'
+                        }`} />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className={`font-bold font-orbitron mb-1 ${
+                          milestone.status === 'done' ? 'text-green-400' :
+                          milestone.status === 'in-progress' ? 'text-neural-blue' : 
+                          'text-orange-400'
+                        }`}>
+                          {milestone.title}
+                        </h4>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        {milestone.status === 'done' && <span className="text-green-500 text-lg">✓</span>}
+                        {milestone.status === 'in-progress' && <span className="text-neural-blue animate-pulse text-lg">⏳</span>}
+                        {milestone.status === 'planned' && <span className="text-orange-500 text-lg">📋</span>}
+                      </div>
+                    </div>
+                    
+                    {/* Milestone Description */}
+                    <p className="text-sm text-neural-gray leading-relaxed mb-4">
+                      {milestone.description}
+                    </p>
+                    
+                    {/* Milestone Details */}
+                    <div className="space-y-2">
+                      <h5 className="text-xs font-semibold text-ghost-white uppercase tracking-wide">Key Components</h5>
+                      <div className="grid grid-cols-1 gap-2">
+                        {milestone.details.map((detail, detailIdx) => (
+                          <div key={detailIdx} className="flex items-center space-x-2">
+                            <div className={`w-1.5 h-1.5 rounded-full ${
+                              milestone.status === 'done' ? 'bg-green-500' :
+                              milestone.status === 'in-progress' ? 'bg-neural-blue' : 
+                              'bg-orange-500'
+                            }`}></div>
+                            <span className="text-xs text-neural-gray">{detail}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Hover Effect */}
+                    {hoveredMilestone === milestone.title && (
+                      <div className="absolute inset-0 bg-gradient-to-br from-neural-blue/10 to-mind-purple/10 rounded-xl pointer-events-none"></div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
 
-        {/* Call to Action - Compact Design */}
-        <div className="glass-card rounded-2xl p-8 text-center border border-neural-blue/30 max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-ghost-white mb-4 font-orbitron">
+        {/* Call to Action - Mobile Responsive */}
+        <div className="glass-card rounded-2xl p-6 md:p-8 text-center border border-neural-blue/30 max-w-4xl mx-auto">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-ghost-white mb-4 font-orbitron">
             Follow Our Live Progress
           </h2>
-          <p className="text-lg text-neural-gray mb-6 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-neural-gray mb-8 max-w-xl mx-auto leading-relaxed">
             Real-time updates as we hit milestones. Join our community for instant notifications.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
-            <button className="flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-neural-blue to-mind-purple text-white font-bold rounded-xl group hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-neural-blue/30">
+            <button className="flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-neural-blue to-mind-purple text-white font-bold rounded-xl group hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-neural-blue/30">
               <Users className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
               Join Community
             </button>
             
-            <button className="flex items-center justify-center w-full sm:w-auto px-6 py-3 glass-card border border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold rounded-xl group hover:scale-105 transition-all duration-300">
+            <button className="flex items-center justify-center w-full sm:w-auto px-8 py-4 glass-card border border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold rounded-xl group hover:scale-105 transition-all duration-300">
               <Bell className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               Get Updates
             </button>

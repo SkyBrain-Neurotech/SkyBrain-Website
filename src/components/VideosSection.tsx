@@ -45,8 +45,8 @@ const VideosSection = () => {
     },
     {
       id: "yew_NZSqVZw",
-      title: "BCI Gaming Demo",
-      description: "Mind-controlled gaming demonstration using EEG signals to control game mechanics and cognitive state monitoring.",
+      title: "BCI Gaming Neurofeedback",
+      description: "Mind-controlled gaming demonstration using EEG signals to showcase gamified neurofeedback.",
       thumbnail: "https://img.youtube.com/vi/yew_NZSqVZw/maxresdefault.jpg"
     },
     {
@@ -83,9 +83,8 @@ const VideosSection = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-neural-gray max-w-4xl mx-auto leading-relaxed">
-            Watch live demonstrations of our Brain-Computer Interface technology in real-world applications.
+            Watch live demonstrations of our neurotechnology in real-world scenarios from mind-controlled interactions to cognitive-state monitoring.
             <br className="hidden md:block" />
-            <span className="text-neural-blue font-semibold">Real demos showcasing the power of neurotechnology.</span>
           </p>
         </div>
 
@@ -135,7 +134,7 @@ const VideosSection = () => {
                       Live Demo
                     </div>
                     <div className="px-2 md:px-3 py-1 bg-black/70 backdrop-blur-sm rounded-full text-white text-xs font-semibold">
-                      HD
+                      1080p
                     </div>
                   </div>
                 </div>
@@ -182,15 +181,17 @@ const VideosSection = () => {
           <p className="text-lg md:text-xl text-neural-gray mb-6 md:mb-8 max-w-2xl mx-auto">
             Subscribe to our channel for the latest technology demos and live showcases of BCI innovations.
           </p>
-          <a 
-            href="https://youtube.com/@skybrain" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="glass-button text-lg md:text-2xl flex items-center mx-auto group hover:scale-105 transition-transform px-6 md:px-8 py-3 md:py-4 text-neural-blue"
-          >
-            <Youtube className="mr-3 md:mr-4 h-6 w-6 md:h-8 md:w-8 group-hover:scale-125 transition-transform" />
-            Subscribe to Channel
-          </a>
+          <div className="flex justify-center">
+            <a 
+              href="https://youtube.com/@skybrainneurotech" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="glass-button text-lg md:text-2xl inline-flex items-center group hover:scale-105 transition-transform px-6 md:px-8 py-3 md:py-4 text-neural-blue"
+            >
+              <Youtube className="mr-3 md:mr-4 h-6 w-6 md:h-8 md:w-8 group-hover:scale-125 transition-transform" />
+              Subscribe to Channel
+            </a>
+          </div>
         </div>
       </div>
 
@@ -198,18 +199,21 @@ const VideosSection = () => {
       {isModalOpen && playingVideo && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-2 md:p-4">
           <div className="relative w-full max-w-6xl aspect-video">
-            {/* Close Button */}
-            <button
-              onClick={closeModal}
-              className="absolute -top-8 md:-top-12 right-0 text-white hover:text-neural-blue transition-colors z-10"
-            >
-              <X className="h-6 w-6 md:h-8 md:w-8" />
-            </button>
+            {/* Close Button - More prominent */}
+            <div className="absolute -top-12 md:-top-16 right-0 z-10">
+              <button
+                onClick={closeModal}
+                className="glass-card px-4 py-2 rounded-xl text-white hover:text-neural-blue transition-all duration-300 border border-white/30 hover:border-neural-blue/50 flex items-center space-x-2 backdrop-blur-sm"
+              >
+                <span className="text-sm font-semibold">Close Video</span>
+                <X className="h-4 w-4" />
+              </button>
+            </div>
             
-            {/* Embedded Video Player with Loop */}
+            {/* Embedded Video Player with Sound and Quality */}
             <div className="w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
               <iframe
-                src={`https://www.youtube.com/embed/${playingVideo}?autoplay=1&loop=1&playlist=${playingVideo}&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&disablekb=1&mute=1&start=0&end=0&enablejsapi=1&origin=${window.location.origin}`}
+                src={`https://www.youtube.com/embed/${playingVideo}?autoplay=1&controls=1&modestbranding=1&rel=0&showinfo=1&fs=1&cc_load_policy=1&iv_load_policy=3&mute=0&quality=hd1080&vq=hd1080&hd=1&enablejsapi=1&origin=${window.location.origin}`}
                 title={videos.find(v => v.id === playingVideo)?.title || "Video Player"}
                 className="w-full h-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -217,8 +221,7 @@ const VideosSection = () => {
                 loading="lazy"
                 style={{
                   border: 'none',
-                  outline: 'none',
-                  pointerEvents: 'none'
+                  outline: 'none'
                 }}
               />
             </div>

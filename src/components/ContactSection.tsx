@@ -74,7 +74,7 @@ const ContactSection = () => {
         {/* Enhanced Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center space-x-2 glass-card rounded-full px-6 py-3 mb-8">
-            <Brain className="h-5 w-5 text-neural-blue animate-pulse" />
+            <Brain className="h-5 w-5 text-neural-blue home-sync-group sync-stagger-1" />
             <span className="text-sm font-semibold text-neural-blue tracking-wide uppercase">Get Involved</span>
           </div>
 
@@ -224,7 +224,7 @@ const ContactSection = () => {
             <Card className="glass-card border-neural-blue/40 bg-gradient-to-br from-neural-blue/10 to-mind-purple/10 holographic">
               <CardContent className="p-10 text-center">
                 <div className="relative mb-6">
-                  <Brain className="h-16 w-16 text-neural-blue mx-auto animate-pulse floating" />
+                  <Brain className="h-16 w-16 text-neural-blue mx-auto contact-brain-sync" />
                   <div className="absolute inset-0 h-16 w-16 bg-neural-blue/20 rounded-full blur-xl mx-auto"></div>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-ghost-white font-orbitron">

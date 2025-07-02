@@ -58,6 +58,7 @@ const AdvancedNeuralLightning = () => {
   const explosionsRef = useRef<ExplosionEffect[]>([]);
   const lastInteractionRef = useRef<number>(0);
   const [brainActivity, setBrainActivity] = useState(0.1);
+  const brainActivityRef = useRef<number>(0.1);
 
   // Create realistic brain-like node distribution with full page coverage
   const createBrainNodes = useCallback((width: number, height: number) => {
@@ -327,11 +328,9 @@ const AdvancedNeuralLightning = () => {
         setIsInteracting(false);
       }
 
-      // Dynamic brain activity
-      setBrainActivity(prev => {
-        const target = isInteracting ? 0.3 : 0.1;
-        return prev + (target - prev) * 0.05;
-      });
+      // Dynamic brain activity using ref to avoid state updates in animation loop
+      const target = isInteracting ? 0.3 : 0.1;
+      brainActivityRef.current = brainActivityRef.current + (target - brainActivityRef.current) * 0.05;
 
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
@@ -424,7 +423,7 @@ const AdvancedNeuralLightning = () => {
       // Update nodes
       nodesRef.current.forEach((node, idx) => {
         // Natural charge buildup based on brain activity
-        node.charge += brainActivity * (0.015 + Math.random() * 0.025);
+        node.charge += brainActivityRef.current * (0.015 + Math.random() * 0.025);
         
         // Fire when charged
         if (node.charge >= node.maxCharge && !node.isActive && now - node.lastFired > 200) {
@@ -551,7 +550,7 @@ const AdvancedNeuralLightning = () => {
       });
 
       // Very subtle brain activity with wave patterns
-      if (Math.random() < brainActivity * 0.3) { // Extremely infrequent firing
+      if (Math.random() < brainActivityRef.current * 0.3) { // Extremely infrequent firing
         const randomNode = Math.floor(Math.random() * nodesRef.current.length);
         nodesRef.current[randomNode].charge += 0.2;
         
@@ -603,7 +602,7 @@ const AdvancedNeuralLightning = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [createBrainNodes, handleMouseMove, handleMouseLeave, createLightningBolt, isInteracting, brainActivity]);
+  }, [createBrainNodes, handleMouseMove, handleMouseLeave, createLightningBolt, isInteracting]);
 
   return (
     <canvas

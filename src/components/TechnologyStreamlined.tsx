@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Brain, Zap, Activity, Target, Users, Shield, Waves, TrendingUp, Eye, Heart, MonitorSpeaker, Cpu, ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import { Brain, Zap, Activity, Target, Users, Shield, Waves, TrendingUp, Eye, Heart, MonitorSpeaker, Cpu, ChevronLeft, ChevronRight, Play, Pause, Headphones } from 'lucide-react';
 
 const TechnologyStreamlined = () => {
   const [activeFreq, setActiveFreq] = useState(10.2);
   const [activeStep, setActiveStep] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [isAutoPlay, setIsAutoPlay] = useState(false);
 
   // Comprehensive EEG Mapping Process
   const eegSteps = [
@@ -67,7 +67,7 @@ const TechnologyStreamlined = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-deep-space via-shadow-black to-neural-blue/5"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -79,15 +79,15 @@ const TechnologyStreamlined = () => {
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight tracking-tight">
               <span className="text-ghost-white">EEG Neural</span>{' '}
-              <span className="text-neural-blue font-orbitron neural-glow text-5xl md:text-7xl lg:text-8xl block relative">
+              <span className="text-neural-blue font-orbitron neural-glow text-4xl md:text-6xl lg:text-7xl block relative">
                 Mapping
                 <div className="absolute inset-0 bg-neural-blue/20 blur-xl rounded-2xl animate-pulse"></div>
               </span>
             </h1>
             
-            <p className="text-xl text-neural-gray max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-lg md:text-xl text-neural-gray max-w-4xl mx-auto leading-relaxed mb-12">
               We map your complete EEG signature across all cognitive states - from focus and creativity to stress and relaxation. 
               This comprehensive neural profile enables personalized optimization for peak mental performance.
             </p>
@@ -177,6 +177,118 @@ const TechnologyStreamlined = () => {
         </div>
       </section>
 
+      {/* Wearable Devices Section */}
+      <section className="py-16 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight tracking-tight font-orbitron">
+              <span className="text-ghost-white">Our</span>{' '}
+              <span className="text-neural-blue neural-glow">Wearable Devices</span>
+            </h2>
+            <p className="text-lg md:text-xl text-neural-gray max-w-4xl mx-auto leading-relaxed">
+              Choose from our range of comfortable, advanced EEG wearables designed for different use cases and preferences.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Headband Variant */}
+            <div className="glass-card p-8 rounded-2xl border border-neural-blue/30 hover:border-neural-blue/50 transition-all duration-300 group">
+              <div className="text-center mb-8">
+                <div className="p-6 bg-neural-blue/20 rounded-2xl mx-auto w-fit mb-6 group-hover:bg-neural-blue/30 transition-colors">
+                  <Brain className="h-16 w-16 text-neural-blue group-hover:scale-110 transition-transform" />
+                </div>
+                <h3 className="text-2xl font-bold text-ghost-white mb-4 font-orbitron">
+                  Headband Variant
+                </h3>
+                <p className="text-neural-blue font-semibold mb-4">Professional EEG Headband</p>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
+                  <span className="text-neural-gray">Lightweight, comfortable design for extended wear</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
+                  <span className="text-neural-gray">4-channel medical-grade EEG sensors</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
+                  <span className="text-neural-gray">Adjustable fit for all head sizes</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
+                  <span className="text-neural-gray">Perfect for meditation and focus training</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
+                  <span className="text-neural-gray">Long battery life (8+ hours)</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Headphone Variant */}
+            <div className="glass-card p-8 rounded-2xl border border-mind-purple/30 hover:border-mind-purple/50 transition-all duration-300 group">
+              <div className="text-center mb-8">
+                <div className="p-6 bg-mind-purple/20 rounded-2xl mx-auto w-fit mb-6 group-hover:bg-mind-purple/30 transition-colors">
+                  <Headphones className="h-16 w-16 text-mind-purple group-hover:scale-110 transition-transform" />
+                </div>
+                <h3 className="text-2xl font-bold text-ghost-white mb-4 font-orbitron">
+                  Headphone Variant
+                </h3>
+                <p className="text-mind-purple font-semibold mb-4">All-in-One Neural Headphones</p>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-mind-purple rounded-full"></div>
+                  <span className="text-neural-gray">Premium audio quality with EEG integration</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-mind-purple rounded-full"></div>
+                  <span className="text-neural-gray">Built-in EEG sensors in ear cups</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-mind-purple rounded-full"></div>
+                  <span className="text-neural-gray">Active noise cancellation</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-mind-purple rounded-full"></div>
+                  <span className="text-neural-gray">Real-time binaural audio adaptation</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-mind-purple rounded-full"></div>
+                  <span className="text-neural-gray">Wireless connectivity and charging case</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Features */}
+          <div className="mt-16 text-center">
+            <div className="glass-card p-8 rounded-2xl border border-neural-blue/20 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-ghost-white mb-6 font-orbitron">
+                Both Variants Include
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-neural-blue font-bold text-lg mb-2">Real-Time Processing</div>
+                  <p className="text-neural-gray text-sm">Instant neural signal analysis</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-mind-purple font-bold text-lg mb-2">Wireless Connectivity</div>
+                  <p className="text-neural-gray text-sm">Seamless device pairing</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-neural-blue font-bold text-lg mb-2">App Integration</div>
+                  <p className="text-neural-gray text-sm">Complete mobile control</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Interactive EEG Process */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -230,8 +342,8 @@ const TechnologyStreamlined = () => {
               </div>
 
               {/* Current Step Display */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[400px]">
-                <div className="text-center lg:text-left">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[350px] md:min-h-[400px]">
+                <div className="text-center lg:text-left order-2 lg:order-1">
                   <div className="flex items-center justify-center lg:justify-start mb-6">
                     <div className={`p-4 bg-${eegSteps[activeStep].color}/20 rounded-2xl`}>
                       {React.createElement(eegSteps[activeStep].visual, {
@@ -240,21 +352,21 @@ const TechnologyStreamlined = () => {
                     </div>
                   </div>
                   
-                  <h3 className="text-3xl font-bold text-ghost-white mb-4 font-orbitron">
+                  <h3 className="text-2xl md:text-3xl font-bold text-ghost-white mb-4 font-orbitron">
                     {eegSteps[activeStep].title}
                   </h3>
                   
-                  <p className="text-lg text-neural-blue mb-6 font-semibold">
+                  <p className="text-base md:text-lg text-neural-blue mb-6 font-semibold">
                     {eegSteps[activeStep].description}
                   </p>
                   
-                  <p className="text-neural-gray leading-relaxed text-lg">
+                  <p className="text-neural-gray leading-relaxed text-base md:text-lg">
                     {eegSteps[activeStep].content}
                   </p>
                 </div>
 
-                <div className="relative">
-                  <div className="glass-card p-8 rounded-2xl border border-neural-blue/30">
+                <div className="relative order-1 lg:order-2">
+                  <div className="glass-card p-6 md:p-8 rounded-2xl border border-neural-blue/30">
                     {/* Enhanced visualizations for each step */}
                     {activeStep === 0 && (
                       <div className="text-center space-y-6">
@@ -449,7 +561,7 @@ const TechnologyStreamlined = () => {
                 </h2>
               </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {[
                 { 
                   icon: Eye, 

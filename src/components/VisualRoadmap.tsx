@@ -48,12 +48,12 @@ const VisualRoadmap = () => {
       subtitle: 'Core BCI Technology',
       status: 'in-progress',
       progress: 85,
-      timeline: 'Q1-Q2 2025',
+      timeline: 'Q1 2025',
       icon: Brain,
       color: 'blue',
       milestones: [
         { title: 'EEG Signal Processing', status: 'done', visual: Zap },
-        { title: 'Hardware Integration', status: 'done', visual: Cpu },
+        { title: 'Commercial Hardware Integration', status: 'done', visual: Cpu },
         { title: 'Pattern Recognition', status: 'active', visual: Target },
         { title: 'Real-time Processing', status: 'active', visual: Clock },
         { title: 'Signal Optimization', status: 'pending', visual: Zap }
@@ -137,7 +137,7 @@ const VisualRoadmap = () => {
       icon: Users,
       color: 'orange',
       milestones: [
-        { title: 'IRB Approval', status: 'pending', visual: Award },
+        { title: 'India & UAE Market Approvals', status: 'pending', visual: Award },
         { title: 'Trial Design', status: 'pending', visual: Target },
         { title: 'Participant Recruitment', status: 'pending', visual: Users },
         { title: 'Data Collection', status: 'pending', visual: Brain },
@@ -176,7 +176,7 @@ const VisualRoadmap = () => {
         { title: 'Manufacturing Scale-up', status: 'pending', visual: Cpu },
         { title: 'Regulatory Approval', status: 'pending', visual: Award },
         { title: 'Beta Testing Program', status: 'pending', visual: Users },
-        { title: 'Global Market Release', status: 'pending', visual: Globe },
+        { title: 'India & UAE Market Launch', status: 'pending', visual: Globe },
         { title: 'Customer Support Setup', status: 'pending', visual: Heart }
       ],
     },
@@ -215,18 +215,7 @@ const VisualRoadmap = () => {
     }
   };
 
-  // Auto-cycle through phases
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActivePhase(prev => {
-        const currentIndex = phases.findIndex(p => p.id === prev);
-        const nextIndex = (currentIndex + 1) % phases.length;
-        return phases[nextIndex].id;
-      });
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [phases]);
+  // Removed auto-cycling - now manual only
 
   const activePhaseData = phases.find(p => p.id === activePhase);
 

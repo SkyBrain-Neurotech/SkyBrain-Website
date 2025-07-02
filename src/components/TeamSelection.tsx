@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Brain, Users, Award, BookOpen, Shield, Stethoscope, GraduationCap, Zap, User, Crown, Star } from 'lucide-react';
+import { Brain, Users, Award, BookOpen, Shield, Stethoscope, GraduationCap, Zap, User, Crown, Star, X } from 'lucide-react';
 
 interface TeamMember {
   id: string;
@@ -26,10 +26,11 @@ const TeamSelection = () => {
       name: 'Rakesh Jakati',
       role: 'Founder & CEO',
       category: 'Leadership',
-      avatar: '/api/placeholder/400/400',
-      bio: 'Visionary leader driving the future of neurotechnology and mental wellness through Brain-Computer Interface innovations. Leading breakthrough research in BCI applications and cognitive enhancement systems.',
+      avatar: '/images/team/founder-ceo.png',
+      bio: 'Visionary leader driving the future of neurotechnology and mental wellness through Brain-Computer Interface innovations. Leading breakthrough R&D in BCI applications and cognitive enhancement systems.',
       expertise: ['Neurotechnology', 'R&D', 'Strategy', 'Leadership', 'Blockchain'],
       status: 'founder',
+      education: 'Specialization in Neurotechnology & Healthcare',
       experience: '7+ years in neurotechnology and BCI research'
     },
     {
@@ -37,11 +38,11 @@ const TeamSelection = () => {
       name: 'Dr. Bhaskar Tripathi',
       role: 'AI Advisor',
       category: 'Advisory',
-      avatar: '/api/placeholder/400/400',
+      avatar: '/images/team/ai-advisor.png',
       bio: 'Leading AI expert guiding our AI initiatives and neural pattern recognition systems. Pioneer in deep learning applications for brain-computer interfaces.',
       expertise: ['Artificial Intelligence', 'Machine Learning', 'Neural Networks', 'Deep Learning', 'Pattern Recognition'],
       status: 'advisor',
-      education: 'Ph.D. in Computational and Mathematical Finance, Specialization in AI',
+      education: 'Ph.D. in Computational and Mathematical Finance',
       experience: '15+ years in AI research and development'
     },
     {
@@ -49,7 +50,7 @@ const TeamSelection = () => {
       name: 'Dr. Ganesh R Naik',
       role: 'Neurotech Advisor',
       category: 'Advisory',
-      avatar: '/api/placeholder/400/400',
+      avatar: '/images/team/neurotech-advisor.png',
       bio: 'Top 2% of researchers worldwide in Biomedical Engineering. Neurotechnology pioneer with decades of BCI experience and groundbreaking research in neural interfaces.',
       expertise: ['Wearables & Algorithims', 'Neuroscience', 'Signal Processing', 'Sleep Research', 'Biomedical Devices'],
       status: 'advisor',
@@ -59,90 +60,40 @@ const TeamSelection = () => {
     // Research Team
     {
       id: 'research-scientist-1',
-      name: 'Dr. Sarah Chen',
-      role: 'Senior Research Scientist',
+      name: 'Aranyak Banerjee',
+      role: 'Research Scientist',
       category: 'Research',
-      avatar: '/api/placeholder/400/400',
+      avatar: '/images/team/research-scientist-1.png',
       bio: 'Advanced research in neural signal processing and cognitive enhancement methodologies. Leading our EEG analysis and real-time processing initiatives.',
       expertise: ['Neuroscience', 'Signal Processing', 'Cognitive Science', 'EEG Analysis', 'Data Science'],
-      status: 'coming-soon',
-      education: 'Ph.D. in Neuroscience, M.S. in Electrical Engineering',
-      experience: '12+ years in neural signal processing'
+      status: 'team',
+      education: 'Ph.D. Scholar Brain Computer Interfaces',
+      experience: '5+ years in neural signal processing'
     },
     {
       id: 'research-scientist-2',
-      name: 'Dr. Michael Rodriguez',
+      name: '?',
       role: 'Research Scientist',
       category: 'Research',
-      avatar: '/api/placeholder/400/400',
+      avatar: '/images/team/research-scientist-2.png',
       bio: 'Specializing in real-time neural data analysis and pattern recognition algorithms. Expert in machine learning applications for BCI systems.',
       expertise: ['Data Analysis', 'Pattern Recognition', 'Neural Networks', 'Real-time Processing', 'Algorithm Development'],
       status: 'coming-soon',
-      education: 'Ph.D. in Computer Science, M.S. in Statistics',
-      experience: '10+ years in data science and neural computing'
+      education: 'Ph.D. in ',
+      experience: '5+ years'
     },
     // Technology Team
     {
       id: 'blockchain-expert',
-      name: 'Dr. Alex Kumar',
-      role: 'Blockchain & Security Lead',
-      category: 'Technology',
-      avatar: '/api/placeholder/400/400',
+      name: '?',
+      role: 'Research Scientist',
+      category: 'Research',
+      avatar: '/images/team/blockchain-expert.png',
       bio: 'Ensuring secure, decentralized neural data management and privacy-preserving BCI systems. Expert in cryptographic protocols for healthcare data.',
       expertise: ['Blockchain', 'Cryptography', 'Security', 'Decentralized Systems', 'Data Privacy'],
       status: 'coming-soon',
-      education: 'Ph.D. in Cryptography, M.S. in Computer Science',
-      experience: '8+ years in blockchain and security systems'
-    },
-    // Medical Advisors
-    {
-      id: 'doctor-advisor-1',
-      name: 'Dr. Emily Johnson',
-      role: 'Clinical Advisor',
-      category: 'Medical',
-      avatar: '/api/placeholder/400/400',
-      bio: 'Clinical expertise in neurology and mental health applications of BCI technology. Board-certified neurologist with extensive research background.',
-      expertise: ['Neurology', 'Clinical Research', 'Mental Health', 'Medical Ethics', 'Patient Care'],
-      status: 'coming-soon',
-      education: 'M.D., Ph.D. in Neuroscience',
-      experience: '18+ years in clinical neurology and research'
-    },
-    {
-      id: 'doctor-advisor-2',
-      name: 'Dr. James Wilson',
-      role: 'Medical Advisor',
-      category: 'Medical',
-      avatar: '/api/placeholder/400/400',
-      bio: 'Bridging neurotechnology with clinical practice and patient care applications. Specialist in neuropsychiatry and brain disorders.',
-      expertise: ['Medicine', 'Neuroscience', 'Healthcare', 'Patient Care', 'Neuropsychiatry'],
-      status: 'coming-soon',
-      education: 'M.D., Residency in Psychiatry and Neurology',
-      experience: '15+ years in medical practice and research'
-    },
-    // Academic Researchers
-    {
-      id: 'academic-researcher-1',
-      name: 'Dr. Maria Gonzalez',
-      role: 'Principal Researcher',
-      category: 'Academia',
-      avatar: '/api/placeholder/400/400',
-      bio: 'Leading academic research in brain-computer interfaces and publishing breakthrough studies. Professor at leading research university.',
-      expertise: ['Academic Research', 'Publications', 'BCI Theory', 'Scientific Writing', 'Grant Writing'],
-      status: 'coming-soon',
-      education: 'Ph.D. in Neuroscience, Postdoc in BCI Research',
-      experience: '14+ years in academic research and teaching'
-    },
-    {
-      id: 'academic-researcher-2',
-      name: 'Dr. David Park',
-      role: 'Research Fellow',
-      category: 'Academia',
-      avatar: '/api/placeholder/400/400',
-      bio: 'Advancing the theoretical foundations of neurotechnology and cognitive enhancement. Rising star in computational neuroscience.',
-      expertise: ['Research', 'Theory', 'Innovation', 'Cognitive Science', 'Computational Modeling'],
-      status: 'coming-soon',
-      education: 'Ph.D. in Computational Neuroscience',
-      experience: '6+ years in theoretical neuroscience research'
+      education: 'Ph.D. in',
+      experience: '5+ years'
     }
   ];
 
@@ -179,7 +130,7 @@ const TeamSelection = () => {
   };
 
   return (
-    <section className="pt-32 pb-20 relative overflow-hidden min-h-screen">
+    <section className="pt-24 md:pt-32 pb-20 relative overflow-hidden min-h-screen">
       {/* Epic Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-deep-space via-shadow-black to-neural-blue/5"></div>
@@ -228,7 +179,7 @@ const TeamSelection = () => {
         </div>
 
         {/* Team Grid - Professional Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => {
             const IconComponent = getCategoryIcon(member.category);
             const isHovered = hoveredMember === member.id;
@@ -248,7 +199,7 @@ const TeamSelection = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Professional Team Card */}
-                <div className={`glass-card p-8 rounded-2xl border-2 transition-all duration-300 ${
+                <div className={`glass-card p-10 rounded-2xl border-2 transition-all duration-300 ${
                   isHovered 
                     ? 'border-neural-blue shadow-lg shadow-neural-blue/30' 
                     : member.status === 'coming-soon' 
@@ -265,7 +216,7 @@ const TeamSelection = () => {
                   
                   {/* Professional Photo */}
                   <div className="relative mb-6">
-                    <div className={`w-40 h-40 mx-auto rounded-2xl border-4 transition-all duration-300 ${
+                    <div className={`w-48 h-48 mx-auto rounded-2xl border-4 transition-all duration-300 ${
                       member.status === 'coming-soon' 
                         ? 'border-neural-gray/50' 
                         : 'border-neural-blue hover:border-neural-blue/80'
@@ -367,13 +318,16 @@ const TeamSelection = () => {
       {showModal && selectedMember && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="glass-modal p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            {/* Close Button */}
-            <button
-              onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-neural-gray hover:text-neural-blue transition-colors"
-            >
-              ✕
-            </button>
+            {/* Close Button - Better positioned */}
+            <div className="flex justify-end mb-4">
+              <button
+                onClick={() => setShowModal(false)}
+                className="glass-card px-4 py-2 rounded-xl text-neural-gray hover:text-neural-blue transition-all duration-300 border border-neural-gray/30 hover:border-neural-blue/50 flex items-center space-x-2"
+              >
+                <span className="text-sm font-semibold">Close</span>
+                <X className="h-4 w-4" />
+              </button>
+            </div>
             
             {/* Professional Profile */}
             <div className="text-center mb-8">

@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Roadmap from "./pages/Roadmap";
 import Team from "./pages/Team";
 import BetaSignup from "./pages/BetaSignup";
+import Blockchain from "./pages/Blockchain";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/applications" element={<Applications />} />
             <Route path="/research" element={<Research />} />
             <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/blockchain" element={<Blockchain />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />

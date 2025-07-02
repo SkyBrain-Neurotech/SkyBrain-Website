@@ -27,7 +27,7 @@ const VisionHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0"
              style={{ background: 'transparent' }}>
 
       {/* Main Content */}

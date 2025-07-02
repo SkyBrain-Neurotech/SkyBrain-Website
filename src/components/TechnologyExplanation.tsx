@@ -242,8 +242,7 @@ const TechnologyExplanation = () => {
                   2. Pattern Recognition
                 </h3>
                 <p className="text-neural-gray leading-relaxed">
-                  AI algorithms identify your unique alpha peak frequency (iAPF) and optimal cognitive patterns. 
-                  This baseline represents your brain's peak performance state.
+                  AI algorithms identify your unique neural patterns and optimal cognitive patterns.
                 </p>
               </div>
 

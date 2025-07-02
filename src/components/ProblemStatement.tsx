@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { AlertTriangle, Clock, Users, TrendingDown, Frown, Brain, Sparkles, ArrowRight } from 'lucide-react';
+import { AlertTriangle, Clock, Users, TrendingDown, Frown, Brain } from 'lucide-react';
 
 const ProblemStatement = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -193,116 +193,6 @@ const ProblemStatement = () => {
           ))}
         </div>
 
-        {/* Enhanced Gap Visualization */}
-        <div className="glass-card rounded-3xl p-16 relative overflow-hidden border border-neural-blue/20">
-          <div className="absolute inset-0 bg-gradient-to-br from-neural-blue/5 to-mind-purple/5"></div>
-          
-          <div className="relative z-10">
-            <h3 className="text-5xl font-black mb-16 text-center text-ghost-white font-orbitron">
-              Bridging the Mental Health Gap
-            </h3>
-            
-            {/* Professional Before/After Comparison */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-              
-              {/* Current State */}
-              <div className="text-center group">
-                <div className="relative mb-8">
-                  <div className="glass-card p-12 border border-red-400/30 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-2xl">
-                    <div className="grid grid-cols-2 gap-6">
-                      <div className="space-y-4">
-                        <div className="h-8 bg-red-400/30 rounded animate-pulse"></div>
-                        <div className="h-4 bg-red-400/20 rounded"></div>
-                        <div className="h-4 bg-red-400/20 rounded w-2/3"></div>
-                      </div>
-                      <div className="space-y-4">
-                        <div className="h-6 bg-red-400/20 rounded"></div>
-                        <div className="h-4 bg-red-400/20 rounded"></div>
-                        <div className="h-4 bg-red-400/20 rounded w-3/4"></div>
-                      </div>
-                    </div>
-                    <div className="mt-6 flex justify-center">
-                      <AlertTriangle className="h-16 w-16 text-red-400" />
-                    </div>
-                  </div>
-                </div>
-                <h4 className="text-2xl font-bold text-red-400 mb-4 font-orbitron">Traditional Mental Health</h4>
-                <div className="space-y-2 text-neural-gray">
-                  <p>✗ Reactive after problems occur</p>
-                  <p>✗ One-size-fits-all approaches</p>
-                  <p>✗ Limited real-time insights</p>
-                  <p>✗ Subjective assessment only</p>
-                </div>
-              </div>
-
-              {/* The Bridge */}
-              <div className="flex flex-col items-center space-y-6">
-                <div className="relative">
-                  <div className="w-24 h-24 bg-gradient-to-br from-neural-blue to-mind-purple rounded-full flex items-center justify-center">
-                    <Brain className="h-12 w-12 text-white" />
-                  </div>
-                  <div className="absolute inset-0 bg-neural-blue/30 rounded-full blur-xl animate-pulse"></div>
-                </div>
-                <div className="text-center">
-                  <h5 className="text-xl font-bold text-neural-blue font-orbitron mb-2">Neural Bridge</h5>
-                  <p className="text-neural-gray">Brain-Computer Interface Technology</p>
-                </div>
-                <ArrowRight className="h-8 w-8 text-neural-blue lg:hidden" />
-              </div>
-
-              {/* Future State */}
-              <div className="text-center group">
-                <div className="relative mb-8">
-                  <div className="glass-card p-12 border border-neural-blue/30 bg-gradient-to-br from-neural-blue/10 to-mind-purple/10 rounded-2xl">
-                    <div className="grid grid-cols-2 gap-6">
-                      <div className="space-y-4">
-                        <div className="h-8 bg-neural-blue/50 rounded"></div>
-                        <div className="h-4 bg-neural-blue/30 rounded"></div>
-                        <div className="h-4 bg-neural-blue/30 rounded w-2/3"></div>
-                      </div>
-                      <div className="space-y-4">
-                        <div className="h-6 bg-mind-purple/40 rounded"></div>
-                        <div className="h-4 bg-mind-purple/30 rounded"></div>
-                        <div className="h-4 bg-mind-purple/30 rounded w-3/4"></div>
-                      </div>
-                    </div>
-                    <div className="mt-6 flex justify-center relative">
-                      <Brain className="h-16 w-16 text-neural-blue" />
-                      <Sparkles className="h-6 w-6 text-mind-purple absolute -top-1 -right-1 animate-pulse" />
-                    </div>
-                  </div>
-                </div>
-                <h4 className="text-2xl font-bold text-neural-blue mb-4 font-orbitron">SkyBrain Neurotech</h4>
-                <div className="space-y-2 text-neural-gray">
-                  <p>✓ Proactive mental wellness</p>
-                  <p>✓ Personalized to your brain</p>
-                  <p>✓ Real-time neural feedback</p>
-                  <p>✓ Objective brain measurements</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Professional Stats */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-neural-blue/20">
-              <div className="text-center">
-                <div className="text-3xl font-black text-neural-blue mb-2">70%</div>
-                <p className="text-neural-gray text-sm">of mental health issues go undetected</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-mind-purple mb-2">6 months</div>
-                <p className="text-neural-gray text-sm">average wait for professional help</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-neural-blue mb-2">1 in 4</div>
-                <p className="text-neural-gray text-sm">people affected by mental health issues</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-mind-purple mb-2">Real-time</div>
-                <p className="text-neural-gray text-sm">neural feedback with BCI technology</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

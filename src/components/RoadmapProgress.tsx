@@ -23,7 +23,7 @@ const RoadmapProgress = () => {
       description: "Develop the fundamental brain-computer interface hardware and signal processing algorithms",
       status: "completed",
       phase: "Foundation",
-      timeline: "Q1-Q2 2024",
+      timeline: "Q1 2024",
       progress: 100,
       updates: [
         "✅ EEG signal acquisition system completed",

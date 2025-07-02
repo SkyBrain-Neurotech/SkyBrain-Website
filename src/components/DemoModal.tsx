@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { X, ExternalLink, Play, BarChart3, Brain, Zap, ArrowRight, Smartphone, Download, Upload } from 'lucide-react';
+import { X, ExternalLink, Play, BarChart3, Brain, Zap, ArrowRight, Smartphone, Download, Upload, Calendar } from 'lucide-react';
+import DemoForm from './DemoForm';
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -8,7 +9,7 @@ interface DemoModalProps {
 }
 
 const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
-  const [demoStep, setDemoStep] = useState<'intro' | 'loading' | 'redirect'>('intro');
+  const [demoStep, setDemoStep] = useState<'intro' | 'loading' | 'redirect' | 'form'>('intro');
 
   useEffect(() => {
     if (isOpen) {
@@ -88,7 +89,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
               {/* Header */}
               <div className="text-center mb-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-neural-blue/30 to-mind-purple/30 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Brain className="h-12 w-12 text-neural-blue neural-pulse" />
+                  <Brain className="h-12 w-12 text-neural-blue demo-brain-sync" />
                 </div>
                 
                 <h2 className="text-3xl font-bold text-ghost-white mb-4 font-orbitron">
@@ -113,16 +114,14 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                       <strong>Supported Devices:</strong>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-xs text-neural-gray">
-                      <div>• Muse S/2</div>
+                      <div>• SkyBrain</div>
+                      <div>• Muse</div>
                       <div>• OpenBCI</div>
-                      <div>• NeuroSky</div>
-                      <div>• Emotiv EPOC+</div>
-                      <div>• g.tec g.Nautilus</div>
-                      <div>• ANT Neuro</div>
+                      <div>• PiEEG</div>
                     </div>
                   </div>
                   <p className="text-sm text-neural-gray mb-4">
-                    Use our data collection app to record your EEG and get personalized analysis reports.
+                    Use our data collection app to record your EEG and upload to get personalized analysis reports.
                   </p>
                 </div>
 
@@ -137,7 +136,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                   </p>
                   <div className="space-y-2 text-xs text-neural-gray">
                     <div>• Pre-recorded meditation sessions</div>
-                    <div>• Focus training datasets</div>
+                    <div>• Focus training sessions</div>
                     <div>• Stress response patterns</div>
                     <div>• Sleep state analysis</div>
                   </div>
@@ -153,7 +152,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 <ul className="space-y-2 text-neural-gray">
                   <li className="flex items-center space-x-2">
                     <div className="w-1.5 h-1.5 bg-neural-blue rounded-full"></div>
-                    <span>Upload your EEG data or download our sample CSV files</span>
+                    <span>Upload your EEG data or use our sample data files</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-1.5 h-1.5 bg-neural-blue rounded-full"></div>
@@ -165,20 +164,29 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-1.5 h-1.5 bg-neural-blue rounded-full"></div>
-                    <span>Download detailed analysis and wellness recommendations</span>
+                    <span>Download detailed analysis into cognitive states and asymmetry </span>
                   </li>
                 </ul>
               </div>
 
-              {/* Action Button */}
-              <div className="flex justify-center">
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   onClick={handleStartDemo}
                   className="cyber-button text-deep-space font-bold py-4 px-8 text-lg group"
                 >
                   <Upload className="mr-2 h-5 w-5" />
-                  Demo Analysis Platform
+                  Try Analysis Platform
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                </Button>
+                
+                <Button
+                  onClick={() => setDemoStep('form')}
+                  variant="outline"
+                  className="glass-card border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold py-4 px-8 text-lg group"
+                >
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Book Live Demo
                 </Button>
               </div>
 
@@ -210,9 +218,18 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
               
-              <p className="text-neural-gray">
+              <p className="text-neural-gray mb-6">
                 Opening SkyBrain analysis platform in a new tab...
               </p>
+              
+              {/* Cancel/Close Button */}
+              <Button
+                onClick={onClose}
+                variant="outline"
+                className="glass-card border-neural-gray/40 text-neural-gray hover:bg-neural-gray/10 font-bold px-6 py-2"
+              >
+                Cancel
+              </Button>
             </div>
           )}
 
@@ -230,12 +247,47 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
                 The analysis platform has opened in a new tab. Upload your EEG data or use our sample files to generate your first wellness report.
               </p>
               
-              <Button
-                onClick={onClose}
-                className="cyber-button text-deep-space font-bold px-8 py-3"
-              >
-                Continue Exploring
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  onClick={() => window.open('https://demo.skybrain.in/', '_blank')}
+                  className="cyber-button text-deep-space font-bold px-8 py-3"
+                >
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  Open Platform Again
+                </Button>
+                
+                <Button
+                  onClick={onClose}
+                  variant="outline"
+                  className="glass-card border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold px-8 py-3"
+                >
+                  Close & Continue
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {demoStep === 'form' && (
+            <div>
+              <div className="text-center mb-6">
+                <Button
+                  onClick={() => setDemoStep('intro')}
+                  variant="ghost"
+                  className="text-neural-gray hover:text-neural-blue mb-4"
+                >
+                  ← Back to Demo Options
+                </Button>
+              </div>
+              
+              <DemoForm 
+                onSuccess={() => {
+                  // Handle successful form submission
+                  setTimeout(() => {
+                    onClose();
+                  }, 3000);
+                }}
+                className="border-0 bg-transparent p-0"
+              />
             </div>
           )}
         </div>
