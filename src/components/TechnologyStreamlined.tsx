@@ -10,7 +10,7 @@ const TechnologyStreamlined = () => {
   const eegSteps = [
     {
       title: "Neural Signal Capture",
-      description: "Medical-grade EEG sensors capture your brain's electrical activity across multiple frequency bands.",
+      description: "Research-grade EEG sensors capture your brain's electrical activity across multiple frequency bands.",
       content: "Our advanced 4-channel EEG system records neural oscillations from 0.5-50Hz, capturing everything from deep delta waves to high-frequency gamma activity. This comprehensive data collection ensures we map your complete neural signature.",
       visual: Brain,
       color: "neural-blue"
@@ -209,7 +209,7 @@ const TechnologyStreamlined = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
-                  <span className="text-neural-gray">4-channel medical-grade EEG sensors</span>
+                  <span className="text-neural-gray">4-channel research-grade EEG sensors</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
@@ -309,16 +309,16 @@ const TechnologyStreamlined = () => {
               <div className="flex justify-center items-center space-x-4 mb-8">
                 <button
                   onClick={prevStep}
-                  className="glass-card p-3 sm:p-4 rounded-full hover:scale-105 transition-all duration-300 touch-manipulation"
+                  className="glass-card p-4 rounded-full hover:scale-105 transition-all duration-300 touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center"
                 >
-                  <ChevronLeft className="h-6 w-6 text-neural-blue" />
+                  <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-neural-blue" />
                 </button>
 
                 <div className="glass-card px-6 py-3 rounded-full">
                   <div className="flex items-center space-x-3">
                     <button
                       onClick={() => setIsAutoPlay(!isAutoPlay)}
-                      className="hover:scale-110 transition-transform"
+                      className="hover:scale-110 transition-transform min-h-[44px] min-w-[44px] flex items-center justify-center p-2"
                     >
                       {isAutoPlay ? (
                         <Pause className="h-5 w-5 text-neural-blue" />
@@ -334,9 +334,9 @@ const TechnologyStreamlined = () => {
 
                 <button
                   onClick={nextStep}
-                  className="glass-card p-3 sm:p-4 rounded-full hover:scale-105 transition-all duration-300 touch-manipulation"
+                  className="glass-card p-4 rounded-full hover:scale-105 transition-all duration-300 touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center"
                 >
-                  <ChevronRight className="h-6 w-6 text-neural-blue" />
+                  <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-neural-blue" />
                 </button>
               </div>
 
@@ -564,7 +564,7 @@ const TechnologyStreamlined = () => {
                 { 
                   icon: Eye, 
                   title: 'Scan', 
-                  desc: 'Advanced EEG sensors safely read your brainwaves with medical-grade precision',
+                  desc: 'Advanced EEG sensors safely read your brainwaves with research-grade precision',
                   color: 'neural-blue'
                 },
                 { 

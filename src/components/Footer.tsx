@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="space-y-3 text-sm text-neural-gray">
               <div className="flex items-center glass-container p-3 hover:bg-white/10 transition-all rounded-lg">
                 <Mail className="h-4 w-4 mr-3 text-neural-blue flex-shrink-0" />
-                <span className="text-left">contact@skybrain.in</span>
+                <span className="text-left">info@skybrain.in</span>
               </div>
               <div className="flex items-center glass-container p-3 hover:bg-white/10 transition-all rounded-lg">
                 <MapPin className="h-4 w-4 mr-3 text-neural-blue flex-shrink-0" />

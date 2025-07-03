@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { submitContactForm, validateContactForm, trackFormSubmission, FormSubmissionData } from '@/lib/formHandler';
 import { 
   Mail, 
   MapPin, 
@@ -19,10 +20,86 @@ import {
   Users,
   Code,
   Heart,
-  Zap
+  Zap,
+  CheckCircle2,
+  AlertCircle,
+  Loader2
 } from 'lucide-react';
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    interestArea: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [errors, setErrors] = useState<string[]>([]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear errors when user starts typing
+    if (errors.length > 0) {
+      setErrors([]);
+      setSubmitStatus('idle');
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrors([]);
+
+    // Validate form
+    const validation = validateContactForm(formData);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      return;
+    }
+
+    try {
+      const submissionData: FormSubmissionData = {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        source: 'website_contact_form'
+      };
+
+      const result = await submitContactForm(submissionData);
+      
+      if (result.success) {
+        setSubmitStatus('success');
+        setSubmitMessage(result.message);
+        trackFormSubmission('enhanced_form', true);
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          interestArea: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage(result.message);
+        trackFormSubmission('enhanced_form', false);
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage('An unexpected error occurred. Please try again or contact us directly at info@skybrain.in');
+      trackFormSubmission('enhanced_form', false);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const involvementOptions = [
     {
       icon: Microscope,
@@ -98,10 +175,10 @@ const ContactSection = () => {
           <h3 className="text-3xl font-bold mb-12 text-center text-ghost-white font-orbitron">
             Ways to Get Involved
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {involvementOptions.map((option, index) => (
               <Card key={option.title} className="glass-card border-neural-blue/20 hover:border-neural-blue/40 transition-all group hover:scale-105">
-                <CardContent className="p-6 text-center">
+                <CardContent className="p-4 md:p-6 text-center">
                   <div className={`p-4 bg-gradient-to-r ${option.color} bg-opacity-20 rounded-xl mx-auto w-fit mb-4`}>
                     <option.icon className="h-8 w-8 text-neural-blue group-hover:scale-110 transition-transform" />
                   </div>
@@ -123,17 +200,64 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Enhanced Contact Form */}
           <Card className="glass-card border-neural-blue/20 holographic">
-            <CardContent className="p-10">
+            <CardContent className="p-6 md:p-8 lg:p-10">
               <h3 className="text-3xl font-bold mb-8 text-ghost-white font-orbitron">Send us a Message</h3>
-              <form className="space-y-8">
+              {/* Form Status Messages */}
+              {errors.length > 0 && (
+                <div className="mb-6 p-4 bg-red-500/20 border border-red-500/40 rounded-xl">
+                  <div className="flex items-start space-x-2">
+                    <AlertCircle className="h-5 w-5 text-red-400 mt-0.5" />
+                    <div>
+                      <div className="text-red-400 font-semibold mb-1">Please fix the following errors:</div>
+                      <ul className="text-red-300 text-sm space-y-1">
+                        {errors.map((error, index) => (
+                          <li key={index}>• {error}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-500/20 border border-green-500/40 rounded-xl">
+                  <div className="flex items-start space-x-2">
+                    <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5" />
+                    <div>
+                      <div className="text-green-400 font-semibold mb-1">Message sent successfully!</div>
+                      <div className="text-green-300 text-sm">{submitMessage}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === 'error' && submitMessage && !errors.length && (
+                <div className="mb-6 p-4 bg-yellow-500/20 border border-yellow-500/40 rounded-xl">
+                  <div className="flex items-start space-x-2">
+                    <AlertCircle className="h-5 w-5 text-yellow-400 mt-0.5" />
+                    <div>
+                      <div className="text-yellow-400 font-semibold mb-1">Submission Notice</div>
+                      <div className="text-yellow-300 text-sm">{submitMessage}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-8">
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-neural-gray mb-3 uppercase tracking-wide">
                       First Name
                     </label>
                     <Input 
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       placeholder="First Name" 
-                      className="glass-card border-neural-blue/30 focus:border-neural-blue text-lg py-6 rounded-xl"
+                      required
+                      disabled={isSubmitting}
+                      className="glass-card border-neural-blue/30 focus:border-neural-blue text-base sm:text-lg py-4 sm:py-5 md:py-6 rounded-xl disabled:opacity-50"
                     />
                   </div>
                   <div>
@@ -141,8 +265,13 @@ const ContactSection = () => {
                       Last Name
                     </label>
                     <Input 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       placeholder="Last Name" 
-                      className="glass-card border-neural-blue/30 focus:border-neural-blue text-lg py-6 rounded-xl"
+                      required
+                      disabled={isSubmitting}
+                      className="glass-card border-neural-blue/30 focus:border-neural-blue text-base sm:text-lg py-4 sm:py-5 md:py-6 rounded-xl disabled:opacity-50"
                     />
                   </div>
                 </div>
@@ -152,9 +281,14 @@ const ContactSection = () => {
                     Email
                   </label>
                   <Input 
-                    type="email" 
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="your@email.com" 
-                    className="glass-card border-neural-blue/30 focus:border-neural-blue text-lg py-6 rounded-xl"
+                    required
+                    disabled={isSubmitting}
+                    className="glass-card border-neural-blue/30 focus:border-neural-blue text-base sm:text-lg py-4 sm:py-5 md:py-6 rounded-xl disabled:opacity-50"
                   />
                 </div>
                 
@@ -163,8 +297,12 @@ const ContactSection = () => {
                     Interest Area
                   </label>
                   <Input 
+                    name="interestArea"
+                    value={formData.interestArea}
+                    onChange={handleInputChange}
                     placeholder="Research, Enterprise, Development, Healthcare..." 
-                    className="glass-card border-neural-blue/30 focus:border-neural-blue text-lg py-6 rounded-xl"
+                    disabled={isSubmitting}
+                    className="glass-card border-neural-blue/30 focus:border-neural-blue text-base sm:text-lg py-4 sm:py-5 md:py-6 rounded-xl disabled:opacity-50"
                   />
                 </div>
                 
@@ -173,15 +311,33 @@ const ContactSection = () => {
                     Message
                   </label>
                   <Textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Your message..."
-                    rows={6}
-                    className="glass-card border-neural-blue/30 focus:border-neural-blue resize-none text-lg p-6 rounded-xl"
+                    rows={4}
+                    required
+                    disabled={isSubmitting}
+                    className="glass-card border-neural-blue/30 focus:border-neural-blue resize-none text-base sm:text-lg p-4 sm:p-5 md:p-6 rounded-xl md:rows-6 disabled:opacity-50"
                   />
                 </div>
                 
-                <Button className="w-full cyber-button text-primary-foreground font-bold py-6 text-xl rounded-xl group">
-                  <Send className="mr-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
-                  Send Message
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full cyber-button text-primary-foreground font-bold py-4 sm:py-5 md:py-6 text-lg sm:text-xl rounded-xl group min-h-[44px] disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-3 h-6 w-6 animate-spin" />
+                      Sending Message...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>
@@ -217,7 +373,7 @@ const ContactSection = () => {
                     variant="outline" 
                     size="sm" 
                     className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
-                    onClick={() => window.open('https://linktr.ee/skybrain', '_blank')}
+                    onClick={() => window.open('LINKTREE_URL_PLACEHOLDER', '_blank')}
                   >
                     <ExternalLink className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>
@@ -225,7 +381,7 @@ const ContactSection = () => {
                     variant="outline" 
                     size="sm" 
                     className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
-                    onClick={() => window.open('https://linkedin.com/company/skybrain-neurotech', '_blank')}
+                    onClick={() => window.open('LINKEDIN_URL_PLACEHOLDER', '_blank')}
                   >
                     <Linkedin className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>
@@ -233,7 +389,7 @@ const ContactSection = () => {
                     variant="outline" 
                     size="sm" 
                     className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
-                    onClick={() => window.open('https://youtube.com/@skybrainneurotech', '_blank')}
+                    onClick={() => window.open('YOUTUBE_URL_PLACEHOLDER', '_blank')}
                   >
                     <Youtube className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>
@@ -241,7 +397,7 @@ const ContactSection = () => {
                     variant="outline" 
                     size="sm" 
                     className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
-                    onClick={() => window.open('https://github.com/skybrain-neurotech', '_blank')}
+                    onClick={() => window.open('GITHUB_URL_PLACEHOLDER', '_blank')}
                   >
                     <Github className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>

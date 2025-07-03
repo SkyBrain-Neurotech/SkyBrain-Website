@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NewsletterSignup from './NewsletterSignup';
 import { trackButtonClick } from '@/lib/analytics';
+import { showComingSoonNotification } from '@/lib/notifications';
 import { 
   CheckCircle2, 
   Circle, 
@@ -680,8 +681,8 @@ const VisualRoadmap = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button 
                   onClick={() => {
-                    trackButtonClick('Join Community', 'roadmap', 'discord_community');
-                    window.open('https://discord.gg/skybrain', '_blank');
+                    trackButtonClick('Join Community', 'roadmap', 'coming_soon');
+                    showComingSoonNotification('Community Platform');
                   }}
                   className="cyber-button text-deep-space font-bold px-8 py-4 text-lg rounded-xl hover:scale-105 transition-transform font-orbitron group"
                 >

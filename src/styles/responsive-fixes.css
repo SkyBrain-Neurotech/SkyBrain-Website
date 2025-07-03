@@ -54,11 +54,36 @@
   .cyber-button {
     padding: 1rem 2rem;
     font-size: 1rem;
+    min-height: 44px;
   }
   
   /* Video thumbnails */
   .video-thumbnail {
     aspect-ratio: 16/9;
+  }
+  
+  /* Text size improvements */
+  .text-xs {
+    font-size: 0.875rem !important; /* 14px instead of 12px */
+  }
+  
+  /* Touch target improvements */
+  button, .btn, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Mobile typography scaling */
+  h1 {
+    font-size: clamp(2rem, 8vw, 4rem) !important;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
   }
 }
 

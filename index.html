@@ -11,11 +11,9 @@
     <meta property="og:title" content="SkyBrain - Advanced Brain-Computer Interface Technology" />
     <meta property="og:description" content="Revolutionary BCI technology for brain monitoring, neural signal processing, and cognitive optimization." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@skybrain" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +66,17 @@
   </head>
 
   <body>
+    <!-- Hidden form for Netlify Forms detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="text" name="interestArea" />
+      <textarea name="message"></textarea>
+      <input type="text" name="timestamp" />
+      <input type="text" name="source" />
+    </form>
+
     <div id="root"></div>
     <!-- Mock API for development -->
     <script src="/api-mock.js"></script>

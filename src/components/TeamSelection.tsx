@@ -165,7 +165,7 @@ const TeamSelection = () => {
         </div>
 
         {/* Team Grid - Professional Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 mb-16 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => {
             const IconComponent = getCategoryIcon(member.category);
             const isHovered = hoveredMember === member.id;
@@ -185,7 +185,7 @@ const TeamSelection = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Professional Team Card */}
-                <div className={`glass-card p-10 rounded-2xl border-2 transition-all duration-300 ${
+                <div className={`glass-card p-6 md:p-8 lg:p-10 rounded-2xl border-2 transition-all duration-300 ${
                   isHovered 
                     ? 'border-neural-blue shadow-lg shadow-neural-blue/30' 
                     : member.status === 'coming-soon' 

@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { showComingSoonNotification } from '@/lib/notifications';
 import { ArrowLeft, ArrowRight, CheckCircle2, Mail, User, Building, Globe, Zap, Brain, Heart, Code } from 'lucide-react';
+
+// TODO: Implement email service - see BETA_EMAIL_IMPLEMENTATION.md
+const sendWelcomeEmail = async (userData: any) => {
+  console.log('TODO: Send welcome email to:', userData.email);
+  // ConvertKit example:
+  // const response = await fetch('https://api.convertkit.com/v3/forms/8263860/subscribe', {...});
+  
+  // EmailJS example:
+  // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', userData, 'EndO3wWhAz3IC1Nkw-lIKQ');
+  
+  // For now, just log - replace with actual email service
+  return Promise.resolve();
+};
 
 interface BetaSignupFormProps {
   userType: string;
@@ -78,6 +92,13 @@ const BetaSignupForm: React.FC<BetaSignupFormProps> = ({ userType, onBack }) => 
         }),
       });
 
+      // EMAIL INTEGRATION - Add your chosen service here
+      await sendWelcomeEmail({
+        ...formData,
+        userType,
+        timestamp: new Date().toISOString()
+      });
+
       if (response.ok) {
         setIsSubmitted(true);
         // Track conversion
@@ -143,7 +164,7 @@ const BetaSignupForm: React.FC<BetaSignupFormProps> = ({ userType, onBack }) => 
           <Button 
             variant="outline" 
             className="glass-card border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold px-8 py-3 text-lg"
-            onClick={() => window.location.href = '/community'}
+            onClick={() => showComingSoonNotification('Community Platform')}
           >
             Join Community
           </Button>

@@ -38,28 +38,28 @@ const VideosSection = () => {
   // SkyBrain technology demonstrations
   const videos = [
     {
-      id: "GEDnCgjRQ3k",
+      id: "VIDEO_ID_PLACEHOLDER_1",
       title: "SkyBrain Neurotech EEG Platform",
       description: "Real-time brain signal visualization and advanced neural analytics platform demonstration.",
-      thumbnail: "https://img.youtube.com/vi/GEDnCgjRQ3k/maxresdefault.jpg"
+      thumbnail: "YOUTUBE_THUMBNAIL_PLACEHOLDER_1"
     },
     {
-      id: "yew_NZSqVZw",
+      id: "VIDEO_ID_PLACEHOLDER_2",
       title: "BCI Gaming Neurofeedback",
       description: "Mind-controlled gaming demonstration using EEG signals to showcase gamified neurofeedback.",
-      thumbnail: "https://img.youtube.com/vi/yew_NZSqVZw/maxresdefault.jpg"
+      thumbnail: "YOUTUBE_THUMBNAIL_PLACEHOLDER_2"
     },
     {
-      id: "wojRDIQHn34",
+      id: "VIDEO_ID_PLACEHOLDER_3",
       title: "Smart Home Integration",
       description: "Emotion-responsive smart home technology demo showcasing real-time environmental adaptation to cognitive states.",
-      thumbnail: "https://img.youtube.com/vi/wojRDIQHn34/maxresdefault.jpg"
+      thumbnail: "YOUTUBE_THUMBNAIL_PLACEHOLDER_3"
     },
     {
-      id: "gfp79bhekHA",
+      id: "VIDEO_ID_PLACEHOLDER_4",
       title: "Tech Summit 2024 Showcase",
       description: "Live technology demonstration at Bengaluru Tech Summit 2024 featuring our latest BCI innovations.",
-      thumbnail: "https://img.youtube.com/vi/gfp79bhekHA/maxresdefault.jpg"
+      thumbnail: "YOUTUBE_THUMBNAIL_PLACEHOLDER_4"
     }
   ];
 
@@ -197,13 +197,13 @@ const VideosSection = () => {
 
       {/* Video Modal */}
       {isModalOpen && playingVideo && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-2 md:p-4">
-          <div className="relative w-full max-w-6xl aspect-video">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-[95vw] md:max-w-6xl aspect-video">
             {/* Close Button - More prominent */}
-            <div className="absolute -top-12 md:-top-16 right-0 z-10">
+            <div className="absolute top-2 md:-top-12 right-2 md:right-0 z-10">
               <button
                 onClick={closeModal}
-                className="glass-card px-4 py-2 rounded-xl text-white hover:text-neural-blue transition-all duration-300 border border-white/30 hover:border-neural-blue/50 flex items-center space-x-2 backdrop-blur-sm"
+                className="glass-card px-3 py-2 sm:px-4 rounded-xl text-white hover:text-neural-blue transition-all duration-300 border border-white/30 hover:border-neural-blue/50 flex items-center space-x-2 backdrop-blur-sm min-h-[44px]"
               >
                 <span className="text-sm font-semibold">Close Video</span>
                 <X className="h-4 w-4" />

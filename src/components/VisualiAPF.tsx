@@ -232,7 +232,7 @@ const VisualiAPF = () => {
                 { 
                   icon: Eye, 
                   title: 'Scan', 
-                  desc: 'Advanced EEG sensors safely read your brainwaves with medical-grade precision',
+                  desc: 'Advanced EEG sensors safely read your brainwaves with Research-grade precision',
                   color: 'neural-blue'
                 },
                 { 

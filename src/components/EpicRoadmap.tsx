@@ -18,6 +18,7 @@ import {
   ChevronRight,
   Bell
 } from 'lucide-react';
+import { showComingSoonNotification } from '@/lib/notifications';
 
 interface RoadmapPhase {
   id: string;
@@ -41,6 +42,17 @@ interface RoadmapPhase {
 const EpicRoadmap = () => {
   const [activePhase, setActivePhase] = useState<string>('foundation');
   const [hoveredMilestone, setHoveredMilestone] = useState<string | null>(null);
+
+  // Fixed particles to prevent re-randomization on re-renders
+  const [particles] = useState(() => 
+    [...Array(20)].map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      animationDelay: Math.random() * 3,
+      animationDuration: 2 + Math.random() * 2
+    }))
+  );
 
   const phases: RoadmapPhase[] = [
     {
@@ -338,21 +350,21 @@ const EpicRoadmap = () => {
       {/* Epic Background with Animated Elements */}
       <div className="absolute inset-0">
         {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-deep-space via-shadow-black to-neural-blue/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-deep-space via-shadow-black to-neural-blue/5"></div>
         
         {/* Removed animated grid background */}
         
         {/* Floating Neural Particles */}
         <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
+          {particles.map((particle) => (
             <div
-              key={i}
-              className="absolute w-2 h-2 bg-neural-blue/40 rounded-full animate-pulse"
+              key={particle.id}
+              className="absolute w-2 h-2 bg-neural-blue/20 rounded-full animate-pulse"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`
+                left: `${particle.left}%`,
+                top: `${particle.top}%`,
+                animationDelay: `${particle.animationDelay}s`,
+                animationDuration: `${particle.animationDuration}s`
               }}
             />
           ))}
@@ -363,14 +375,14 @@ const EpicRoadmap = () => {
         {/* Epic Header */}
         <div className="text-center mb-24 relative">
           {/* Central Brain Visualization */}
-          <div className="absolute inset-0 flex justify-center items-center opacity-10">
+          <div className="absolute inset-0 flex justify-center items-center opacity-5">
             <div className="relative">
-              <Brain className="h-80 w-80 text-neural-blue animate-pulse" />
+              <Brain className="h-80 w-80 text-neural-blue/50 animate-pulse" />
               {/* Orbiting Elements */}
               {[...Array(8)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute w-4 h-4 bg-neural-blue/60 rounded-full roadmap-orbital-sync"
+                  className="absolute w-4 h-4 bg-neural-blue/30 rounded-full roadmap-orbital-sync"
                   style={{
                     top: '50%',
                     left: '50%',
@@ -384,15 +396,15 @@ const EpicRoadmap = () => {
           
           <div className="relative z-10">
             {/* Live Status Badge */}
-            <div className="inline-flex items-center space-x-3 glass-card px-8 py-4 mb-12 rounded-full border border-neural-blue/30 shadow-lg shadow-neural-blue/20">
+            <div className="inline-flex items-center space-x-3 glass-card px-8 py-4 mb-12 rounded-full border border-neural-blue/30 shadow-md shadow-neural-blue/10">
               <div className="relative">
-                <Rocket className="h-6 w-6 text-neural-blue animate-pulse" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+                <Rocket className="h-6 w-6 text-neural-blue" />
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400/70 rounded-full animate-pulse"></div>
               </div>
               <span className="text-base font-bold text-neural-blue tracking-wide font-orbitron uppercase">
                 Live Progress • Active Development
               </span>
-              <div className="w-3 h-3 bg-neural-blue rounded-full animate-ping"></div>
+              <div className="w-3 h-3 bg-neural-blue/70 rounded-full animate-pulse"></div>
             </div>
 
             {/* Epic Main Title */}
@@ -737,12 +749,18 @@ const EpicRoadmap = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
-            <button className="flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-neural-blue to-mind-purple text-white font-bold rounded-xl group hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-neural-blue/30">
+            <button 
+              onClick={() => showComingSoonNotification('Community Platform')}
+              className="flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-neural-blue to-mind-purple text-white font-bold rounded-xl group hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-neural-blue/30"
+            >
               <Users className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
               Join Community
             </button>
             
-            <button className="flex items-center justify-center w-full sm:w-auto px-8 py-4 glass-card border border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold rounded-xl group hover:scale-105 transition-all duration-300">
+            <button 
+              onClick={() => showComingSoonNotification('Update Notifications')}
+              className="flex items-center justify-center w-full sm:w-auto px-8 py-4 glass-card border border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold rounded-xl group hover:scale-105 transition-all duration-300"
+            >
               <Bell className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               Get Updates
             </button>

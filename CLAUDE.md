@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-- `npm run dev` - Start development server on port 8080
+- `npm run dev` - Start development server on port 8080 (accessible on all interfaces)
 - `npm run build` - Build for production
 - `npm run build:dev` - Build in development mode
 - `npm run lint` - Run ESLint
@@ -20,15 +20,16 @@ This is a React-based website for SkyBrain, a brain-computer interface (BCI) com
 - **shadcn/ui** components built on Radix UI
 - **Tailwind CSS** for styling with custom neural/brain-themed colors and animations
 - **TanStack Query** for state management
-- **Lovable** platform integration for development
 
 ### Key Structure
 
-- `/src/pages/` - Route components (Index, Technology, Applications, Research, Videos, Contact)
+- `/src/pages/` - Route components (Index, Technology, Applications, Research, Videos, Contact, etc.)
 - `/src/components/` - Reusable UI components, including page sections
 - `/src/components/ui/` - shadcn/ui component library
 - `/src/lib/utils.ts` - Utility functions and shared logic
 - `/src/hooks/` - Custom React hooks
+- `/src/styles/` - Additional CSS files (responsive fixes, synchronized animations)
+- `/public/images/team/` - Team member photos and assets
 
 ### Routing
 
@@ -37,8 +38,13 @@ Single-page application with React Router:
 - `/technology` - Technology page
 - `/applications` - Applications page  
 - `/research` - Research page
+- `/roadmap` - Roadmap page
+- `/blockchain` - Blockchain page
 - `/videos` - Videos page
+- `/team` - Team page
 - `/contact` - Contact page
+- `/beta-signup` - Beta signup page
+- `*` - 404 Not Found page
 
 ### Theming
 
@@ -62,4 +68,12 @@ Custom animations: `neural-pulse`, `glow-breathe`, `fade-in-up`, `float`
 
 ### Development Workflow
 
-This project integrates with the Lovable platform. Changes made locally should be committed to sync with the Lovable project interface.
+This project is a standard Vite + React + TypeScript project. Changes made locally should be committed and pushed to your remote repository as usual.
+
+### Key Configuration
+
+- **Vite config**: Uses `@vitejs/plugin-react-swc` for fast builds and HMR
+- **Path aliases**: `@/` points to `src/` directory
+- **TypeScript**: Strict configuration with separate configs for app and Node.js
+- **ESLint**: Configured with React and TypeScript rules
+- **Tailwind**: Custom neural/brain theme with specialized animations and colors

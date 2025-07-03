@@ -43,7 +43,7 @@ const VisionHero = () => {
           </div>
 
           {/* Dynamic Main Heading */}
-          <h1 className={`text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight transition-all duration-1000 ${textGlow ? 'scale-105' : 'scale-100'}`}>
+          <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight transition-all duration-1000 ${textGlow ? 'scale-105' : 'scale-100'}`}>
             <span className="text-ghost-white hover:text-neural-blue transition-colors cursor-pointer">Mental Wellness & Health</span>
             <br />
             <span className={`text-neural-blue font-orbitron relative transition-all duration-1000 ${textGlow ? 'neural-glow' : ''}`}>
@@ -53,20 +53,20 @@ const VisionHero = () => {
           </h1>
 
           {/* Dynamic Subheading */}
-          <div className="text-xl md:text-2xl text-neural-gray mb-12 max-w-4xl mx-auto leading-relaxed">
+          <div className="text-lg sm:text-xl md:text-2xl text-neural-gray mb-12 max-w-4xl mx-auto leading-relaxed">
             <div className="mb-4">
               Building the future of mental wellness with Brain-Computer Interface technology
             </div>
           </div>
 
           {/* Enhanced CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
             <Button 
               onClick={() => {
                 trackButtonClick('Experience Demo', 'hero', 'demo_modal');
                 setShowDemoModal(true);
               }}
-              className="neural-gradient text-white font-bold px-8 py-4 text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden"
+              className="neural-gradient text-white font-bold px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden min-h-[44px] w-full sm:w-auto"
             >
               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               <Brain className="mr-3 h-6 w-6 group-hover:rotate-180 transition-transform duration-500" />
@@ -77,7 +77,7 @@ const VisionHero = () => {
               <Button 
                 onClick={() => trackButtonClick('See Our Roadmap', 'hero', '/roadmap')}
                 variant="outline" 
-                className="glass-card border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold px-8 py-4 text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden"
+                className="glass-card border-neural-blue/40 text-neural-blue hover:bg-neural-blue/10 font-bold px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg rounded-xl group transition-all transform hover:scale-110 font-orbitron relative overflow-hidden min-h-[44px] w-full sm:w-auto"
               >
                 <div className="absolute inset-0 bg-neural-blue/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 <span className="group-hover:text-ghost-white transition-colors duration-300 relative z-10 flex items-center">
