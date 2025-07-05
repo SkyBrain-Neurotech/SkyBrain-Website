@@ -373,7 +373,7 @@ const ContactSection = () => {
                     variant="outline" 
                     size="sm" 
                     className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
-                    onClick={() => window.open('LINKTREE_URL_PLACEHOLDER', '_blank')}
+                    onClick={() => window.open('https://linktr.ee/skybrain', '_blank')}
                   >
                     <ExternalLink className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>
@@ -381,7 +381,7 @@ const ContactSection = () => {
                     variant="outline" 
                     size="sm" 
                     className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
-                    onClick={() => window.open('LINKEDIN_URL_PLACEHOLDER', '_blank')}
+                    onClick={() => window.open('https://www.linkedin.com/company/skybrain-neurotech/', '_blank')}
                   >
                     <Linkedin className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>
@@ -389,7 +389,7 @@ const ContactSection = () => {
                     variant="outline" 
                     size="sm" 
                     className="glass-card border-neural-blue/30 text-neural-blue p-3 rounded-xl hover:border-neural-blue/50 hover:bg-neural-blue/10 transition-all group"
-                    onClick={() => window.open('YOUTUBE_URL_PLACEHOLDER', '_blank')}
+                    onClick={() => window.open('https://www.youtube.com/@skybrainneurotech', '_blank')}
                   >
                     <Youtube className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   </Button>
