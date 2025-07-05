@@ -15,7 +15,7 @@ const VideosSection = () => {
     setPlayingVideo(null);
     setIsModalOpen(false);
   };
-
+  
   // Handle escape key to close modal
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
