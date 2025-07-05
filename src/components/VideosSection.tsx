@@ -38,28 +38,28 @@ const VideosSection = () => {
   // SkyBrain technology demonstrations
   const videos = [
     {
-      id: "VIDEO_ID_PLACEHOLDER_1",
+      id: "GEDnCgjRQ3k",
       title: "SkyBrain Neurotech EEG Platform",
       description: "Real-time brain signal visualization and advanced neural analytics platform demonstration.",
-      thumbnail: "YOUTUBE_THUMBNAIL_PLACEHOLDER_1"
+      thumbnail: "https://img.youtube.com/vi/GEDnCgjRQ3k/hqdefault.jpg"
     },
     {
-      id: "VIDEO_ID_PLACEHOLDER_2",
+      id: "yew_NZSqVZw",
       title: "BCI Gaming Neurofeedback",
       description: "Mind-controlled gaming demonstration using EEG signals to showcase gamified neurofeedback.",
-      thumbnail: "YOUTUBE_THUMBNAIL_PLACEHOLDER_2"
+      thumbnail: "https://img.youtube.com/vi/yew_NZSqVZw/hqdefault.jpg"
     },
     {
-      id: "VIDEO_ID_PLACEHOLDER_3",
+      id: "wojRDIQHn34",
       title: "Smart Home Integration",
       description: "Emotion-responsive smart home technology demo showcasing real-time environmental adaptation to cognitive states.",
-      thumbnail: "YOUTUBE_THUMBNAIL_PLACEHOLDER_3"
+      thumbnail: "https://img.youtube.com/vi/wojRDIQHn34/hqdefault.jpg"
     },
     {
-      id: "VIDEO_ID_PLACEHOLDER_4",
+      id: "gfp79bhekHA",
       title: "Tech Summit 2024 Showcase",
       description: "Live technology demonstration at Bengaluru Tech Summit 2024 featuring our latest BCI innovations.",
-      thumbnail: "YOUTUBE_THUMBNAIL_PLACEHOLDER_4"
+      thumbnail: "https://img.youtube.com/vi/gfp79bhekHA/hqdefault.jpg"
     }
   ];
 
