@@ -16,6 +16,7 @@ export interface FormResponse {
   submissionId?: string;
 }
 
+<<<<<<< HEAD
 // Enhanced form submission with SkyBrain backend API
 export const submitContactForm = async (data: FormSubmissionData): Promise<FormResponse> => {
   try {
@@ -63,6 +64,12 @@ export const submitContactForm = async (data: FormSubmissionData): Promise<FormR
     }
 
     // Method 2: Try to use Netlify Forms (if deployed on Netlify)
+=======
+// Enhanced form submission with multiple free services
+export const submitContactForm = async (data: FormSubmissionData): Promise<FormResponse> => {
+  try {
+    // Method 1: Try to use Netlify Forms (if deployed on Netlify)
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
     if (window.location.hostname.includes('netlify') || window.location.hostname === 'skybrain.in') {
       try {
         const formData = new FormData();

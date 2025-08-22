@@ -112,6 +112,7 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
+<<<<<<< HEAD
 Sitemap: https://skybrain.in/sitemap.xml
 
 # Legal pages for Google verification
@@ -124,3 +125,12 @@ Sitemap: https://skybrain.in/sitemap.xml
 # Purpose: Mental wellness through BCI technology
 # Compliance: DPDP Act 2023, IT Act 2000, Google Verification
 # Last updated: 2025-08-03
+=======
+Sitemap: https://skybrain-neurotech.com/sitemap.xml
+
+# Website information
+# Company: SkyBrain Neurotech
+# Industry: Neurotechnology, Brain-Computer Interfaces
+# Purpose: Mental wellness through BCI technology
+# Last updated: 2025-06-30
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43

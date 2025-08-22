@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { showComingSoonNotification } from '@/lib/notifications';
 import { ArrowLeft, ArrowRight, CheckCircle2, Mail, User, Building, Globe, Zap, Brain, Heart, Code } from 'lucide-react';
 
+<<<<<<< HEAD
 // Get API base URL based on environment
 const getApiBaseUrl = () => {
   if (typeof window !== 'undefined') {
@@ -16,6 +17,19 @@ const getApiBaseUrl = () => {
     return 'http://localhost:3001';
   }
   return 'http://localhost:3001';
+=======
+// TODO: Implement email service - see BETA_EMAIL_IMPLEMENTATION.md
+const sendWelcomeEmail = async (userData: any) => {
+  console.log('TODO: Send welcome email to:', userData.email);
+  // ConvertKit example:
+  // const response = await fetch('https://api.convertkit.com/v3/forms/8263860/subscribe', {...});
+  
+  // EmailJS example:
+  // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', userData, 'EndO3wWhAz3IC1Nkw-lIKQ');
+  
+  // For now, just log - replace with actual email service
+  return Promise.resolve();
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
 };
 
 interface BetaSignupFormProps {
@@ -81,6 +95,7 @@ const BetaSignupForm: React.FC<BetaSignupFormProps> = ({ userType, onBack }) => 
     setIsSubmitting(true);
 
     try {
+<<<<<<< HEAD
       const apiBaseUrl = getApiBaseUrl();
       const betaData = {
         ...formData,
@@ -90,16 +105,38 @@ const BetaSignupForm: React.FC<BetaSignupFormProps> = ({ userType, onBack }) => 
       };
 
       const response = await fetch(`${apiBaseUrl}/api/beta-signup`, {
+=======
+      // TODO: Implement actual API call
+      const response = await fetch('/api/beta-signup', {
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+<<<<<<< HEAD
         body: JSON.stringify(betaData),
       });
 
       const result = await response.json();
 
       if (response.ok && result.success) {
+=======
+        body: JSON.stringify({
+          ...formData,
+          userType,
+          timestamp: new Date().toISOString()
+        }),
+      });
+
+      // EMAIL INTEGRATION - Add your chosen service here
+      await sendWelcomeEmail({
+        ...formData,
+        userType,
+        timestamp: new Date().toISOString()
+      });
+
+      if (response.ok) {
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
         setIsSubmitted(true);
         // Track conversion
         if (typeof gtag !== 'undefined') {
@@ -109,11 +146,19 @@ const BetaSignupForm: React.FC<BetaSignupFormProps> = ({ userType, onBack }) => 
           });
         }
       } else {
+<<<<<<< HEAD
         throw new Error(result.message || 'Signup failed');
       }
     } catch (error) {
       console.error('Beta signup error:', error);
       alert('Something went wrong. Please try again or contact us at info@skybrain.in');
+=======
+        throw new Error('Signup failed');
+      }
+    } catch (error) {
+      console.error('Beta signup error:', error);
+      alert('Something went wrong. Please try again.');
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
     } finally {
       setIsSubmitting(false);
     }

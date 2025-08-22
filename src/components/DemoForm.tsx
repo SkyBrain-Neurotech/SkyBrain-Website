@@ -7,6 +7,7 @@ interface DemoFormProps {
   className?: string;
 }
 
+<<<<<<< HEAD
 // Get API base URL based on environment
 const getApiBaseUrl = () => {
   if (typeof window !== 'undefined') {
@@ -22,6 +23,8 @@ const getApiBaseUrl = () => {
   return 'http://localhost:3001';
 };
 
+=======
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
 declare global {
   interface Window {
     executeRecaptcha: (action: string) => Promise<string>;
@@ -56,14 +59,21 @@ const DemoForm: React.FC<DemoFormProps> = ({ onSuccess, className = "" }) => {
     setSubmitStatus('idle');
 
     try {
+<<<<<<< HEAD
       const apiBaseUrl = getApiBaseUrl();
       
+=======
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       // Execute reCAPTCHA v3
       let recaptchaToken = '';
       if (typeof window !== 'undefined' && window.executeRecaptcha) {
         recaptchaToken = await window.executeRecaptcha('demo_request');
       }
 
+<<<<<<< HEAD
+=======
+      // Simulate form submission (replace with actual API call)
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       const submissionData = {
         ...formData,
         recaptchaToken,
@@ -71,6 +81,7 @@ const DemoForm: React.FC<DemoFormProps> = ({ onSuccess, className = "" }) => {
         source: 'website_demo_form'
       };
 
+<<<<<<< HEAD
       const response = await fetch(`${apiBaseUrl}/api/demo-request`, {
         method: 'POST',
         headers: {
@@ -105,6 +116,33 @@ const DemoForm: React.FC<DemoFormProps> = ({ onSuccess, className = "" }) => {
         }
       } else {
         throw new Error(result.message || 'Demo request failed');
+=======
+      console.log('Demo form submission:', submissionData);
+
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // Track successful form submission
+      if (typeof window !== 'undefined' && window.trackFormSubmission) {
+        window.trackFormSubmission('demo_request');
+      }
+
+      setSubmitStatus('success');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        interest: 'personal',
+        message: ''
+      });
+
+      // Call success callback
+      if (onSuccess) {
+        onSuccess();
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       }
 
     } catch (error) {

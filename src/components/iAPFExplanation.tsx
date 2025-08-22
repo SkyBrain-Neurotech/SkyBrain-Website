@@ -14,16 +14,28 @@ const iAPFExplanation = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-neural-gray max-w-4xl mx-auto leading-relaxed mb-8">
+<<<<<<< HEAD
             <strong className="text-neural-blue">i</strong>ndividual <strong className="text-neural-blue">A</strong>daptive <strong className="text-neural-blue">P</strong>ersonalization <strong className="text-neural-blue">F</strong>ramework
             <br className="hidden md:block" />
             Your brain's unique neural signature that powers truly personalized wellness
+=======
+            <strong className="text-neural-blue">i</strong>ndividual <strong className="text-neural-blue">A</strong>lpha <strong className="text-neural-blue">P</strong>eak <strong className="text-neural-blue">F</strong>requency
+            <br className="hidden md:block" />
+            Your brain's unique alpha rhythm (8-13 Hz) that powers personalized neurofeedback
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
           </p>
           
           <div className="glass-card inline-block px-8 py-4 mb-12">
             <div className="text-center">
+<<<<<<< HEAD
               <div className="text-neural-blue text-3xl font-mono mb-2">YOUR</div>
               <div className="text-neural-gray text-sm">Personal Neural Profile</div>
               <div className="text-xs text-neural-gray mt-1">Uniquely Yours</div>
+=======
+              <div className="text-neural-blue text-3xl font-mono mb-2">10.2 Hz</div>
+              <div className="text-neural-gray text-sm">Your Personal Alpha Peak</div>
+              <div className="text-xs text-neural-gray mt-1">Detected via EEG analysis</div>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
             </div>
           </div>
 
@@ -43,8 +55,13 @@ const iAPFExplanation = () => {
                   <Brain className="h-12 w-12 text-mind-purple" />
                   <Zap className="h-6 w-6 text-neural-blue absolute -top-1 -right-1 animate-pulse" />
                 </div>
+<<<<<<< HEAD
                 <h3 className="text-xl font-bold text-ghost-white mb-2 font-orbitron">Neural Analysis</h3>
                 <p className="text-neural-gray">AI identifies your unique neural patterns for personalized wellness</p>
+=======
+                <h3 className="text-xl font-bold text-ghost-white mb-2 font-orbitron">Alpha Analysis</h3>
+                <p className="text-neural-gray">AI identifies your unique alpha peak frequency for personalized training</p>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </div>
               
               <div className="text-center">
@@ -161,7 +178,11 @@ const iAPFExplanation = () => {
               </div>
               <h3 className="text-xl font-bold text-ghost-white mb-4 font-orbitron">Learn</h3>
               <p className="text-neural-gray">
+<<<<<<< HEAD
                 AI analyzes your neural patterns to create your unique brain profile - your personal wellness blueprint
+=======
+                AI analyzes your EEG to find your unique alpha peak frequency (usually between 8-13 Hz) - your brain's optimal rhythm
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </p>
             </div>
             
@@ -171,7 +192,11 @@ const iAPFExplanation = () => {
               </div>
               <h3 className="text-xl font-bold text-ghost-white mb-4 font-orbitron">Predict</h3>
               <p className="text-neural-gray">
+<<<<<<< HEAD
                 Monitors changes in your neural activity to predict mental state shifts and wellness needs
+=======
+                Monitors changes in your alpha activity to predict mental state shifts and cognitive performance
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </p>
             </div>
             
@@ -181,7 +206,11 @@ const iAPFExplanation = () => {
               </div>
               <h3 className="text-xl font-bold text-ghost-white mb-4 font-orbitron">Act</h3>
               <p className="text-neural-gray">
+<<<<<<< HEAD
                 Delivers personalized interventions optimized for your unique neural profile to enhance wellbeing
+=======
+                Delivers personalized neurofeedback training at your exact iAPF to optimize cognitive performance and wellbeing
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </p>
             </div>
           </div>

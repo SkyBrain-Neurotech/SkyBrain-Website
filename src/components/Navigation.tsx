@@ -128,6 +128,7 @@ const Navigation = () => {
               </Button>
             </Link>
           </div>
+<<<<<<< HEAD
           
           {/* Legal Links Section */}
           <div className="pt-3 border-t border-neural-blue/20">
@@ -154,6 +155,8 @@ const Navigation = () => {
               📧 Contact Us
             </a>
           </div>
+=======
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
         </div>
       </div>
     </nav>

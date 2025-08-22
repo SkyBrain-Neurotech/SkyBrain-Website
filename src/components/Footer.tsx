@@ -1,7 +1,10 @@
 
 import React from 'react';
 import { Brain, Mail, MapPin, Phone } from 'lucide-react';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
+=======
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
 
 const Footer = () => {
   const footerLinks = {
@@ -61,6 +64,7 @@ const Footer = () => {
           ))}
         </div>
 
+<<<<<<< HEAD
         {/* Legal Links Section - More Prominent */}
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="text-center mb-6">
@@ -99,6 +103,25 @@ const Footer = () => {
                 <span>Bangalore, India</span>
                 <span>•</span>
                 <span>info@skybrain.in</span>
+=======
+        {/* Bottom Bar - Better responsive alignment */}
+        <div className="border-t border-white/20 mt-12 pt-8">
+          <div className="glass-container p-6 rounded-xl">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-neural-gray text-sm text-center md:text-left">
+                © 2025 SkyBrain Neurotech. All rights reserved.
+              </p>
+              <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
+                <a href="#" className="text-neural-gray hover:text-neural-blue transition-colors text-sm hover:translate-x-1 transition-all duration-300">
+                  Privacy Policy
+                </a>
+                <a href="#" className="text-neural-gray hover:text-neural-blue transition-colors text-sm hover:translate-x-1 transition-all duration-300">
+                  Terms of Service
+                </a>
+                <a href="#" className="text-neural-gray hover:text-neural-blue transition-colors text-sm hover:translate-x-1 transition-all duration-300">
+                  Cookie Policy
+                </a>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </div>
             </div>
           </div>

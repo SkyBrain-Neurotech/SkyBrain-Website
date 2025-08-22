@@ -65,14 +65,22 @@ const EpicRoadmap = () => {
       color: 'blue',
       description: 'Building the fundamental brain-computer interface technology that powers all SkyBrain capabilities. This phase establishes our core neural signal processing pipeline, hardware integration, and the foundational algorithms that enable real-time brain activity monitoring and analysis.',
       keyFeatures: [
+<<<<<<< HEAD
         'Neural signal acquisition',
         'High-precision monitoring',
         'Real-time processing',
         'Advanced signal enhancement',
+=======
+        'EEG acquisition',
+        '250Hz sampling precision',
+        'Real-time signal processing',
+        'Advanced noise filtering',
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
         'Cross-platform compatibility'
       ],
       milestones: [
         { 
+<<<<<<< HEAD
           title: 'Neural Signal Processing', 
           description: 'Advanced algorithms for extracting meaningful neural information with sophisticated enhancement and artifact removal.',
           status: 'done', 
@@ -82,10 +90,22 @@ const EpicRoadmap = () => {
             'Artifact detection and removal',
             'Pattern analysis',
             'Cloud processing'
+=======
+          title: 'EEG Signal Processing', 
+          description: 'Advanced algorithms for extracting meaningful neural signals from raw EEG data with sophisticated noise reduction and artifact removal.',
+          status: 'done', 
+          visual: Zap,
+          details: [
+            'Digital signal processing pipeline',
+            'Artifact detection and removal',
+            'Frequency domain analysis',
+            'Cloud analysis'
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
           ]
         },
         { 
           title: 'Hardware Integration', 
+<<<<<<< HEAD
           description: 'Integration with professional-grade monitoring hardware while developing our proprietary devices for future launch.',
           status: 'done', 
           visual: Cpu,
@@ -94,6 +114,16 @@ const EpicRoadmap = () => {
             'Low-latency data transmission',
             'Robust connection protocols',
             'Proprietary hardware development'
+=======
+          description: 'Integration with best-in-class commercial EEG hardware while developing our proprietary beta hardware for future launch.',
+          status: 'done', 
+          visual: Cpu,
+          details: [
+            'Commercial hardware compatibility',
+            'Low-latency data transmission',
+            'Robust connection protocols',
+            'Beta hardware development'
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
           ]
         },
         { 
@@ -105,7 +135,11 @@ const EpicRoadmap = () => {
             'Machine learning models',
             'Mental state classification',
             'Focus, Relaxation level detection',
+<<<<<<< HEAD
             'Personal profile extraction'
+=======
+            'iAPF extraction'
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
           ]
         }
       ],
@@ -121,10 +155,17 @@ const EpicRoadmap = () => {
       description: 'Implementing robust privacy-first architecture to ensure user neural data remains secure, private, and under complete user control. This phase focuses on building trust through transparency, encryption, and giving users ownership of their most sensitive data.',
       keyFeatures: [
         'Military-grade encryption',
+<<<<<<< HEAD
         'Privacy-first processing',
         'Local storage options',
         'GDPR & HIPAA compliance',
         'Secure consent tracking'
+=======
+        'Zero-knowledge processing',
+        'Local data storage options',
+        'GDPR & HIPAA compliance',
+        'Blockchain consent tracking'
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       ],
       milestones: [
         { 
@@ -152,15 +193,24 @@ const EpicRoadmap = () => {
           ]
         },
         { 
+<<<<<<< HEAD
           title: 'Secure Data Ownership', 
           description: 'Advanced system securing data ownership, control, and ethical participation opportunities for users.',
+=======
+          title: 'Blockchain Data Ownership', 
+          description: 'Revolutionary blockchain system securing data ownership, control, and ethical monetization opportunities for users.',
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
           status: 'in-progress', 
           visual: Target,
           details: [
             'Secure data ownership protocols',
             'User-controlled data lifetime',
             'Ethical usage permissions',
+<<<<<<< HEAD
             'Participation reward framework'
+=======
+            'Data monetization framework'
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
           ]
         }
       ],
@@ -173,7 +223,11 @@ const EpicRoadmap = () => {
       timeline: 'Q3 - Q4 2025',
       icon: Lightbulb,
       color: 'purple',
+<<<<<<< HEAD
       description: 'Advanced intelligent Adaptive Personal Framework that learns from your unique neural patterns to provide personalized mental wellness optimization. This AI system adapts to individual signatures, delivering increasingly effective interventions tailored to each user.',
+=======
+      description: 'Revolutionary intelligent Adaptive Personal Framework (iAPF) that learns from your unique neural patterns to provide personalized mental wellness optimization. This AI system adapts to individual brain signatures, delivering increasingly effective interventions tailored to each user.',
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       keyFeatures: [
         'Personalized AI models',
         'Adaptive learning algorithms',
@@ -184,6 +238,7 @@ const EpicRoadmap = () => {
       milestones: [
         { 
           title: 'AI Model Architecture', 
+<<<<<<< HEAD
           description: 'Deep learning framework specifically designed for pattern analysis and personalized mental health insights with continuous learning capabilities.',
           status: 'in-progress', 
           visual: Brain,
@@ -192,6 +247,16 @@ const EpicRoadmap = () => {
             'Adaptive learning models',
             'Pattern recognition systems',
             'Continuous learning capabilities'
+=======
+          description: 'Deep learning framework specifically designed for neural pattern analysis and personalized mental health insights with continuous learning capabilities.',
+          status: 'in-progress', 
+          visual: Brain,
+          details: [
+            'Neural network architecture',
+            'Transfer learning models',
+            'Pattern recognition algorithms',
+            'Continuous learning systems'
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
           ]
         },
         { 
@@ -238,6 +303,7 @@ const EpicRoadmap = () => {
       ],
       milestones: [
         { 
+<<<<<<< HEAD
           title: 'Regulatory Approval Strategy', 
           description: 'Comprehensive regulatory strategy for our target launch markets ensuring full compliance with health authorities and medical device regulations.',
           status: 'in-progress', 
@@ -247,6 +313,17 @@ const EpicRoadmap = () => {
             'Federal regulatory compliance',
             'Medical device certifications',
             'Safety and efficacy validation'
+=======
+          title: 'Regulatory Approval for India & UAE', 
+          description: 'Comprehensive regulatory strategy for our target launch markets: India, Dubai, and Abu Dhabi. Securing CDSCO approval for India and UAE federal/emirate-specific clearances.',
+          status: 'in-progress', 
+          visual: Award,
+          details: [
+            'India: CDSCO market approval',
+            'UAE Federal: MOHAP registration',
+            'Dubai: DHA approval required',
+            'Abu Dhabi: DoH clearance needed'
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
           ]
         },
         { 
@@ -318,6 +395,7 @@ const EpicRoadmap = () => {
         },
         { 
           title: 'Strategic Market Launch', 
+<<<<<<< HEAD
           description: 'Targeted launch in key international markets with full regulatory compliance and region-specific strategies.',
           status: 'planned', 
           visual: Globe,
@@ -326,6 +404,16 @@ const EpicRoadmap = () => {
             'Health authority compliance',
             'Regional regulatory alignment',
             'Strategic market expansion'
+=======
+          description: 'Targeted launch in India, Dubai, and Abu Dhabi with full regulatory compliance and market-specific strategies.',
+          status: 'planned', 
+          visual: Globe,
+          details: [
+            'India market entry strategy',
+            'Dubai Health Authority (DHA) approval',
+            'DoH Abu Dhabi compliance',
+            'GCC regional expansion'
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
           ]
         }
       ],

@@ -6,33 +6,59 @@ const TechnologyStreamlined = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(false);
 
+<<<<<<< HEAD
   // Neural Wellness Process
   const eegSteps = [
     {
       title: "Neural Signal Capture",
       description: "Professional-grade sensors safely monitor your brain's natural electrical activity.",
       content: "Our advanced monitoring system captures your neural patterns with clinical precision. This comprehensive approach ensures we understand your complete mental wellness profile safely and non-invasively.",
+=======
+  // Comprehensive EEG Mapping Process
+  const eegSteps = [
+    {
+      title: "Neural Signal Capture",
+      description: "Research-grade EEG sensors capture your brain's electrical activity across multiple frequency bands.",
+      content: "Our advanced 4-channel EEG system records neural oscillations from 0.5-50Hz, capturing everything from deep delta waves to high-frequency gamma activity. This comprehensive data collection ensures we map your complete neural signature.",
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       visual: Brain,
       color: "neural-blue"
     },
     {
       title: "Cognitive State Recognition",
+<<<<<<< HEAD
       description: "AI algorithms identify patterns for focus, creativity, stress, and relaxation states.",
       content: "Intelligent systems trained on extensive research recognize your unique mental state signatures. We identify when you're in optimal flow states, experiencing stress, or achieving deep focus.",
+=======
+      description: "AI algorithms identify distinct patterns for focus, creativity, stress, and relaxation states.",
+      content: "Machine learning models trained on thousands of EEG sessions recognize your unique neural signatures for different cognitive states. We identify when you're in flow state, experiencing stress, or achieving deep focus.",
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       visual: Eye,
       color: "mind-purple"
     },
     {
+<<<<<<< HEAD
       title: "Personal Profile Analysis",
       description: "Extract your unique neural biomarkers and patterns for true personalization.",
       content: "Your individual neural profile serves as your wellness baseline. We create a comprehensive map of your mental patterns, attention markers, and cognitive preferences for optimal support.",
+=======
+      title: "iAPF & Biomarker Analysis",
+      description: "Extract individual Alpha Peak Frequency and other key neural biomarkers for personalization.",
+      content: "Your Individual Alpha Peak Frequency (iAPF) serves as your neural baseline. We also map theta/beta ratios for attention, alpha asymmetry for emotional balance, and gamma coherence for cognitive processing speed.",
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       visual: Activity,
       color: "neural-blue"
     },
     {
+<<<<<<< HEAD
       title: "Wellness Optimization",
       description: "Real-time guidance helps you achieve optimal mental states for your goals.",
       content: "Based on your personal profile, we provide targeted wellness interventions: enhance creativity states, improve focus clarity, reduce stress patterns, or deepen relaxation experiences.",
+=======
+      title: "Performance Optimization",
+      description: "Real-time neurofeedback guides you toward optimal states for specific tasks and goals.",
+      content: "Based on your neural map, we provide targeted interventions: boost alpha waves for creativity, increase SMR for focus, reduce high-beta for stress relief, or enhance theta for deep meditation states.",
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       visual: Target,
       color: "mind-purple"
     }
@@ -87,8 +113,13 @@ const TechnologyStreamlined = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-neural-gray max-w-4xl mx-auto leading-relaxed mb-12">
+<<<<<<< HEAD
               We create your complete mental wellness profile across all cognitive states - from focus and creativity to stress and relaxation. 
               This comprehensive understanding enables truly personalized optimization for peak mental performance.
+=======
+              We map your complete EEG signature across all cognitive states - from focus and creativity to stress and relaxation. 
+              This comprehensive neural profile enables personalized optimization for peak mental performance.
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
             </p>
 
             {/* Cognitive States Overview */}
@@ -190,16 +221,26 @@ const TechnologyStreamlined = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+<<<<<<< HEAD
             {/* Wellness Monitor */}
+=======
+            {/* Headband Variant */}
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
             <div className="glass-card p-8 rounded-2xl border border-neural-blue/30 hover:border-neural-blue/50 transition-all duration-300 group">
               <div className="text-center mb-8">
                 <div className="p-6 bg-neural-blue/20 rounded-2xl mx-auto w-fit mb-6 group-hover:bg-neural-blue/30 transition-colors">
                   <Brain className="h-16 w-16 text-neural-blue group-hover:scale-110 transition-transform" />
                 </div>
                 <h3 className="text-2xl font-bold text-ghost-white mb-4 font-orbitron">
+<<<<<<< HEAD
                   Wellness Monitor
                 </h3>
                 <p className="text-neural-blue font-semibold mb-4">Professional Wellness Headband</p>
+=======
+                  Headband Variant
+                </h3>
+                <p className="text-neural-blue font-semibold mb-4">Professional EEG Headband</p>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </div>
               
               <div className="space-y-4">
@@ -209,7 +250,11 @@ const TechnologyStreamlined = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
+<<<<<<< HEAD
                   <span className="text-neural-gray">Professional-grade neural sensors</span>
+=======
+                  <span className="text-neural-gray">4-channel research-grade EEG sensors</span>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
@@ -221,21 +266,35 @@ const TechnologyStreamlined = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-neural-blue rounded-full"></div>
+<<<<<<< HEAD
                   <span className="text-neural-gray">Extended battery life for all-day use</span>
+=======
+                  <span className="text-neural-gray">Long battery life (8+ hours)</span>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                 </div>
               </div>
             </div>
 
+<<<<<<< HEAD
             {/* Audio Wellness Device */}
+=======
+            {/* Headphone Variant */}
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
             <div className="glass-card p-8 rounded-2xl border border-mind-purple/30 hover:border-mind-purple/50 transition-all duration-300 group">
               <div className="text-center mb-8">
                 <div className="p-6 bg-mind-purple/20 rounded-2xl mx-auto w-fit mb-6 group-hover:bg-mind-purple/30 transition-colors">
                   <Headphones className="h-16 w-16 text-mind-purple group-hover:scale-110 transition-transform" />
                 </div>
                 <h3 className="text-2xl font-bold text-ghost-white mb-4 font-orbitron">
+<<<<<<< HEAD
                   Audio Wellness Device
                 </h3>
                 <p className="text-mind-purple font-semibold mb-4">All-in-One Wellness Headphones</p>
+=======
+                  Headphone Variant
+                </h3>
+                <p className="text-mind-purple font-semibold mb-4">All-in-One Neural Headphones</p>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </div>
               
               <div className="space-y-4">
@@ -245,7 +304,11 @@ const TechnologyStreamlined = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-mind-purple rounded-full"></div>
+<<<<<<< HEAD
                   <span className="text-neural-gray">Integrated neural monitoring technology</span>
+=======
+                  <span className="text-neural-gray">Built-in EEG sensors in ear cups</span>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-mind-purple rounded-full"></div>
@@ -374,6 +437,7 @@ const TechnologyStreamlined = () => {
                           <Brain className="h-32 w-32 text-neural-blue" />
                         </div>
                         <div className="grid grid-cols-4 gap-2">
+<<<<<<< HEAD
                           {['Delta', 'Theta', 'Alpha', 'Beta'].map((band, i) => (
                             <div key={i} className="glass-card p-2 text-xs text-neural-blue border border-neural-blue/30">
                               {band}
@@ -381,6 +445,15 @@ const TechnologyStreamlined = () => {
                           ))}
                         </div>
                         <p className="text-neural-gray">Multi-channel neural capture</p>
+=======
+                          {['0.5-4Hz', '4-8Hz', '8-13Hz', '13-30Hz'].map((freq, i) => (
+                            <div key={i} className="glass-card p-2 text-xs text-neural-blue border border-neural-blue/30">
+                              {freq}
+                            </div>
+                          ))}
+                        </div>
+                        <p className="text-neural-gray">4-channel EEG capture</p>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                       </div>
                     )}
                     
@@ -411,8 +484,13 @@ const TechnologyStreamlined = () => {
                         <Activity className="h-20 w-20 text-neural-blue mx-auto" />
                         <div className="space-y-3">
                           <div className="glass-card p-3 border border-neural-blue/30">
+<<<<<<< HEAD
                             <div className="text-neural-blue font-semibold">Profile: Active</div>
                             <div className="text-xs text-neural-gray">Personal Neural Signature</div>
+=======
+                            <div className="text-neural-blue font-semibold">iAPF: {activeFreq.toFixed(1)} Hz</div>
+                            <div className="text-xs text-neural-gray">Individual Alpha Peak</div>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                           </div>
                           <div className="grid grid-cols-2 gap-2">
                             <div className="glass-card p-2 border border-neural-blue/20">

@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 
 .vercel
+<<<<<<< HEAD
 "nul" 
 "nul" 
 "CON" 
@@ -37,3 +38,5 @@ dist-ssr
 "LPT1" 
 "LPT2" 
 "LPT3" 
+=======
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43

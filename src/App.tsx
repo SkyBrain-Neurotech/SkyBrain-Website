@@ -15,8 +15,11 @@ import Roadmap from "./pages/Roadmap";
 import Team from "./pages/Team";
 import BetaSignup from "./pages/BetaSignup";
 import Blockchain from "./pages/Blockchain";
+<<<<<<< HEAD
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+=======
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,8 +42,11 @@ const App = () => (
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/beta-signup" element={<BetaSignup />} />
+<<<<<<< HEAD
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+=======
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnalyticsProvider>

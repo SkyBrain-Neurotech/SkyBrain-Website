@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Mail, CheckCircle2, ArrowRight, Bell, Users, Code, Microscope } from 'lucide-react';
 import { trackFormSubmission } from '@/lib/analytics';
 
+<<<<<<< HEAD
 // Get API base URL based on environment
 const getApiBaseUrl = () => {
   if (typeof window !== 'undefined') {
@@ -18,6 +19,8 @@ const getApiBaseUrl = () => {
   return 'http://localhost:3001';
 };
 
+=======
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
 interface NewsletterSignupProps {
   location?: string;
   showPreferences?: boolean;
@@ -60,8 +63,12 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
     setError('');
 
     try {
+<<<<<<< HEAD
       const apiBaseUrl = getApiBaseUrl();
       const response = await fetch(`${apiBaseUrl}/api/newsletter-subscribe`, {
+=======
+      const response = await fetch('/api/newsletter-subscribe', {
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,19 +81,31 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
         }),
       });
 
+<<<<<<< HEAD
       const result = await response.json();
 
       if (response.ok && result.success) {
+=======
+      if (response.ok) {
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
         setIsSubmitted(true);
         trackFormSubmission('newsletter', true, { 
           preferences: preferences.join(','),
           source: location 
         });
       } else {
+<<<<<<< HEAD
         throw new Error(result.message || 'Subscription failed');
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong. Please try again or contact us at info@skybrain.in');
+=======
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Subscription failed');
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
       trackFormSubmission('newsletter', false, { 
         error: err instanceof Error ? err.message : 'unknown_error',
         source: location 

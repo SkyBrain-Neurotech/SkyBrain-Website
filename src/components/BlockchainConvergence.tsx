@@ -124,11 +124,19 @@ const BlockchainConvergence = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold font-orbitron text-neural-blue mb-6">
+<<<<<<< HEAD
               Welcome to the SkyBrain Ecosystem
             </h2>
             <p className="text-xl text-neural-gray max-w-3xl mx-auto">
               Where your wellness journey contributes to breakthrough discoveries 
               while maintaining your privacy and rewarding your participation.
+=======
+              Welcome to the SKY Ecosystem
+            </h2>
+            <p className="text-xl text-neural-gray max-w-3xl mx-auto">
+              Where your neural data becomes a valuable digital asset, fueling breakthrough discoveries 
+              while rewarding your contribution to neuroscience.
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
             </p>
           </div>
           
@@ -139,13 +147,22 @@ const BlockchainConvergence = () => {
                   <div className="p-3 bg-gradient-to-br from-neural-blue/20 to-mind-purple/20 rounded-xl">
                     <Coins className="h-8 w-8 text-neural-blue" />
                   </div>
+<<<<<<< HEAD
                   <CardTitle className="text-neural-blue">Earn Rewards</CardTitle>
+=======
+                  <CardTitle className="text-neural-blue">Earn SKY Tokens</CardTitle>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                 </div>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-neural-gray text-base">
+<<<<<<< HEAD
                   Your wellness sessions contribute to research advancement and you're 
                   rewarded for your participation. Your privacy is protected while creating value.
+=======
+                  Every validated EEG session earns you SKY tokens. Higher quality data, 
+                  premium rewards. Your neural patterns have value.
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                 </CardDescription>
               </CardContent>
             </Card>
@@ -156,13 +173,22 @@ const BlockchainConvergence = () => {
                   <div className="p-3 bg-gradient-to-br from-neural-blue/20 to-mind-purple/20 rounded-xl">
                     <Network className="h-8 w-8 text-neural-blue" />
                   </div>
+<<<<<<< HEAD
                   <CardTitle className="text-neural-blue">Data Ownership</CardTitle>
+=======
+                  <CardTitle className="text-neural-blue">Data NFTs</CardTitle>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                 </div>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-neural-gray text-base">
+<<<<<<< HEAD
                   Your wellness data remains securely under your control. 
                   You maintain ownership while contributing to breakthrough research.
+=======
+                  Research-grade EEG sessions become unique NFTs in your wallet. 
+                  Own your data, earn ongoing royalties from its use.
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                 </CardDescription>
               </CardContent>
             </Card>
@@ -173,13 +199,22 @@ const BlockchainConvergence = () => {
                   <div className="p-3 bg-gradient-to-br from-neural-blue/20 to-mind-purple/20 rounded-xl">
                     <TrendingUp className="h-8 w-8 text-neural-blue" />
                   </div>
+<<<<<<< HEAD
                   <CardTitle className="text-neural-blue">Participate & Govern</CardTitle>
+=======
+                  <CardTitle className="text-neural-blue">Stake & Govern</CardTitle>
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                 </div>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-neural-gray text-base">
+<<<<<<< HEAD
                   Participate in platform governance while supporting groundbreaking 
                   neuroscience research. Help shape the future of mental wellness.
+=======
+                  Stake your tokens to earn passive income while helping fund groundbreaking 
+                  neuroscience research. Shape the future of the ecosystem.
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
                 </CardDescription>
               </CardContent>
             </Card>
@@ -210,10 +245,17 @@ const BlockchainConvergence = () => {
                   1
                 </div>
               </div>
+<<<<<<< HEAD
               <h3 className="text-2xl font-bold text-neural-blue mb-4">Join Securely</h3>
               <p className="text-neural-gray">
                 Create your secure account to join the SkyBrain community. 
                 Your privacy, your data, your control.
+=======
+              <h3 className="text-2xl font-bold text-neural-blue mb-4">Connect Your Wallet</h3>
+              <p className="text-neural-gray">
+                Login with your Web3 wallet to join the SKY ecosystem. 
+                Your identity, your data, your control.
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </p>
             </div>
 
@@ -226,10 +268,17 @@ const BlockchainConvergence = () => {
                   2
                 </div>
               </div>
+<<<<<<< HEAD
               <h3 className="text-2xl font-bold text-neural-blue mb-4">Contribute Wellness Data</h3>
               <p className="text-neural-gray">
                 Participate in wellness sessions with SkyBrain. Our platform ensures 
                 quality standards and determines research contribution value.
+=======
+              <h3 className="text-2xl font-bold text-neural-blue mb-4">Contribute Neural Data</h3>
+              <p className="text-neural-gray">
+                Record EEG sessions with SkyBrain. Our AI validates quality 
+                and determines research value automatically.
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </p>
             </div>
 
@@ -242,10 +291,17 @@ const BlockchainConvergence = () => {
                   3
                 </div>
               </div>
+<<<<<<< HEAD
               <h3 className="text-2xl font-bold text-neural-blue mb-4">Earn & Participate</h3>
               <p className="text-neural-gray">
                 Your valuable contributions are recognized and rewarded. Participate 
                 in governance and help shape the future of mental wellness research.
+=======
+              <h3 className="text-2xl font-bold text-neural-blue mb-4">Earn & Own</h3>
+              <p className="text-neural-gray">
+                Valuable sessions become NFTs in your wallet. Earn SKY tokens, 
+                stake for passive income, and shape the future of neuroscience.
+>>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
               </p>
             </div>
           </div>
