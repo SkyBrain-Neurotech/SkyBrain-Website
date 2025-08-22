@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "version": 2,
   "builds": [
     {
@@ -31,14 +30,7 @@
     "server/api/contact.js": {
       "maxDuration": 30
     }
-  }
-=======
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
+  },
   "headers": [
     {
       "source": "/api/(.*)",
@@ -49,5 +41,4 @@
       ]
     }
   ]
->>>>>>> 304ae85180a052867b7eea44cef94e82e245fe43
 }
